@@ -1,0 +1,170 @@
+/* 1) Variables + color scheme */
+:root {
+  --bg: #ffffff;
+  --text: #213547;
+  --accent: #646cff;
+  --accent-primary: #6333f2;
+  --accent-primary-hover: #7b4ef5;
+  --accent-primary-soft: rgba(99, 51, 242, 0.35);
+  --accent-tint: rgba(99, 51, 242, 0.08);
+  --accent-shadow: #9b7bf959;
+  --accent-ring: #a78bfa;
+  --surface: #ffffff;
+  --surface-muted: #f5f7fb;
+  --surface-raised: #fcfcfd;
+  --text-strong: #111827;
+  --text-muted: #4b5563;
+  --text-subtle: #777e90;
+  --border: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #242424;
+    --text: rgba(255, 255, 255, 0.87);
+    --accent: #bca5ff;
+    --accent-primary: #a67dff;
+    --accent-primary-hover: #c19eff;
+    --accent-primary-soft: rgba(166, 125, 255, 0.45);
+    --accent-tint: rgba(166, 125, 255, 0.18);
+    --accent-shadow: rgba(51, 21, 110, 0.55);
+    --accent-ring: #b896ff;
+    --surface: #111217;
+    --surface-muted: #171923;
+    --surface-raised: #1f2230;
+    --text-strong: rgba(255, 255, 255, 0.92);
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --text-subtle: rgba(255, 255, 255, 0.55);
+    --border: rgba(255, 255, 255, 0.18);
+  }
+}
+
+/* 2) Box-sizing + sensible defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Keep layout width stable when some pages show a vertical scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3) Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* 4) Links and buttons */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.9;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 5) Media + images */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6) Root layout helper (optional) */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* 7) Container utility (optional) */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* 8) Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.15;
+  }
+
+  .container {
+    max-width: 960px;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    margin-bottom: 0.85rem;
+  }
+
+  .container {
+    max-width: 640px;
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.875rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    padding: 0 0.85rem;
+  }
+}

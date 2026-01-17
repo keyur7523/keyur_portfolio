@@ -1,0 +1,135 @@
+.contact-title {
+    font-size: 80px;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Increase selector specificity to win over global Home.css rule */
+
+
+/* Self-contained layout for Contact page (no Home.css dependency) */
+.my-info {
+    margin-top: 130px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.my-info .text {
+    width: 50%;
+    height: 100%;
+}
+.my-info .image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-info .image img {
+    display: block;
+    width: clamp(220px, 28vw, 480px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 35% 40%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 49px #ffffff, 0 0 0 50px var(--accent-ring);
+}
+.my-info .text .accent {
+    color: var(--accent-primary);
+}
+
+.contact-details {
+    margin-top: 50px;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--text-strong);
+}
+.contact-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+}
+.contact-icon {
+    font-size: 22px;
+    color: var(--text-muted);
+}
+.contact-text {
+    font-size: 20px;
+    font-weight: inherit; /* inherit 100 from .contact-details */
+}
+.contact-item:hover .contact-icon-wrap {
+    border-color: var(--accent-primary);
+}
+.contact-item:hover .contact-icon {
+    color: var(--accent-primary);
+}
+
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+    .my-info {
+        gap: 40px;
+    }
+
+    .my-info .text,
+    .my-info .image {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .my-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .my-info .image img {
+        width: clamp(200px, 60vw, 360px);
+    }
+
+    .contact-details {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 42px;
+    }
+
+    .contact-details {
+        font-size: 18px;
+    }
+
+    .contact-text {
+        font-size: 18px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

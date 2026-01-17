@@ -1,0 +1,156 @@
+/* Grid container to place cards side-by-side */
+
+
+/* On the standalone Projects page, stack cards vertically */
+div.projects-page .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Project card */
+div.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 100px;
+}
+
+div.project-images {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 20px;
+    background: var(--border); /* auto adjusts */
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.project-image {
+    width: 85%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+div.project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-name {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 1000;
+    gap: 8px;
+}
+
+a.project-open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    color: var(--text-strong);
+    text-decoration: none;
+}
+a.project-open:hover {
+    border-color: var(--accent-ring);
+    color: var(--accent-ring);
+}
+
+p.project-summary {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.project-summary-link {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-top: 12px;
+}
+.project-summary-link-anchor {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.project-summary-link-anchor:hover {
+    opacity: 0.9;
+}
+
+.project-name-link { 
+    display: flex; 
+    align-items: baseline; 
+    gap: 8px; 
+    margin-top: 25px;
+}
+
+.project-link {
+     display: inline-flex; 
+     font-size: 28px; 
+     line-height: 1; 
+     color: var(--accent-primary);
+     text-decoration: none; 
+     margin-left: 25px;
+    }
+
+.project-link svg { 
+    width: 1em; 
+    height: 1em; 
+}
+
+
+/* Stack on smaller screens */
+@media (max-width: 700px) {
+    div.projects-grid {
+        grid-template-columns: 1fr;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+    div.project-card {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    div.project-images {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-name {
+        font-size: 24px;
+    }
+
+    p.project-summary {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    div.project-card {
+        margin-bottom: 60px;
+    }
+
+    .project-summary-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .project-link {
+        margin-left: 0;
+    }
+}

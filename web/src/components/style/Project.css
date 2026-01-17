@@ -1,0 +1,290 @@
+.project-page {
+    margin-top: 100px;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* pushes icon to the far right */
+    gap: 16px;
+}
+
+.project-page h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+}
+
+/* Back link at top of project page */
+.project-page > a:first-of-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-primary);
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 16px;
+}
+.project-page > a:first-of-type:hover {
+    color: var(--accent-primary-hover);
+}
+.project-page > a:first-of-type svg {
+    width: 28px;
+    height: 28px;
+    color: inherit; /* make icon match text color */
+}
+
+.project-page p {
+    font-size: 22px;
+    width: 70%;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 1rem 0;
+}
+
+.project-open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--accent-primary); /* accent */
+    text-decoration: none;
+}
+.project-open:hover {
+    color: var(--accent-primary-hover);
+}
+
+/* Ensure no circular border from shared card styles */
+.project-header a.project-open {
+    border: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    padding: 0;
+    color: var(--accent-primary); /* ensure accent wins over card CSS */
+}
+.project-header a.project-open:hover { color: var(--accent-primary-hover); }
+
+.project-summary-link {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-top: 12px;
+}
+.project-summary-link-anchor {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.project-summary-link-anchor:hover {
+    opacity: 0.9;
+}
+
+.accent {
+    color: var(--accent-primary);
+}
+
+/* Stacked images list - project detail only (scoped to avoid card CSS collisions) */
+.project-detail-images {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+.project-detail-image img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* Slideshow */
+.project-gallery {
+    margin-top: 100px;
+    display: grid;
+    gap: 12px;
+}
+
+.project-gallery-viewport {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--surface-muted); /* theme-aware */
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 28px rgba(0,0,0,.10), 0 2px 10px rgba(0,0,0,.06);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.project-gallery-viewport:hover {
+    box-shadow: 0 18px 44px rgba(0,0,0,.14), 0 6px 18px var(--accent-tint);
+    transform: translateY(-1px);
+}
+
+.project-gallery-viewport::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 16px;
+    box-shadow: inset 0 0 80px rgba(0,0,0,.07);
+}
+
+.project-gallery-img {
+    width: 75%;
+    height: auto;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.12));
+    transition: width .25s ease, transform .25s ease, filter .25s ease, opacity .25s ease;
+    animation: project-image-fade-in .32s ease both;
+}
+
+.project-gallery-viewport:hover .project-gallery-img {
+    width: 80%;
+    transform: scale(1.02);
+    filter: drop-shadow(0 16px 32px rgba(0,0,0,.18));
+}
+
+@keyframes project-image-fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.project-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 9999px;
+    border: 1px solid var(--accent-primary);
+    background: var(--surface);
+    color: var(--accent-primary); /* accent */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.project-gallery-arrow.left { left: 12px; }
+.project-gallery-arrow.right { right: 12px; }
+.project-gallery-arrow:hover { color: var(--accent-primary-hover); border-color: var(--accent-primary-hover); }
+.project-gallery-arrow:focus-visible { outline: 3px solid var(--accent-primary-soft); outline-offset: 2px; }
+
+/* ensure icon inherits the button color */
+.project-gallery-arrow svg { color: inherit; }
+
+.project-gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.project-gallery-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: #cbd5e1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.project-gallery-dot.active { background: var(--accent-primary); }
+
+/* Project description list with tick + text inline */
+.project-description {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-desc-item {
+    display: flex;
+    align-items: baseline; /* align icon with text baseline */
+    gap: 10px;
+}
+
+.project-desc-icon {
+    color: var(--accent-primary); /* accent */
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    flex-shrink: 0;
+}
+
+.project-desc-text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+    .project-page h1 {
+        font-size: 48px;
+    }
+
+    .project-page p {
+        width: 90%;
+    }
+
+    .project-gallery {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-page h1 {
+        font-size: 40px;
+    }
+
+    .project-page p {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .project-gallery-viewport {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-gallery-arrow {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-page {
+        margin-top: 60px;
+    }
+
+    .project-page h1 {
+        font-size: 34px;
+    }
+
+    .project-page p {
+        font-size: 18px;
+    }
+
+    .project-gallery-dots {
+        gap: 8px;
+        margin-bottom: 60px;
+    }
+}

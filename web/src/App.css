@@ -1,0 +1,27 @@
+.page-container {
+  margin-left: 180px;
+  margin-right: 180px;
+}
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+  .page-container {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+

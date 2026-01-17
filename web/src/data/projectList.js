@@ -12,9 +12,9 @@ import probekitImage3 from '../images/probekit/probekitimg3.jpg'
 import probekitImage4 from '../images/probekit/probekitimg4.jpg'
 import probekitImage5 from '../images/probekit/probekitimg5.jpg'
 import probekitImage6 from '../images/probekit/probekitimg6.jpg'
-import hireTrackImage1 from '../images/hiretrack/hiretrackimg1.jpg'
-import hireTrackImage2 from '../images/hiretrack/hiretrackimg2.jpg'
-import hireTrackImage3 from '../images/hiretrack/hiretrackimg3.jpg'
+import hireTrackImage1 from '../images/hiretrack/hiretrackimg1.jpeg'
+import hireTrackImage2 from '../images/hiretrack/hiretrackimg2.jpeg'
+import hireTrackImage3 from '../images/hiretrack/hiretrackimg3.jpeg'
 
 
 /* Projects */
@@ -70,7 +70,4 @@ export const projectList = [
         link: 'https://casesnap-lake.vercel.app/'
     }
 
-
-
-    
 ]

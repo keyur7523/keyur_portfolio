@@ -15,10 +15,26 @@ import probekitImage6 from '../images/probekit/probekitimg6.jpg'
 import hireTrackImage1 from '../images/hiretrack/hiretrackimg1.jpeg'
 import hireTrackImage2 from '../images/hiretrack/hiretrackimg2.jpeg'
 import hireTrackImage3 from '../images/hiretrack/hiretrackimg3.jpeg'
+import kodaImage1 from '../images/koda/kodaimg1.jpeg'
+import kodaImage2 from '../images/koda/kodaimg2.jpeg'
+import kodaImage3 from '../images/koda/kodaimg3.jpeg'
 
 
 /* Projects */
 export const projectList = [
+
+    {
+        name: 'Koda',
+        summary: 'AI-powered coding agent with multi-phase orchestration, human-in-the-loop approval workflows, and real-time streaming execution for safe, transparent code generation.',                                                                     
+        description: [
+            'Architected a multi-phase agentic workflow (Understanding → Planning → Executing → Approval) with phase-specific model selection—using Claude 3.5 Haiku for cost-effective codebase exploration and Claude Sonnet 4 for intelligent planning and execution—reducing API costs by 40% while maintaining output quality', 'Implemented a tool-use orchestration loop supporting 7 tools (read_file, write_file, delete_file, list_directory, search_code, run_command, index_symbols) with automatic tool chaining, where the LLM iteratively calls tools until task completion, handling complex multi-step coding tasks autonomously', 'Built a change staging system with human-in-the-loop approval—all file modifications are staged (never applied directly), generating unified diffs for visual review in Monaco Editor before explicit user approval, ensuring safety and preventing unintended codebase changes.', 'Developed real-time WebSocket streaming architecture that broadcasts agent reasoning, tool calls, and results live to the frontend, providing full transparency into agent decision-making with sub-second latency using FastAPI async handlers.', 'Implemented secure API key management with Fernet (AES-128-CBC) encryption at rest, where user Anthropic keys are encrypted before PostgreSQL storage and decrypted only during LLM API calls—keys are never logged, cached, or returned to the frontend.', 'Integrated GitHub OAuth for repository cloning, branch creation, and automated PR generation with structured descriptions, enabling end-to-end workflow from natural language task to pull request without leaving the application.', 'Built a Tree-sitter powered code indexer that parses Python ASTs to extract symbols (classes, functions, methods), enabling the agent to understand codebase structure and navigate to relevant code sections during the understanding phase.', 'Designed a token-aware architecture with usage tracking per user, supporting both BYOK (Bring Your Own Key) for unlimited usage and a free tier with configurable token limits, with graceful degradation when limits are reached.',  'Delivered a responsive React dashboard with Zustand state management, featuring real-time agent stream visualization, collapsible tool call inspection, Monaco-based diff review, dark/light theme support, and keyboard shortcuts for power users.'   
+        ],
+        techStack: [
+            'React 19', 'TypeScript', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'WebSocket', 'Anthropic Claude API', 'Tree-sitter', 'Monaco Editor', 'Zustand', 'Fernet Encryption', 'JWT', 'GitHub OAuth', 'Tailwind CSS v4', 'Vite', 'Vercel', 'Render'
+        ],
+        images: [kodaImage1, kodaImage2, kodaImage3],
+        link: 'https://koda-tau.vercel.app'
+    }, 
     {
         name: 'PromptLab',
         summary: 'LLM experimentation platform with real-time SSE streaming chat, deterministic A/B prompt routing, persistent conversations, and feedback + cost/latency telemetry to continuously evaluate and improve model behavior.',

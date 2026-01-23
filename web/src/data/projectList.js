@@ -18,6 +18,10 @@ import hireTrackImage3 from '../images/hiretrack/hiretrackimg3.jpeg'
 import kodaImage1 from '../images/koda/kodaimg1.jpeg'
 import kodaImage2 from '../images/koda/kodaimg2.jpeg'
 import kodaImage3 from '../images/koda/kodaimg3.jpeg'
+import authzImage1 from '../images/authz/authzimg1.jpeg'
+import authzImage2 from '../images/authz/authzimg2.jpeg'
+import authzImage3 from '../images/authz/authzimg3.jpeg'
+import authzImage4 from '../images/authz/authzimg4.jpeg'
 
 
 /* Projects */
@@ -44,6 +48,22 @@ export const projectList = [
         techStack: ['Python', 'FastAPI', 'Rust', 'PostgreSQL', 'Redis', 'Server-Sent Events (SSE)', 'React', 'TypeScript', 'Vite', 'SQLAlchemy', 'Docker'],
         images: [promptLabImage1],
         link: 'https://prompt-lab-gold.vercel.app/'
+    },
+    {
+        name: 'AuthZ Platform',
+        summary: 'Enterprise-grade authorization and approval workflow system featuring RBAC/PBAC policy engines, multi-tenant organization management, and real-time access request workflows—mirroring authorization infrastructure used at companies like Google, Meta, and ByteDance.',
+        description: [
+            'Architected a dual authorization engine supporting both Role-Based Access Control (RBAC) and Policy-Based Access Control (PBAC)—RBAC provides simple user→role→permission hierarchies while PBAC enables flexible JSON policy documents with principal matching, wildcard patterns (e.g., database:*), and attribute-based conditions, with deny-overrides-allow evaluation logic matching AWS IAM semantics.',
+            'Built a complete access request workflow with finite state machine (Pending→Approved/Denied→Expired), featuring request submission with justification, approver inbox with risk-based color coding, approve/deny actions with comments, automatic role provisioning on approval, and time-bound access that auto-expires—all changes captured in an immutable audit trail.',
+            'Implemented secure JWT authentication with refresh token rotation using unique JTI (JWT ID) claims—each refresh invalidates the previous token by replacing the stored SHA-256 hash, preventing token reuse attacks while maintaining seamless user sessions with 15-minute access tokens and 7-day refresh tokens.',
+            'Designed a multi-tenant architecture with organization-scoped data isolation, member roles (Owner/Admin/Member), and an invite system with expiring tokens—all database queries are automatically scoped to the user\'s current organization, preventing cross-tenant data leakage at the ORM level.',
+            'Developed a power-user optimized React dashboard with command palette (Cmd+K), keyboard navigation (j/k for lists, G+R/G+P/G+U for quick navigation), real-time search filtering, bulk permission assignment, CSV audit export, and a "Midnight Sapphire" dark theme—delivering the keyboard-driven efficiency expected in internal developer tools.',
+        ],
+        techStack: [
+            'React 19', 'TypeScript', 'FastAPI', 'PostgreSQL', 'SQLAlchemy 2.0', 'Alembic', 'JWT', 'bcrypt', 'Zustand', 'React Query', 'Framer Motion', 'Tailwind CSS v4', 'Sonner', 'Lucide React', 'Vite', 'Pytest'
+        ],
+        images: [authzImage1, authzImage2, authzImage3, authzImage4],
+        link: 'https://authz-liard.vercel.app/'
     },
     {
         name: 'HireTrack',

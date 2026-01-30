@@ -56,7 +56,7 @@ export const projectList = [
             'Deployed on Vercel (frontend) and Render (backend) with Neon PostgreSQL for persistence, Redis for session caching, OAuth 2.0 authentication (Google/GitHub), auto-running Alembic migrations for zero-touch deployments, and environment-based CORS/WebSocket URL configuration for secure cross-origin communication.'
         ],
         techStack: ['React', 'TypeScript', 'Konva.js', 'Yjs CRDT', 'FastAPI', 'WebSockets', 'PostgreSQL', 'Redis', 'SQLAlchemy', 'Alembic', 'OAuth 2.0', 'JWT', 'Tailwind CSS', 'Vercel', 'Render', 'Neon'],
-        images: [ccimg1, ccimg2, ccimg3],
+        images: [collabCanvasImage1, collabCanvasImage2, collabCanvasImage3],
         link: 'https://collabcanvas-tau.vercel.app'
     },
     {

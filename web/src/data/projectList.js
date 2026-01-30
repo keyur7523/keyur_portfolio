@@ -22,6 +22,9 @@ import authzImage1 from '../images/authz/authzimg1.jpeg'
 import authzImage2 from '../images/authz/authzimg2.jpeg'
 import authzImage3 from '../images/authz/authzimg3.jpeg'
 import authzImage4 from '../images/authz/authzimg4.jpeg'
+import collabCanvasImage1 from '../images/collabcanvas/ccimg1.jpeg'
+import collabCanvasImage2 from '../images/collabcanvas/ccimg2.jpeg'
+import collabCanvasImage3 from '../images/collabcanvas/ccimg3.jpeg'
 
 
 /* Projects */
@@ -39,6 +42,23 @@ export const projectList = [
         images: [kodaImage1, kodaImage2, kodaImage3],
         link: 'https://koda-tau.vercel.app'
     }, 
+    {
+        name: 'CollabCanvas',
+        summary: 'Real-time collaborative design board with CRDT-based synchronization, live cursor presence, and a full-featured canvas editor supporting shapes, text, and images.',
+        description: [
+            'Architected a real-time collaborative canvas using Yjs CRDT (Conflict-free Replicated Data Type) for seamless multi-user synchronization, implementing pycrdt-websocket on the backend for document persistence, binary WebSocket message broadcasting, and automatic conflict resolution without requiring operational transforms.',
+            'Engineered JWT-authenticated WebSocket connections with token validation middleware, graceful reconnection handling with exponential backoff, and React StrictMode-compatible connection lifecycle management using deferred cleanup patterns to prevent premature disconnections during development.',
+            'Built a feature-rich canvas editor with Konva.js supporting multiple shape primitives (rectangles, ellipses, lines, arrows, text, sticky notes, images), with transformer handles for resize/rotate, multi-select via Shift+click and marquee selection, and layer management (bring-to-front, send-to-back).',
+            'Implemented advanced canvas interactions including copy/paste with Ctrl+C/V and automatic offset positioning, snap-to-grid with configurable grid sizes, smart alignment guides, shape locking to prevent accidental edits, and full keyboard shortcut support (Ctrl+Z/Y undo/redo, Delete, Escape to deselect).',
+            'Developed comprehensive live collaboration features including real-time cursor tracking with user name labels and avatar colors, remote selection highlights showing elements others are editing, online presence panel with user list, and connection status indicators.',
+            'Created a sharing system with role-based permissions (owner/editor/viewer), secure invite link generation with unique tokens, board access management modal, and cross-tenant isolation ensuring users only access authorized boards.',
+            'Delivered polished UX with zoom controls (fit-to-screen, zoom-to-selection, percentage-based with mousewheel support), alignment toolbar (distribute horizontally/vertically, align edges/centers), PNG/SVG/JSON export functionality, and inline-editable board names with auto-save.',
+            'Deployed on Vercel (frontend) and Render (backend) with Neon PostgreSQL for persistence, Redis for session caching, OAuth 2.0 authentication (Google/GitHub), auto-running Alembic migrations for zero-touch deployments, and environment-based CORS/WebSocket URL configuration for secure cross-origin communication.'
+        ],
+        techStack: ['React', 'TypeScript', 'Konva.js', 'Yjs CRDT', 'FastAPI', 'WebSockets', 'PostgreSQL', 'Redis', 'SQLAlchemy', 'Alembic', 'OAuth 2.0', 'JWT', 'Tailwind CSS', 'Vercel', 'Render', 'Neon'],
+        images: [ccimg1, ccimg2, ccimg3],
+        link: 'https://collabcanvas-tau.vercel.app'
+    },
     {
         name: 'PromptLab',
         summary: 'LLM experimentation platform with real-time SSE streaming chat, deterministic A/B prompt routing, persistent conversations, and feedback + cost/latency telemetry to continuously evaluate and improve model behavior.',

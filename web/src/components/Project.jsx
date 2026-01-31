@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './style/Project.css'
 import { useParams, Link } from 'react-router-dom'
 import { projectList } from '../data/projectList'
-import { LuExternalLink } from "react-icons/lu";
+import { LuExternalLink, LuLink } from "react-icons/lu";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import TechTile from './TechTile'
+import { FadeIn } from './ui/Animations'
 
 export default function Project() {
 
-    const [currentIndex, setCurrentIndex] = React.useState(0)
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [copied, setCopied] = useState(false)
     const { projectId } = useParams()
     const project = projectList.find(project => project.name.toLowerCase().replace(' ', '-') === projectId)
+
+    const copyLink = async () => {
+        await navigator.clipboard.writeText(window.location.href);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    const relatedProjects = projectList
+        .filter(p => p.name !== project?.name)
+        .slice(0, 3);
 
     if (!project) {
         return <div>Project not found</div>
@@ -44,9 +56,19 @@ export default function Project() {
             </Link>
             <div className='project-header'>
                 <h1>{project.name}<span className="accent">.</span></h1>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className='project-open' aria-label='Open project'>
-                    <LuExternalLink size={30} strokeWidth={2.5} />
-                </a>
+                <div className='project-header-actions'>
+                    <button
+                        onClick={copyLink}
+                        className="project-copy-link"
+                        aria-label="Copy link"
+                    >
+                        <LuLink size={24} />
+                        {copied && <span className="copied-tooltip">Copied!</span>}
+                    </button>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className='project-open' aria-label='Open project'>
+                        <LuExternalLink size={30} strokeWidth={2.5} />
+                    </a>
+                </div>
             </div>
             <p>{project.summary}</p>
             <div className="project-gallery">
@@ -107,6 +129,23 @@ export default function Project() {
                 <div className="tech-grid">
                     {project.techStack.map((t, i) => (
                         <TechTile key={i} tech={t} />
+                    ))}
+                </div>
+            </div>
+
+            <div className="related-projects">
+                <h2>More Projects</h2>
+                <div className="related-grid">
+                    {relatedProjects.map((p, i) => (
+                        <Link
+                            key={i}
+                            to={`/projects/${p.name.toLowerCase().replace(' ', '-')}`}
+                            className="related-card"
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        >
+                            <img src={p.images[0]} alt={p.name} />
+                            <span>{p.name}</span>
+                        </Link>
                     ))}
                 </div>
             </div>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './style/Navbar.css'
 import { Link, NavLink } from 'react-router-dom'
 import { GrContact } from "react-icons/gr";
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,7 +16,8 @@ export default function Navbar() {
     }
 
     return (
-        <nav className='navbar'>
+        <nav className={`navbar ${isMenuOpen ? 'menu-open' : ''}`}>
+            <a href='#main-content' className='skip-link'>Skip to main content</a>
             <p>Keyur Pawaskar</p>
             <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
                 <li><NavLink to='/' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>Home</NavLink></li>
@@ -37,9 +39,12 @@ export default function Navbar() {
                 <span />
                 <span />
             </button>
-            <NavLink to='/contact' className={({ isActive }) => isActive ? 'active contact-icon' : 'contact-icon'} aria-label='Contact'>
-                <GrContact />
-            </NavLink>
+            <div className='navbar-actions'>
+                <ThemeToggle />
+                <NavLink to='/contact' className={({ isActive }) => isActive ? 'active contact-icon' : 'contact-icon'} aria-label='Contact'>
+                    <GrContact />
+                </NavLink>
+            </div>
         </nav>
     )
 }

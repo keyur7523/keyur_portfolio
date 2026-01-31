@@ -1,0 +1,117 @@
+.notfound-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.notfound-content {
+    max-width: 500px;
+}
+
+.notfound-code {
+    font-size: 140px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0 0 16px 0;
+    color: var(--text-strong);
+}
+
+.notfound-code .accent {
+    color: var(--accent-primary);
+}
+
+.notfound-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--text-strong);
+}
+
+.notfound-message {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin: 0 0 40px 0;
+    line-height: 1.6;
+}
+
+.notfound-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.notfound-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.notfound-btn.primary {
+    background: var(--accent-primary);
+    color: white;
+    border: 2px solid var(--accent-primary);
+}
+
+.notfound-btn.primary:hover {
+    background: var(--accent-primary-hover);
+    border-color: var(--accent-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--accent-shadow);
+}
+
+.notfound-btn.secondary {
+    background: transparent;
+    color: var(--text-strong);
+    border: 2px solid var(--border);
+}
+
+.notfound-btn.secondary:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notfound-code {
+        font-size: 100px;
+    }
+
+    .notfound-title {
+        font-size: 26px;
+    }
+
+    .notfound-message {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notfound-code {
+        font-size: 80px;
+    }
+
+    .notfound-title {
+        font-size: 22px;
+    }
+
+    .notfound-actions {
+        flex-direction: column;
+    }
+
+    .notfound-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

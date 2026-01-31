@@ -1,0 +1,105 @@
+.project-card-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.project-card-compact:hover {
+    transform: translateY(-6px);
+}
+
+.project-card-compact-image {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 16px;
+    background: var(--surface-muted);
+    aspect-ratio: 16 / 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card-compact:hover .project-card-compact-image {
+    box-shadow: 0 16px 32px rgba(99, 51, 242, 0.12);
+}
+
+.project-card-compact-image img {
+    width: 85%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card-compact:hover .project-card-compact-image img {
+    transform: scale(1.05);
+}
+
+.project-card-compact-info {
+    display: flex;
+    align-items: center;
+}
+
+.project-card-compact-name {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-strong);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-card-compact-icon {
+    font-size: 16px;
+    color: var(--accent-primary);
+    transition: transform 0.2s ease;
+}
+
+.project-card-compact:hover .project-card-compact-icon {
+    transform: translate(2px, -2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .project-card-compact {
+        gap: 14px;
+    }
+
+    .project-card-compact-image {
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card-compact-name {
+        font-size: 20px;
+    }
+
+    .project-card-compact-image {
+        aspect-ratio: 16 / 11;
+        border-radius: 12px;
+    }
+
+    .project-card-compact {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card-compact-name {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .project-card-compact-icon {
+        font-size: 14px;
+    }
+
+    .project-card-compact-image {
+        border-radius: 10px;
+    }
+}

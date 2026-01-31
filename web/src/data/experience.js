@@ -13,10 +13,10 @@ export const experiences =[
         duration: 'Sept 2021 - July 2023',
         description: ['Designed internal survey security and automation tools, cutting build time by 90% and improving compliance visibility.', 'Optimized data pipelines with caching, increasing throughput and reliability across global analytics platforms.', 'Created reusable analytics/security modules, reducing duplicated work and enabling faster adoption across distributed teams.', 'Contributed to cross-time-zone agile teams, performing peer reviews and enforcing secure coding standards.']
     },
-    {
-        company: 'WinnerSecretary',
-        position: 'Software Developer',
-        duration: 'March 2019 - Aug 2021',
-        description: ['Built and deployed a full-stack web platform using React.js, Flask, and SQL to manage insurance client data, including policies and personal details.', 'Designed secure CRUD workflows to onboard new clients, store policy information, and maintain centralized records for over 200 active clients.', 'Implemented backend cron jobs to automatically detect upcoming policy payments, dividend eligibility, and birthdays, triggering timely email reminders.', 'Optimized SQL queries and backend logic for fast data retrieval and reliable reporting, improving operational efficiency for the insurance brokerage.']
-    }
+//    {
+//        company: 'WinnerSecretary',
+//        position: 'Software Developer',
+//        duration: 'March 2019 - Aug 2021',
+//        description: ['Built and deployed a full-stack web platform using React.js, Flask, and SQL to manage insurance client data, including policies and personal details.', 'Designed secure CRUD workflows to onboard new clients, store policy information, and maintain centralized records for over 200 active clients.', 'Implemented backend cron jobs to automatically detect upcoming policy payments, dividend eligibility, and birthdays, triggering timely email reminders.', 'Optimized SQL queries and backend logic for fast data retrieval and reliable reporting, improving operational efficiency for the insurance brokerage.']
+//    }
 ]

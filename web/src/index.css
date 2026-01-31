@@ -1,5 +1,7 @@
 /* 1) Variables + color scheme */
-:root {
+/* Light theme (default) */
+:root,
+:root.light {
   --bg: #ffffff;
   --text: #213547;
   --accent: #646cff;
@@ -16,27 +18,28 @@
   --text-muted: #4b5563;
   --text-subtle: #777e90;
   --border: #e5e7eb;
+  --profile-ring: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #242424;
-    --text: rgba(255, 255, 255, 0.87);
-    --accent: #bca5ff;
-    --accent-primary: #a67dff;
-    --accent-primary-hover: #c19eff;
-    --accent-primary-soft: rgba(166, 125, 255, 0.45);
-    --accent-tint: rgba(166, 125, 255, 0.18);
-    --accent-shadow: rgba(51, 21, 110, 0.55);
-    --accent-ring: #b896ff;
-    --surface: #111217;
-    --surface-muted: #171923;
-    --surface-raised: #1f2230;
-    --text-strong: rgba(255, 255, 255, 0.92);
-    --text-muted: rgba(255, 255, 255, 0.7);
-    --text-subtle: rgba(255, 255, 255, 0.55);
-    --border: rgba(255, 255, 255, 0.18);
-  }
+/* Dark theme */
+:root.dark {
+  --bg: #242424;
+  --text: rgba(255, 255, 255, 0.87);
+  --accent: #bca5ff;
+  --accent-primary: #a67dff;
+  --accent-primary-hover: #c19eff;
+  --accent-primary-soft: rgba(166, 125, 255, 0.45);
+  --accent-tint: rgba(166, 125, 255, 0.18);
+  --accent-shadow: rgba(51, 21, 110, 0.55);
+  --accent-ring: #b896ff;
+  --surface: #111217;
+  --surface-muted: #171923;
+  --surface-raised: #1f2230;
+  --text-strong: rgba(255, 255, 255, 0.92);
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-subtle: rgba(255, 255, 255, 0.55);
+  --border: rgba(255, 255, 255, 0.18);
+  --profile-ring: #242424;
 }
 
 /* 2) Box-sizing + sensible defaults */
@@ -118,6 +121,52 @@ img, picture, video, canvas, svg {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* 9) Global focus-visible styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Better focus for buttons */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 10) Lazy image loading styles */
+.lazy-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.lazy-image-placeholder {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
 }
 
 /* Responsive overrides */

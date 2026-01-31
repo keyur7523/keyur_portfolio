@@ -9,6 +9,44 @@
     gap: 16px;
 }
 
+.project-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.project-copy-link {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-copy-link:hover {
+    background: var(--surface-muted);
+    color: var(--accent-primary);
+}
+
+.copied-tooltip {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-strong);
+    color: var(--surface);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
 .project-page h1 {
     font-size: 60px;
     font-weight: 800;
@@ -286,5 +324,61 @@
     .project-gallery-dots {
         gap: 8px;
         margin-bottom: 60px;
+    }
+}
+
+/* Related Projects Section */
+.related-projects {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid var(--border);
+}
+
+.related-projects h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 32px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-4px);
+}
+
+.related-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
+    background: var(--border);
+}
+
+.related-card span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+@media (max-width: 768px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .related-projects h2 {
+        font-size: 28px;
     }
 }

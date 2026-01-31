@@ -1,0 +1,39 @@
+.skeleton {
+  background: var(--border);
+  border-radius: 8px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-line {
+  height: 16px;
+}
+
+.skeleton-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.skeleton-image {
+  width: 100%;
+  border-radius: 0;
+}
+
+.skeleton-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

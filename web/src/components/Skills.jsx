@@ -11,8 +11,9 @@ export default function Skills() {
                         <div className='skills-list'>
                             {section.tech.map((skill, idx) => {
                                 const IconComp = section.icons[idx]
+                                const skillClass = skill.toLowerCase().replace(/[\s\/]/g, '-')
                                 return(
-                                    <div className='skill-item' key={idx}>
+                                    <div className={`skill-item skill-${skillClass}`} key={idx}>
                                         <div className='skill-icon'>{IconComp ? <IconComp /> : null}</div>
                                         <div className='skill-name'>{skill}</div>
                                     </div>

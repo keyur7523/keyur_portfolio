@@ -1,5 +1,13 @@
 export const experiences =[
     {
+        company: 'HAV Fresno',
+        position: 'Full Stack Developer - AI Focused',
+        duration: 'Aug 2025 - Present',
+        description: [
+            'Implemented HAV_assistant — a Chrome extension + Python backend that records or uploads dictaphone audio, transcribes it, and produces editable paraphrased clinical outputs like Summary, SOAP note, Disease Plan, and full transcript.', 'Implemented frontend features like an injected content script that builds a floating UI with launcher, recorder (MediaRecorder + WebAudio waveform), drag‑and‑drop/folder bulk upload, per‑file upload status, and an inline corrections modal that updates summaries.', 'Implemented backend & integrations like REST endpoints for transcription (transcribe_any_audio) and async paraphrasing, with optional S3 storage for recordings and database persistence for metadata.', 'Demonstrated full‑stack expertise by implementing browser‑extension engineering, real‑time audio capture/processing, async server pipelines, cloud storage integration, and UX‑focused error handling.'
+        ]
+    },
+    {
         company: 'Hibiki AI - CSU Fresno',
         position: 'Frontend Developer',
         duration: 'Jan 2025 - May 2025',
@@ -11,12 +19,8 @@ export const experiences =[
         company: 'YouGov',
         position: 'Python Developer',
         duration: 'Sept 2021 - July 2023',
-        description: ['Designed internal survey security and automation tools, cutting build time by 90% and improving compliance visibility.', 'Optimized data pipelines with caching, increasing throughput and reliability across global analytics platforms.', 'Created reusable analytics/security modules, reducing duplicated work and enabling faster adoption across distributed teams.', 'Contributed to cross-time-zone agile teams, performing peer reviews and enforcing secure coding standards.']
-    },
-//    {
-//        company: 'WinnerSecretary',
-//        position: 'Software Developer',
-//        duration: 'March 2019 - Aug 2021',
-//        description: ['Built and deployed a full-stack web platform using React.js, Flask, and SQL to manage insurance client data, including policies and personal details.', 'Designed secure CRUD workflows to onboard new clients, store policy information, and maintain centralized records for over 200 active clients.', 'Implemented backend cron jobs to automatically detect upcoming policy payments, dividend eligibility, and birthdays, triggering timely email reminders.', 'Optimized SQL queries and backend logic for fast data retrieval and reliable reporting, improving operational efficiency for the insurance brokerage.']
-//    }
+        description: [
+            'Designed internal survey security and automation tools, cutting build time by 90% and improving compliance visibility.', 'Optimized data pipelines with caching, increasing throughput and reliability across global analytics platforms.', 'Created reusable analytics/security modules, reducing duplicated work and enabling faster adoption across distributed teams.', 'Contributed to cross-time-zone agile teams, performing peer reviews and enforcing secure coding standards.'
+        ]
+    }
 ]

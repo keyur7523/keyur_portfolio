@@ -1,10 +1,16 @@
 
+/* PREVIOUS STATE (for rollback):
+   padding: 59px 0 59px 32px;
+   @1024px: 40px 0 40px 28px;
+   @768px: 24px 0 24px 24px;
+   @480px: 18px 0 18px 20px;
+*/
 .experience-button {
   background: transparent;
   border: none;
   border-left: 4px solid var(--text-muted);
   cursor: pointer;
-  padding: 59px 0 59px 32px;
+  padding: 68px 0 68px 32px;
   width: 100%;
   text-align: left;
   box-sizing: border-box;
@@ -40,14 +46,14 @@
 /* Responsive overrides */
 @media (max-width: 1024px) {
   .experience-button {
-    padding: 40px 0 40px 28px;
+    padding: 46px 0 46px 28px;
     font-size: 22px;
   }
 }
 
 @media (max-width: 768px) {
   .experience-button {
-    padding: 24px 0 24px 24px;
+    padding: 28px 0 28px 24px;
     font-size: 20px;
     white-space: normal;
   }
@@ -59,7 +65,7 @@
 
 @media (max-width: 480px) {
   .experience-button {
-    padding: 18px 0 18px 20px;
+    padding: 20px 0 20px 20px;
     font-size: 18px;
   }
 

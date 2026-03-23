@@ -3,7 +3,7 @@ import "./style/Contact.css"
 import profilePicture from '../images/profile_picture.JPG'
 import { MdOutlineEmail } from "react-icons/md";
 import { CiPhone } from "react-icons/ci";
-import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { FaHackerrank } from "react-icons/fa";
 import { HiDownload } from 'react-icons/hi';
 import { FadeIn } from '../components/ui/Animations';
@@ -11,7 +11,9 @@ import { FadeIn } from '../components/ui/Animations';
 export default function Contact() {
 
     useEffect(() => {
+        document.title = 'Contact | Keyur Pawaskar'
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        return () => { document.title = 'Keyur Pawaskar | Software Engineer' }
     }, [])
 
     return (
@@ -22,11 +24,11 @@ export default function Contact() {
                     </FadeIn>
                     <FadeIn delay={0.2}>
                         <div className='contact-details'>
-                            <a className='contact-item' href='mailto:pawaskarkeyur96@gmail.com'>
+                            <a className='contact-item' href='mailto:codekeyur7523@gmail.com'>
                                 <span className='contact-icon-wrap'>
                                     <MdOutlineEmail className='contact-icon' />
                                 </span>
-                                <span className='contact-text'>pawaskarkeyur96@gmail.com</span>
+                                <span className='contact-text'>codekeyur7523@gmail.com</span>
                             </a>
                             <a className='contact-item' href='tel:+15596498106'>
                                 <span className='contact-icon-wrap'>
@@ -51,6 +53,9 @@ export default function Contact() {
                                 </a>
                                 <a href='https://www.hackerrank.com/profile/keyur_pawaskar' target='_blank' rel='noopener noreferrer' aria-label='HackerRank'>
                                     <FaHackerrank />
+                                </a>
+                                <a href='https://x.com/keyur_pawa13430' target='_blank' rel='noopener noreferrer' aria-label='X'>
+                                    <FaXTwitter />
                                 </a>
                             </div>
                         </div>

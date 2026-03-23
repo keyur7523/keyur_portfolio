@@ -65,14 +65,6 @@ ul.navbar-links a.active {
     justify-self: end;
 }
 
-nav.navbar .contact-icon {
-    font-size: 26px;
-    color: var(--text-strong);
-    text-decoration: none;
-}
-nav.navbar .contact-icon:hover {
-    color: var(--accent-ring);
-}
 
 .navbar-toggle {
     display: none;
@@ -120,9 +112,6 @@ nav.navbar .contact-icon:hover {
     transform: translateY(-12px) rotate(-45deg);
 }
 
-.navbar-contact-mobile {
-    display: none;
-}
 
 /* Responsive overrides */
 @media (max-width: 1024px) {
@@ -213,12 +202,6 @@ nav.navbar .contact-icon:hover {
         opacity: 1;
     }
 
-    .navbar-contact-mobile {
-        display: block;
-    }
-    nav.navbar .contact-icon {
-        display: none;
-    }
 
     .navbar-actions {
         gap: 12px;

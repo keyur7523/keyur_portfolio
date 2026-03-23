@@ -3,6 +3,7 @@ import './style/Footer.css'
 import { NavLink } from 'react-router-dom'
 import { FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { FaHackerrank } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
     return (
@@ -15,10 +16,11 @@ export default function Footer() {
                     <li><NavLink to='/contact' className={({isActive}) => isActive ? 'active' : ''}>Contact</NavLink></li>
                 </ul>
                 <div className='footer-social'>
-                    <a target='_blank' href='https://www.linkedin.com/in/keyur-pawaskar-7b05b6169/' aria-label='LinkedIn'><FaLinkedinIn /></a>
-                    <a target='_blank' href='https://github.com/keyur7523' aria-label='GitHub'><FaGithub /></a>
-                    <a target='_blank' href='https://www.instagram.com/keyur_pawaskar/' aria-label='Instagram'><FaInstagram /></a>
-                    <a target='_blank' href='https://www.hackerrank.com/profile/keyur_pawaskar' aria-label='Hackerrank'><FaHackerrank /></a>
+                    <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/keyur-pawaskar-7b05b6169/' aria-label='LinkedIn'><FaLinkedinIn /></a>
+                    <a target='_blank' rel='noopener noreferrer' href='https://github.com/keyur7523' aria-label='GitHub'><FaGithub /></a>
+                    <a target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/keyur_pawaskar/' aria-label='Instagram'><FaInstagram /></a>
+                    <a target='_blank' rel='noopener noreferrer' href='https://www.hackerrank.com/profile/keyur_pawaskar' aria-label='Hackerrank'><FaHackerrank /></a>
+                    <a target='_blank' rel='noopener noreferrer' href='https://x.com/keyur_pawa13430' aria-label='X'><FaXTwitter /></a>
                 </div>
             </div>
             <div className='footer-2'>
@@ -42,8 +44,8 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className='copyright'>
-                    <p>© 2025 Keyur Pawaskar. All rights reserved.</p>
-                    <p>Built with React. Inspired from <a href='https://dribbble.com/shots/23212629-Purplefolio-Framer-Portfolio-Website-For-Web-Developers' target='_blank'>Luca Da Corte</a>.</p>
+                    <p>&copy; {new Date().getFullYear()} Keyur Pawaskar. All rights reserved.</p>
+                    <p>Built with React.</p>
                 </div>
             </div>
         </>

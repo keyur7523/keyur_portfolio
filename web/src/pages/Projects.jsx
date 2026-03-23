@@ -1,9 +1,15 @@
+import { useEffect } from 'react'
 import ProjectCard from '../components/Projects'
 import { projectList } from '../data/projectList'
 import './style/Projects.css'
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/ui/Animations'
 
 export default function Projects() {
+    useEffect(() => {
+        document.title = 'Projects | Keyur Pawaskar'
+        return () => { document.title = 'Keyur Pawaskar | Software Engineer' }
+    }, [])
+
     return (
         <div className="projects-page">
             <div className="projects-heading">

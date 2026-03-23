@@ -38,10 +38,13 @@ export default function Home() {
                     <FadeIn delay={0.3}>
                         <h1>Engineer</h1>
                     </FadeIn>
-                    <FadeIn delay={0.4}>
-                        <p>
-                            Full‑stack developer turning ideas into production‑ready apps.
+                    <FadeIn delay={0.35}>
+                        <p className='hero-subtitle'>
+                            Building AI‑powered full‑stack applications — from LLM agents to real‑time collaborative tools.
                         </p>
+                    </FadeIn>
+                    <FadeIn delay={0.4}>
+                        <p className='hero-status'>MS CS @ CSU Fresno &middot; Full Stack Developer @ HAV Fresno</p>
                     </FadeIn>
                     <FadeIn delay={0.5}>
                         <button className='contact-button' onClick={() => navigate('/contact')}>
@@ -108,7 +111,7 @@ export default function Home() {
                         {experiences.map(experience => {
                             if (experience.company === activeExperience) {
                                 return (
-                                    <>
+                                    <React.Fragment key={experience.company}>
                                         <div className='position-company'>
                                             {experience.position} <span className='accent'>@ {experience.company}</span>
                                         </div>
@@ -123,7 +126,7 @@ export default function Home() {
                                                 </div>
                                             ))}
                                         </div>
-                                    </>
+                                    </React.Fragment>
                                 )
                             }
                         })}

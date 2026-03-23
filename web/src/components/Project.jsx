@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './style/Project.css'
 import { useParams, Link } from 'react-router-dom'
 import { projectList } from '../data/projectList'
@@ -15,6 +15,13 @@ export default function Project() {
     const [copied, setCopied] = useState(false)
     const { projectId } = useParams()
     const project = projectList.find(project => project.name.toLowerCase().replace(' ', '-') === projectId)
+
+    useEffect(() => {
+        if (project) {
+            document.title = `${project.name} | Keyur Pawaskar`
+        }
+        return () => { document.title = 'Keyur Pawaskar | Software Engineer' }
+    }, [project])
 
     const copyLink = async () => {
         await navigator.clipboard.writeText(window.location.href);

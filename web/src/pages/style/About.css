@@ -19,25 +19,75 @@ p.about-lead {
     color: var(--text-muted);
 }
 
-/* My Story section - same styling with 100px gap above */
-div.my-story {
-    margin-top: 100px;
+/* About intro section with photo */
+div.about-intro {
+    margin-top: 80px;
 }
 
-div.my-story h1 {
+.about-intro-content {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.about-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 35% 40%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px var(--accent-ring);
+}
+
+.about-intro-text p {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.about-intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Education section */
+div.about-education {
+    margin-top: 80px;
+}
+
+div.about-education h1 {
     margin: 0 0 24px 0;
     font-size: 60px;
     font-weight: 800;
 }
 
-p.my-story-lead {
-    margin: 0;
-    padding-left: 0;
-    border-left: none;
-    font-size: 24px;
+.education-card {
+    padding: 28px 32px;
+    border-radius: 16px;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+}
+
+.education-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-strong);
+}
+
+.education-school {
+    margin: 0 0 4px 0;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 1.6;
-    color: var(--text-muted);
+    color: var(--accent-primary);
+}
+
+.education-date {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-subtle);
+    font-weight: 500;
 }
 
 /* My Experience section - same styling */
@@ -127,15 +177,23 @@ div.experience-grid {
     }
 
     div.about-header h1,
-    div.my-story h1,
+    div.about-education h1,
     div.my-experience h1 {
         font-size: 48px;
     }
 
     p.about-lead,
-    p.my-story-lead,
     p.my-experience-lead {
         font-size: 22px;
+    }
+
+    .about-intro-content {
+        gap: 32px;
+    }
+
+    .about-photo {
+        width: 160px;
+        height: 160px;
     }
 
     div.experience-grid {
@@ -155,15 +213,37 @@ div.experience-grid {
 
 @media (max-width: 768px) {
     div.about-header h1,
-    div.my-story h1,
+    div.about-education h1,
     div.my-experience h1 {
         font-size: 40px;
     }
 
     p.about-lead,
-    p.my-story-lead,
     p.my-experience-lead {
         font-size: 20px;
+    }
+
+    .about-intro-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .about-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .about-intro-text p {
+        font-size: 16px;
+    }
+
+    div.about-education {
+        margin-top: 60px;
+    }
+
+    div.about-education h1 {
+        font-size: 40px;
     }
 
     div.experience-grid {
@@ -184,15 +264,19 @@ div.experience-grid {
 
 @media (max-width: 480px) {
     div.about-header h1,
-    div.my-story h1,
+    div.about-education h1,
     div.my-experience h1 {
         font-size: 34px;
     }
 
     p.about-lead,
-    p.my-story-lead,
     p.my-experience-lead {
         font-size: 18px;
+    }
+
+    .about-photo {
+        width: 120px;
+        height: 120px;
     }
 
     .exp-right-container p:nth-child(2) {

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './style/Navbar.css'
 import { Link, NavLink } from 'react-router-dom'
-import { GrContact } from "react-icons/gr";
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
@@ -23,11 +22,7 @@ export default function Navbar() {
                 <li><NavLink to='/' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>Home</NavLink></li>
                 <li><NavLink to='/projects' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>Projects</NavLink></li>
                 <li><NavLink to='/about' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>About</NavLink></li>
-                <li className='navbar-contact-mobile'>
-                    <NavLink to='/contact' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>
-                        Contact
-                    </NavLink>
-                </li>
+                <li><NavLink to='/contact' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>Contact</NavLink></li>
             </ul>
             <button
                 type='button'
@@ -41,9 +36,6 @@ export default function Navbar() {
             </button>
             <div className='navbar-actions'>
                 <ThemeToggle />
-                <NavLink to='/contact' className={({ isActive }) => isActive ? 'active contact-icon' : 'contact-icon'} aria-label='Contact'>
-                    <GrContact />
-                </NavLink>
             </div>
         </nav>
     )

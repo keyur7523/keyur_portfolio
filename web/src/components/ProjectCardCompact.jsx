@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function ProjectCardCompact({ project }) {
+    const previewTech = project.techStack ? project.techStack.slice(0, 4) : [];
+
     return (
         <Link
             to={`/projects/${project.name.toLowerCase().replace(' ', '-')}`}
@@ -16,6 +18,13 @@ export default function ProjectCardCompact({ project }) {
                     {project.name}
                     <FaExternalLinkAlt className='project-card-compact-icon' />
                 </h3>
+                {previewTech.length > 0 && (
+                    <div className='project-card-compact-tags'>
+                        {previewTech.map(tech => (
+                            <span key={tech} className='project-card-compact-tag'>{tech}</span>
+                        ))}
+                    </div>
+                )}
             </div>
         </Link>
     )

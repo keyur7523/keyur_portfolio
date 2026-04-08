@@ -25,7 +25,7 @@ import authzImage4 from '../images/authz/authzimg4.jpeg'
 import collabCanvasImage1 from '../images/collabcanvas/ccimg1.jpeg'
 import collabCanvasImage2 from '../images/collabcanvas/ccimg2.jpeg'
 import collabCanvasImage3 from '../images/collabcanvas/ccimg3.jpeg'
-import delegateImage1 from '../images/delegate/delegateimg1.jpeg'
+import delegateImage1 from '../images/delegate/delegateimg1.png'
 
 
 /* Projects */

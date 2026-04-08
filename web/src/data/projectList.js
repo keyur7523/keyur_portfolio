@@ -25,11 +25,28 @@ import authzImage4 from '../images/authz/authzimg4.jpeg'
 import collabCanvasImage1 from '../images/collabcanvas/ccimg1.jpeg'
 import collabCanvasImage2 from '../images/collabcanvas/ccimg2.jpeg'
 import collabCanvasImage3 from '../images/collabcanvas/ccimg3.jpeg'
+import delegateImage1 from '../images/delegate/delegateimg1.jpeg'
 
 
 /* Projects */
 export const projectList = [
-
+    {
+        name: 'Delegate',
+        summary: 'Transparent AI agent for Gmail and Google Calendar with classifier-gated tool execution, mid-session permission revocation, and step-up authentication for high-risk actions.',
+        description: [
+            'Architected a multi-provider AI agent (Anthropic Claude, OpenAI GPT, Google Gemini) on a unified tool-calling loop using the Vercel AI SDK, exposing 10 Gmail and Google Calendar REST endpoints to power natural-language inbox and schedule management without tying the implementation to any single LLM vendor.',
+            'Designed a bring-your-own-key model where API credentials live in the browser\'s localStorage and travel with each request body, letting the server construct the model adapter for a single call and discard the key immediately—no shared backend credentials, no per-user accounts, no rate-limiting infrastructure.',
+            'Built a classifier-gated execution layer where every tool call is risk-scored before running: low-risk reads execute automatically, medium-risk writes are logged, and high-risk actions (send email, delete event, reply-all) require step-up approval via a 30-second countdown modal that auto-denies on timeout.',
+            'Implemented Promise-based step-up authentication over Server-Sent Events: the agent loop awaits a Promise stored in the session\'s pending-actions map, the client confirms or denies via REST, and the Promise resolves accordingly—no polling, no WebSockets, no state-machine refactor of the agent loop.',
+            'Engineered a contextual risk escalator that bumps medium-risk actions to high based on signals: more than 5 email recipients, calendar events with more than 10 attendees, sensitive keywords in the body (password, SSN, bank account), or actions taken outside business hours.',
+            'Developed a live permission dashboard with mid-session scope revocation enforced server-side before every Google API call, optimistic UI updates with rollback on failure, real-time action log streamed over 8 distinct SSE event types (agent_thinking, tool_call, tool_result, step_up_required, action_log, permission_update, agent_message, error), and grouped scope chips showing active vs revoked state.',
+            'Replaced a planned Auth0 integration with direct Google OAuth 2.0 after Token Vault gating blocked the demo, implementing the authorization code flow end-to-end with refresh token rotation, transparent expiry handling via getValidGoogleToken, and hand-rolled Gmail/Calendar fetch wrappers (no googleapis SDK) to keep the bundle lean and the contract with Google explicit.',
+            'Deployed on Vercel (frontend) and Render (backend) with cross-origin session cookies working behind a TLS proxy via trust-proxy + sameSite=none + credentials-include, in-memory session store for stateless single-user deployment, and full production OAuth flow with Google\'s app verification screen documented for visitors.'
+        ],
+        techStack: ['React', 'TypeScript', 'Vercel AI SDK', 'Node.js', 'Express', 'Server-Sent Events', 'Anthropic Claude', 'OpenAI', 'Google Gemini', 'Google OAuth 2.0', 'Gmail API', 'Google Calendar API', 'Tailwind CSS', 'Vite', 'Vercel', 'Render'],
+        images: [delegateImage1],
+        link: 'https://delegate-client.vercel.app'
+    },
     {
         name: 'Koda',
         summary: 'AI-powered coding agent with multi-phase orchestration, human-in-the-loop approval workflows, and real-time streaming execution for safe, transparent code generation.',                                                                     

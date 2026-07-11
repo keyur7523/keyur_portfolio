@@ -56,7 +56,7 @@ div.about-education {
     margin-top: 80px;
 }
 
-div.about-education h1 {
+div.about-education h2 {
     margin: 0 0 24px 0;
     font-size: 60px;
     font-weight: 800;
@@ -95,7 +95,7 @@ div.my-experience {
     margin-top: 100px;
 }
 
-div.my-experience h1 {
+div.my-experience h2 {
     margin: 0 0 24px 0;
     font-size: 60px;
     font-weight: 800;
@@ -177,8 +177,8 @@ div.experience-grid {
     }
 
     div.about-header h1,
-    div.about-education h1,
-    div.my-experience h1 {
+    div.about-education h2,
+    div.my-experience h2 {
         font-size: 48px;
     }
 
@@ -213,8 +213,8 @@ div.experience-grid {
 
 @media (max-width: 768px) {
     div.about-header h1,
-    div.about-education h1,
-    div.my-experience h1 {
+    div.about-education h2,
+    div.my-experience h2 {
         font-size: 40px;
     }
 
@@ -242,7 +242,7 @@ div.experience-grid {
         margin-top: 60px;
     }
 
-    div.about-education h1 {
+    div.about-education h2 {
         font-size: 40px;
     }
 
@@ -264,8 +264,8 @@ div.experience-grid {
 
 @media (max-width: 480px) {
     div.about-header h1,
-    div.about-education h1,
-    div.my-experience h1 {
+    div.about-education h2,
+    div.my-experience h2 {
         font-size: 34px;
     }
 

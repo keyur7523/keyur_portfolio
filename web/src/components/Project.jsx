@@ -14,7 +14,7 @@ export default function Project() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [copied, setCopied] = useState(false)
     const { projectId } = useParams()
-    const project = projectList.find(project => project.name.toLowerCase().replace(' ', '-') === projectId)
+    const project = projectList.find(project => project.name.toLowerCase().replaceAll(' ', '-') === projectId)
 
     useEffect(() => {
         if (project) {
@@ -84,6 +84,7 @@ export default function Project() {
                         className="project-gallery-img"
                         src={project.images[currentIndex]}
                         alt={`${project.name} screenshot ${currentIndex + 1}`}
+                        decoding="async"
                     />
                     {totalImages > 1 && (
                         <>
@@ -121,7 +122,7 @@ export default function Project() {
                 )}
             </div>
             <div className="project-description">
-                <h1>Description</h1>
+                <h2>Description</h2>
                 <div className="project-description-points">
                     {project.description?.map((point, i) => (
                         <div className="project-desc-item" key={i}>
@@ -132,7 +133,7 @@ export default function Project() {
                 </div>
             </div>
             <div className="project-tech-stack">
-                <h1>Tech Stack</h1>
+                <h2>Tech Stack</h2>
                 <div className="tech-grid">
                     {project.techStack.map((t, i) => (
                         <TechTile key={i} tech={t} />
@@ -146,11 +147,11 @@ export default function Project() {
                     {relatedProjects.map((p, i) => (
                         <Link
                             key={i}
-                            to={`/projects/${p.name.toLowerCase().replace(' ', '-')}`}
+                            to={`/projects/${p.name.toLowerCase().replaceAll(' ', '-')}`}
                             className="related-card"
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         >
-                            <img src={p.images[0]} alt={p.name} />
+                            <img src={p.images[0]} alt={p.name} loading='lazy' decoding='async' />
                             <span>{p.name}</span>
                         </Link>
                     ))}

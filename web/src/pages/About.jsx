@@ -52,7 +52,7 @@ export default function About() {
 
             <div className='about-education'>
                 <FadeIn delay={0.3}>
-                    <h1>Education<span className='accent'>.</span></h1>
+                    <h2>Education<span className='accent'>.</span></h2>
                 </FadeIn>
                 <FadeIn delay={0.35}>
                     <div className='education-card'>
@@ -65,7 +65,7 @@ export default function About() {
 
             <div className="my-experience">
                 <FadeIn delay={0.4}>
-                    <h1>My Experience<span className='accent'>.</span></h1>
+                    <h2>My Experience<span className='accent'>.</span></h2>
                 </FadeIn>
                 <FadeIn delay={0.45}>
                     <div className='experience-grid'>

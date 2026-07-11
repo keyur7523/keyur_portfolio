@@ -72,7 +72,7 @@ export default function Contact() {
                     </FadeIn>
                 </div>
                 <FadeIn delay={0.2} className='image'>
-                    <img src={profilePicture} alt='Profile picture' />
+                    <img src={profilePicture} alt='Keyur Pawaskar' width='480' height='480' />
                 </FadeIn>
             </div>
     )

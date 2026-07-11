@@ -114,7 +114,7 @@ export const projectList = [
     },
     {
         name: 'Probekit',
-        summary: 'Behavioral evaluation platform for LLM prompts with multi‑model runs, evaluatorscoring, regression detection, and human‑in‑the‑loop annotations to measure prompt qualitychanges over time.',
+        summary: 'Behavioral evaluation platform for LLM prompts with multi‑model runs, evaluator scoring, regression detection, and human‑in‑the‑loop annotations to measure prompt quality changes over time.',
         description: [
             'Built an end‑to‑end LLM evaluation system that runs prompts across multiple models, capturescost/latency/token telemetry per output, and stores structured results for reproducible analysis — designed for prompt versioning and regression detection workflows.', 'Implemented a suite of behavioral evaluators (instruction adherence, hallucination detection, stability sampling, refusal behavior, and format consistency) with strict schema validation and configurable evaluation parameters to surface failure modes early.', 'Shipped a dashboard with trends, model comparison, evaluator breakdowns, and regression alerts, plus a version‑comparison view that highlights behavioral drift between prompt versions and models.', 'Added a human annotation UI and accuracy reporting to validate automated evaluators against ground truth, enabling calibration and continuous improvement of evaluation reliability.'
         ],

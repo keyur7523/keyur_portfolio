@@ -47,7 +47,9 @@
     white-space: nowrap;
 }
 
-.project-page h1 {
+.project-page h1,
+.project-page > .project-description h2,
+.project-page > .project-tech-stack h2 {
     font-size: 60px;
     font-weight: 800;
     margin: 0 0 16px 0;
@@ -270,7 +272,9 @@
 
 /* Responsive overrides */
 @media (max-width: 1024px) {
-    .project-page h1 {
+    .project-page h1,
+    .project-page > .project-description h2,
+    .project-page > .project-tech-stack h2 {
         font-size: 48px;
     }
 
@@ -289,7 +293,9 @@
         align-items: flex-start;
     }
 
-    .project-page h1 {
+    .project-page h1,
+    .project-page > .project-description h2,
+    .project-page > .project-tech-stack h2 {
         font-size: 40px;
     }
 
@@ -313,7 +319,9 @@
         margin-top: 60px;
     }
 
-    .project-page h1 {
+    .project-page h1,
+    .project-page > .project-description h2,
+    .project-page > .project-tech-stack h2 {
         font-size: 34px;
     }
 

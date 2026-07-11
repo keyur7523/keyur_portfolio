@@ -7,11 +7,11 @@ export default function ProjectCardCompact({ project }) {
 
     return (
         <Link
-            to={`/projects/${project.name.toLowerCase().replace(' ', '-')}`}
+            to={`/projects/${project.name.toLowerCase().replaceAll(' ', '-')}`}
             className='project-card-compact'
         >
             <div className='project-card-compact-image'>
-                <img src={project.images[0]} alt={project.name} />
+                <img src={project.images[0]} alt={project.name} loading='lazy' decoding='async' />
             </div>
             <div className='project-card-compact-info'>
                 <h3 className='project-card-compact-name'>

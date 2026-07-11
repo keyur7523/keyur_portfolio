@@ -129,12 +129,12 @@ div.projects-container {
     gap: 40px;
 }
 
-h1.projects-title {
+.projects-title {
     font-size: 60px;
     font-weight: 1000;
 }
 
-h1.projects-title .accent {
+.projects-title .accent {
     color: var(--accent-primary);
 }
 
@@ -191,12 +191,12 @@ div.experience-container {
     flex-direction: column;
 }
 
-h1.experience-title {
+.experience-title {
     font-size: 60px;
     font-weight: 800;
 }
 
-h1.experience-title .accent {
+.experience-title .accent {
     color: var(--accent-primary);
 }
 
@@ -292,12 +292,12 @@ div.experience-buttons-card {
     gap: 40px;
 }
 
-h1.skills-title {
+.skills-title {
     font-size: 60px;
     font-weight: 800;
 }
 
-h1.skills-title .accent {
+.skills-title .accent {
     color: var(--accent-primary);
 }
 
@@ -312,12 +312,12 @@ h1.skills-title .accent {
     gap: 40px;
 }
 
-h1.mystory-title {
+.mystory-title {
     font-size: 60px;
     font-weight: 800;
 }
 
-h1.mystory-title .accent {
+.mystory-title .accent {
     color: var(--accent-primary);
 }
 

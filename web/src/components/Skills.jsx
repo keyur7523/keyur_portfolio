@@ -6,7 +6,7 @@ export default function Skills() {
         <div className='skills-grid'>
             {skills.map((section, idx) => {
                 return (
-                    <div className={`skills-section skills-section-${section.category.toLowerCase().replace(' ', '-')}`} key={section.category || idx}>
+                    <div className={`skills-section skills-section-${section.category.toLowerCase().replaceAll(/[\s/]+/g, '-')}`} key={section.category || idx}>
                         <h2 className='skills-category'>{section.category}</h2>
                         <div className='skills-list'>
                             {section.tech.map((skill, idx) => {

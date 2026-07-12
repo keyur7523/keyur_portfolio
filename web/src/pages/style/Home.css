@@ -23,7 +23,7 @@ div.my-info .text p {
 
 .home-page .my-info .text h1 {
     font-size: 100px;
-    font-weight: 2400;
+    font-weight: 900;
 }
 
 div.my-info .text .accent {
@@ -114,6 +114,7 @@ div.my-info .image {
 div.my-info .image img {
     display: block;
     width: clamp(220px, 28vw, 480px);
+    height: auto; /* override the height attribute so aspect-ratio stays 1:1 */
     aspect-ratio: 1 / 1; /* force square */
     object-fit: cover; /* crop to circle nicely */
     object-position: 35% 40%; /* shift content left inside circle */
@@ -131,7 +132,7 @@ div.projects-container {
 
 .projects-title {
     font-size: 60px;
-    font-weight: 1000;
+    font-weight: 800;
 }
 
 .projects-title .accent {

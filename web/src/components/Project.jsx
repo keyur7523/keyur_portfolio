@@ -3,8 +3,7 @@ import './style/Project.css'
 import { useParams, Link } from 'react-router-dom'
 import { projectList } from '../data/projectList'
 import { LuExternalLink, LuLink } from "react-icons/lu";
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft, FaArrowCircleRight, FaGithub } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import TechTile from './TechTile'
 import { FadeIn } from './ui/Animations'
@@ -72,12 +71,24 @@ export default function Project() {
                         <LuLink size={24} />
                         {copied && <span className="copied-tooltip">Copied!</span>}
                     </button>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className='project-open' aria-label='Open project'>
+                    {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className='project-github' aria-label='View source on GitHub'>
+                            <FaGithub size={28} />
+                        </a>
+                    )}
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className='project-open' aria-label='Open live project'>
                         <LuExternalLink size={30} strokeWidth={2.5} />
                     </a>
                 </div>
             </div>
             <p>{project.summary}</p>
+            {project.highlights && (
+                <ul className="project-highlights">
+                    {project.highlights.map((h, i) => (
+                        <li key={i} className="project-highlight-chip">{h}</li>
+                    ))}
+                </ul>
+            )}
             <div className="project-gallery">
                 <div className="project-gallery-viewport">
                     <img

@@ -58,7 +58,7 @@ div.project-meta {
 .project-name {
     margin: 0;
     font-size: 28px;
-    font-weight: 1000;
+    font-weight: 800;
     gap: 8px;
 }
 
@@ -118,9 +118,18 @@ p.project-summary {
      margin-left: 25px;
     }
 
-.project-link svg { 
-    width: 1em; 
-    height: 1em; 
+.project-link svg {
+    width: 1em;
+    height: 1em;
+}
+
+/* GitHub icon on project card: neutral until hover */
+.project-github-link {
+    margin-left: 12px;
+    color: var(--text-strong);
+}
+.project-github-link:hover {
+    color: var(--accent-primary);
 }
 
 

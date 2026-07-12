@@ -12,6 +12,19 @@ export const FadeIn = ({ children, delay = 0, duration = 0.5, className = '' }) 
   </motion.div>
 );
 
+// 1b. Reveal - Like FadeIn, but fires when scrolled into view (once)
+export const Reveal = ({ children, delay = 0, duration = 0.5, className = '' }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 24 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+    transition={{ duration, delay, ease: 'easeOut' }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
+
 // 2. SlideIn - For sidebar/drawer content
 export const SlideIn = ({ children, direction = 'left', delay = 0 }) => {
   const x = direction === 'left' ? -20 : 20;
@@ -41,7 +54,8 @@ export const ScaleIn = ({ children, delay = 0 }) => (
 export const StaggerContainer = ({ children, staggerDelay = 0.1, className = '' }) => (
   <motion.div
     initial="hidden"
-    animate="visible"
+    whileInView="visible"
+    viewport={{ once: true, margin: '0px 0px -80px 0px' }}
     variants={{
       hidden: { opacity: 0 },
       visible: {

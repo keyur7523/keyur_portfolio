@@ -10,7 +10,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SiTicktick } from "react-icons/si";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { FadeIn } from '../components/ui/Animations'
+import { FadeIn, Reveal } from '../components/ui/Animations'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Home() {
@@ -56,9 +56,9 @@ export default function Home() {
                 </FadeIn>
             </div>
             <div className='projects-container'>
-                <FadeIn>
+                <Reveal>
                     <h2 className='projects-title'>Projects<span className='accent'>.</span></h2>
-                </FadeIn>
+                </Reveal>
                 <div className='projects-grid-compact'>
                     <AnimatePresence mode="wait">
                         {visibleProjects.map((project, idx) => (
@@ -94,7 +94,10 @@ export default function Home() {
             </div>
             
             <div className='experience-container'>
-                <h2 className='experience-title'>Experience<span className='accent'>.</span></h2>
+                <Reveal>
+                    <h2 className='experience-title'>Experience<span className='accent'>.</span></h2>
+                </Reveal>
+                <Reveal delay={0.1}>
                 <div className='experience-grid'>
                     <div className='experience-buttons-card'>
                         {experiences.map((experience, idx) => {
@@ -128,14 +131,23 @@ export default function Home() {
                         })}
                     </div>
                 </div>
+                </Reveal>
             </div>
-            <div className='skills-container'> 
-                <h2 className='skills-title'>Skills<span className='accent'>.</span></h2>
-                <Skills key='skills' />
+            <div className='skills-container'>
+                <Reveal>
+                    <h2 className='skills-title'>Skills<span className='accent'>.</span></h2>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Skills key='skills' />
+                </Reveal>
             </div>
             <div className='mystory-container'>
-                <h2 className='mystory-title'>My Story<span className='accent'>.</span></h2>
-                <Mystory key='mystory' />  
+                <Reveal>
+                    <h2 className='mystory-title'>My Story<span className='accent'>.</span></h2>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <Mystory key='mystory' />
+                </Reveal>
             </div>
         </div>
     )

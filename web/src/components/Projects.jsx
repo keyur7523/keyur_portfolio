@@ -1,6 +1,6 @@
 import './style/Projects.css'
 import { Link } from 'react-router-dom';
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 
 export default function Projects(props) {
@@ -20,6 +20,16 @@ export default function Projects(props) {
                             className='project-link'>
                                 <FaExternalLinkAlt />
                         </Link>
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='project-link project-github-link'
+                                aria-label={`${project.name} source on GitHub`}>
+                                    <FaGithub />
+                            </a>
+                        )}
                 </h3>
                 <p className='project-summary'>{project.summary}</p>
             </div>

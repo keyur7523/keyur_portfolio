@@ -18,6 +18,9 @@ export default function ProjectCardCompact({ project }) {
                     {project.name}
                     <FaExternalLinkAlt className='project-card-compact-icon' />
                 </h3>
+                {project.summary && (
+                    <p className='project-card-compact-summary'>{project.summary}</p>
+                )}
                 {previewTech.length > 0 && (
                     <div className='project-card-compact-tags'>
                         {previewTech.map(tech => (

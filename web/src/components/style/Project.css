@@ -127,6 +127,54 @@
     color: var(--accent-primary);
 }
 
+/* GitHub source link in project header */
+.project-header a.project-github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-strong);
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    padding: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.project-header a.project-github:hover {
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+/* Highlight chips under summary */
+.project-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.project-highlight-chip {
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-primary);
+    background: var(--accent-tint, rgba(99, 51, 242, 0.08));
+    border: 1px solid var(--accent-ring);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .project-highlight-chip {
+        font-size: 13px;
+        padding: 6px 12px;
+        white-space: normal;
+    }
+}
+
 /* Stacked images list - project detail only (scoped to avoid card CSS collisions) */
 .project-detail-images {
     display: flex;

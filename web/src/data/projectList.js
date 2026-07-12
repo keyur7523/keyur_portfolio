@@ -45,7 +45,8 @@ export const projectList = [
         ],
         techStack: ['React', 'TypeScript', 'Vercel AI SDK', 'Node.js', 'Express', 'Server-Sent Events', 'Anthropic Claude', 'OpenAI', 'Google Gemini', 'Google OAuth 2.0', 'Gmail API', 'Google Calendar API', 'Tailwind CSS', 'Vite', 'Vercel', 'Render'],
         images: [delegateImage1],
-        link: 'https://delegate-client.vercel.app'
+        link: 'https://delegate-client.vercel.app',
+        highlights: ['3 LLM providers, one tool loop', 'Risk-gated tool execution', 'Step-up approval over SSE', 'Google OAuth 2.0 end-to-end']
     },
     {
         name: 'Koda',
@@ -57,7 +58,9 @@ export const projectList = [
             'React 19', 'TypeScript', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'WebSocket', 'Anthropic Claude API', 'Tree-sitter', 'Monaco Editor', 'Zustand', 'Fernet Encryption', 'JWT', 'GitHub OAuth', 'Tailwind CSS v4', 'Vite', 'Vercel', 'Render'
         ],
         images: [kodaImage1, kodaImage2, kodaImage3],
-        link: 'https://koda-tau.vercel.app'
+        link: 'https://koda-tau.vercel.app',
+        github: 'https://github.com/keyur7523/koda',
+        highlights: ['Multi-phase agent workflow', '7-tool orchestration loop', 'Human-in-the-loop diff review', 'Live WebSocket streaming']
     }, 
     {
         name: 'CollabCanvas',
@@ -74,7 +77,9 @@ export const projectList = [
         ],
         techStack: ['React', 'TypeScript', 'Konva.js', 'Yjs CRDT', 'FastAPI', 'WebSockets', 'PostgreSQL', 'Redis', 'SQLAlchemy', 'Alembic', 'OAuth 2.0', 'JWT', 'Tailwind CSS', 'Vercel', 'Render', 'Neon'],
         images: [collabCanvasImage1, collabCanvasImage2, collabCanvasImage3],
-        link: 'https://collabcanvas-tau.vercel.app'
+        link: 'https://collabcanvas-tau.vercel.app',
+        github: 'https://github.com/keyur7523/collabcanvas',
+        highlights: ['Yjs CRDT synchronization', 'Live cursors & presence', 'Full Konva canvas editor', 'Role-based board sharing']
     },
     {
         name: 'PromptLab',
@@ -84,7 +89,9 @@ export const projectList = [
         ],
         techStack: ['Python', 'FastAPI', 'Rust', 'PostgreSQL', 'Redis', 'Server-Sent Events (SSE)', 'React', 'TypeScript', 'Vite', 'SQLAlchemy', 'Docker'],
         images: [promptLabImage1],
-        link: 'https://prompt-lab-gold.vercel.app/'
+        link: 'https://prompt-lab-gold.vercel.app/',
+        github: 'https://github.com/keyur7523/promptLab',
+        highlights: ['Real-time SSE streaming', 'Deterministic A/B routing', 'Rust token microservice', 'Cost & latency telemetry']
     },
     {
         name: 'AuthZ Platform',
@@ -100,7 +107,9 @@ export const projectList = [
             'React 19', 'TypeScript', 'FastAPI', 'PostgreSQL', 'SQLAlchemy 2.0', 'Alembic', 'JWT', 'bcrypt', 'Zustand', 'React Query', 'Framer Motion', 'Tailwind CSS v4', 'Sonner', 'Lucide React', 'Vite', 'Pytest'
         ],
         images: [authzImage1, authzImage2, authzImage3, authzImage4],
-        link: 'https://authz-liard.vercel.app/'
+        link: 'https://authz-liard.vercel.app/',
+        github: 'https://github.com/keyur7523/authz',
+        highlights: ['RBAC + PBAC policy engines', 'AWS IAM deny-overrides semantics', 'JWT refresh token rotation', 'Cmd+K power-user dashboard']
     },
     {
         name: 'HireTrack',
@@ -110,7 +119,9 @@ export const projectList = [
         ],
         techStack: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Redis', 'SQLAlchemy', 'Alembic', 'JWT', 'Tailwind CSS', 'Vercel', 'Render'],
         images: [hireTrackImage1, hireTrackImage2, hireTrackImage3],
-        link: 'https://hiretrack-puce.vercel.app'
+        link: 'https://hiretrack-puce.vercel.app',
+        github: 'https://github.com/keyur7523/hiretrack',
+        highlights: ['Multi-tenant RBAC', 'Idempotent application flow', 'Strict status state machine', 'Graceful Redis degradation']
     },
     {
         name: 'Probekit',
@@ -120,7 +131,9 @@ export const projectList = [
         ],
         techStack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Query', 'Recharts'],
         images: [probekitImage1, probekitImage2, probekitImage3, probekitImage4, probekitImage5, probekitImage6],
-        link: 'https://probekit.vercel.app/'
+        link: 'https://probekit.vercel.app/',
+        github: 'https://github.com/keyur7523/probekit',
+        highlights: ['Multi-model eval runs', '5 behavioral evaluators', 'Prompt regression detection', 'Human annotation & calibration']
     },
     {
         name: 'DeepSearch',
@@ -130,7 +143,9 @@ export const projectList = [
         ],
         techStack: ['Next.js', 'FastAPI', 'MongoDB', 'OpenAI-compatible LLMs', 'Server-Sent Events (SSE)', 'AWS S3', 'Vercel/Render'],
         images: [deepSearchImage1, deepSearchImage2, deepSearchImage3],
-        link: 'https://deep-search-two.vercel.app'
+        link: 'https://deep-search-two.vercel.app',
+        github: 'https://github.com/keyur7523/deep-search',
+        highlights: ['4-agent task DAG pipeline', 'Web + arXiv hybrid retrieval', 'Enforced inline citations', 'Live SSE task-graph view']
     },
     {
         name: 'CaseSnap',
@@ -140,7 +155,9 @@ export const projectList = [
         ],
         techStack: ['Next.js 14', 'TypeScript', 'Node.js/Express', 'MongoDB', 'Material-UI', 'TailwindCSS', 'JWT Authentication', 'Redux Toolkit'],
         images: [caseSnapImage1, caseSnapImage2, caseSnapImage3, caseSnapImage4],
-        link: 'https://casesnap-lake.vercel.app/'
+        link: 'https://casesnap-lake.vercel.app/',
+        github: 'https://github.com/keyur7523/casesnapbackend',
+        highlights: ['Multi-tenant MongoDB isolation', 'Role-based firm administration', 'Automated billing & reminders', 'PDF / Excel export pipeline']
     }
 
 ]

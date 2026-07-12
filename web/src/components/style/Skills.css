@@ -86,6 +86,31 @@
     transform: translateY(-1px);
 }
 
+/* Command output lines (deep-ml stats) */
+.term-output p {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--text-strong);
+    margin: 0 0 6px;
+    line-height: 1.6;
+}
+
+.term-dim {
+    color: var(--text-muted);
+}
+
+.term-output .term-link {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+}
+.term-output .term-link:hover {
+    color: var(--accent-primary-hover);
+    opacity: 1;
+}
+
 @media (max-width: 768px) {
     .terminal-body {
         padding: 20px 18px 24px;

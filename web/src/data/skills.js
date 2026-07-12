@@ -23,6 +23,22 @@ import { SiOpenai } from "react-icons/si";
 import { SiAnthropic } from "react-icons/si";
 import { SiLangchain } from "react-icons/si";
 
+/* Deep-ML (deep-ml.com) problem-solving stats — update occasionally */
+export const deepml = {
+    url: 'https://www.deep-ml.com/profile/ex07TZ98BiNs8sUj4Bl3A3Hn5tp1',
+    solved: 35,
+    easy: 15,
+    medium: 16,
+    hard: 4,
+    topCategories: [
+        ['linear-algebra', 13],
+        ['deep-learning', 10],
+        ['calculus', 4],
+        ['machine-learning', 3],
+        ['probability', 3],
+    ],
+}
+
 export const skills = [
     {
         category: 'Languages',

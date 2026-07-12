@@ -11,50 +11,8 @@ div.my-info {
 }
 
 div.my-info .text {
-    width: 100%;
-    max-width: 900px;
+    width: 50%;
     height: 100%;
-}
-
-.hero-id {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding-top: 40px;
-}
-
-.hero-id .hero-eyebrow {
-    padding-top: 0 !important;
-    margin: 0;
-}
-
-.hero-avatar-frame {
-    width: 108px;
-    height: 108px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-    box-shadow:
-        0 0 0 3px var(--profile-ring),
-        0 0 0 4.5px var(--accent-ring),
-        0 8px 30px var(--accent-shadow);
-}
-
-.hero-avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 36% 50%; /* center the head in the panorama crop */
-    /* mirror so the gaze points right, into the page; zoom in on the face */
-    transform: scaleX(-1) scale(1.7);
-    transform-origin: 50% 60%;
-}
-
-@media (max-width: 768px) {
-    .hero-avatar-frame {
-        width: 76px;
-        height: 76px;
-    }
 }
 
 div.my-info .text p {
@@ -63,25 +21,13 @@ div.my-info .text p {
     padding-top: 40px;
 }
 
-.hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 15px !important;
-    font-weight: 500 !important;
-    color: var(--accent-primary) !important;
-    letter-spacing: 0.04em;
-}
-
 .home-page .my-info .text h1 {
     font-size: 100px;
-    font-weight: 800;
-    letter-spacing: -0.035em;
+    font-weight: 900;
 }
 
 div.my-info .text .accent {
-    background: linear-gradient(100deg, var(--accent), var(--accent-primary) 60%, var(--accent-primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--accent-primary);
 }
 
 .hero-subtitle {
@@ -92,27 +38,11 @@ div.my-info .text .accent {
 }
 
 .hero-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-top: 26px;
-    font-family: var(--font-mono);
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    color: var(--text-muted) !important;
-    padding: 9px 16px !important;
-    border: 1px solid var(--border);
-    border-radius: 9999px;
-    background: var(--surface-muted);
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--success);
-    box-shadow: 0 0 10px var(--success);
-    flex-shrink: 0;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--accent-primary) !important;
+    padding-top: 8px !important;
+    letter-spacing: 0.02em;
 }
 
 /* actions */
@@ -151,10 +81,10 @@ div.my-info .text .projects-button:hover::before {
 }
 
 div.my-info .text .contact-button {
-    background-color: var(--accent-primary);
+    background-color: var(--accent-primary); /* purple */
     border: 2px solid var(--accent-primary);
-    color: var(--accent-contrast);
-    box-shadow: 0 0 28px var(--accent-shadow);
+    color: #ffffff;
+    box-shadow: 0 6px 18px var(--accent-shadow);
     margin-right: 24px;
 }
 div.my-info .text .contact-button:hover {
@@ -163,12 +93,9 @@ div.my-info .text .contact-button:hover {
 }
 
 div.my-info .text .projects-button {
-    background-color: transparent;
+    background-color: var(--surface);
     color: var(--text-strong);
-    border: 2px solid var(--border);
-}
-div.my-info .text .projects-button:hover {
-    border-color: var(--accent-ring);
+    border: 2px solid var(--text-strong);
 }
 div.my-info .text .projects-button:hover {
     background-color: var(--surface-muted);
@@ -192,11 +119,8 @@ div.my-info .image img {
     object-fit: cover; /* crop to circle nicely */
     object-position: 35% 40%; /* shift content left inside circle */
     border-radius: 50%;
-    /* slim concentric ring + ambient glow */
-    box-shadow:
-        0 0 0 8px var(--profile-ring),
-        0 0 0 9px var(--accent-ring),
-        0 24px 90px var(--accent-shadow);
+    /* concentric ring: increase gap before purple outline */
+    box-shadow: 0 0 0 49px var(--profile-ring), 0 0 0 50px var(--accent-ring);
 }
 
 div.projects-container {
@@ -204,15 +128,6 @@ div.projects-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
-}
-
-.section-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent-primary);
-    letter-spacing: 0.06em;
-    margin: 0 0 10px;
 }
 
 .projects-title {

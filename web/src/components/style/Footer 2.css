@@ -1,0 +1,151 @@
+/* Footer styles moved from Home.css to avoid leaking Home page CSS globally */
+div.footer-1 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-top: 120px;
+    padding-bottom: 60px;
+}
+
+ul.footer-nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.footer-nav-links li {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 24px;
+    font-weight: 700;
+}
+ul.footer-nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+ul.footer-nav-links a:hover {
+    color: var(--accent-primary);
+}
+ul.footer-nav-links a.active {
+    color: var(--accent-primary);
+}
+
+div.footer-social {
+    display: flex;
+    gap: 20px;
+}
+div.footer-social a {
+    color: var(--text-muted);
+    font-size: 30px;
+}
+div.footer-social a:hover {
+    color: var(--accent-primary);
+}
+
+div.footer-2 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0 80px;
+}
+
+.footer-cta-title {
+    margin: 0 0 16px 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.footer-cta-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 35px;
+}
+
+.footer-interaction-contact,
+.footer-interaction-projects {
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none; /* for NavLink as button */
+}
+
+.footer-interaction-contact {
+    background-color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    color: #fff;
+}
+.footer-interaction-contact:hover { background-color: var(--accent-primary-hover); }
+
+.footer-interaction-projects {
+    background: var(--surface);
+    color: var(--text-strong);
+    border: 2px solid var(--text-strong);
+}
+.footer-interaction-projects:hover {
+    background: var(--surface-muted);
+    color: var(--text-strong);
+}
+
+.copyright {
+    text-align: right;
+    color: var(--text-muted);
+}
+
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+    div.footer-1,
+    div.footer-2 {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+
+    ul.footer-nav-links li {
+        font-size: 20px;
+    }
+
+    .footer-cta-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    ul.footer-nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .footer-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer-interaction-contact,
+    .footer-interaction-projects {
+        width: 100%;
+        text-align: center;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    ul.footer-nav-links {
+        gap: 16px;
+    }
+
+    ul.footer-nav-links li {
+        font-size: 18px;
+    }
+
+    div.footer-1 {
+        margin-top: 80px;
+    }
+}

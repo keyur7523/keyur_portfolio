@@ -11,8 +11,30 @@ div.my-info {
 }
 
 div.my-info .text {
-    width: 50%;
+    width: 100%;
+    max-width: 900px;
     height: 100%;
+}
+
+.hero-id {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 40px;
+}
+
+.hero-id .hero-eyebrow {
+    padding-top: 0 !important;
+    margin: 0;
+}
+
+.hero-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 35% 40%;
+    box-shadow: 0 0 0 2px var(--profile-ring), 0 0 0 3px var(--accent-ring);
 }
 
 div.my-info .text p {

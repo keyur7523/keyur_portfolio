@@ -4,6 +4,7 @@ import ProjectCardCompact from './../components/ProjectCardCompact'
 import Experience from './../components/Experience'
 import Skills from './../components/Skills'
 import Mystory from './../components/Mystory'
+import FeaturedProject from './../components/FeaturedProject'
 import { projectList } from '../data/projectList'
 import { experiences } from '../data/experience.js'
 import React, { useState } from 'react'
@@ -22,21 +23,34 @@ export default function Home() {
         setActiveExperience(company);
     }
 
-    const visibleProjects = projectsExpanded ? projectList : projectList.slice(0, 2);
+    // First project is showcased in the featured spotlight; grid holds the rest
+    const featured = projectList[0];
+    const visibleProjects = projectsExpanded ? projectList.slice(1) : projectList.slice(1, 3);
 
     return (
         <div className='home-page'>
             <div className='my-info'>
                 <div className='text'>
                     <FadeIn delay={0.1}>
-                        <p className='hero-eyebrow'>~/ hello, I'm Keyur</p>
+                        <div className='hero-id'>
+                            <img
+                                className='hero-avatar'
+                                src={profilePicture}
+                                alt='Keyur Pawaskar'
+                                width='96'
+                                height='96'
+                                fetchPriority='high'
+                            />
+                            <p className='hero-eyebrow'>~/ keyur — software engineer</p>
+                        </div>
                     </FadeIn>
                     <FadeIn delay={0.2}>
-                        <h1><span className='accent'>Soft</span>ware<br />Engineer</h1>
+                        <h1>Building <span className='accent'>AI systems</span><br />that ship.</h1>
                     </FadeIn>
                     <FadeIn delay={0.35}>
                         <p className='hero-subtitle'>
-                            Building AI‑powered full‑stack applications — from LLM agents to real‑time collaborative tools.
+                            I'm Keyur Pawaskar — I build LLM agents, real‑time collaborative tools,
+                            and the production infrastructure that keeps them honest.
                         </p>
                     </FadeIn>
                     <FadeIn delay={0.4}>
@@ -54,14 +68,14 @@ export default function Home() {
                         </button>
                     </FadeIn>
                 </div>
-                <FadeIn delay={0.3} className='image'>
-                    <img src={profilePicture} alt='Keyur Pawaskar' width='480' height='480' fetchPriority='high' />
-                </FadeIn>
             </div>
             <div className='projects-container'>
                 <Reveal>
                     <p className='section-eyebrow'>01 &mdash; things I've built</p>
                     <h2 className='projects-title'>Projects<span className='accent'>.</span></h2>
+                </Reveal>
+                <Reveal delay={0.08}>
+                    <FeaturedProject project={featured} />
                 </Reveal>
                 <div className='projects-grid-compact'>
                     <AnimatePresence mode="wait">

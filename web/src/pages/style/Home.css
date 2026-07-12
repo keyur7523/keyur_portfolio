@@ -29,12 +29,22 @@ div.my-info .text {
 }
 
 .hero-avatar {
-    width: 56px;
-    height: 56px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 35% 40%;
-    box-shadow: 0 0 0 2px var(--profile-ring), 0 0 0 3px var(--accent-ring);
+    box-shadow:
+        0 0 0 3px var(--profile-ring),
+        0 0 0 4.5px var(--accent-ring),
+        0 8px 30px var(--accent-shadow);
+}
+
+@media (max-width: 768px) {
+    .hero-avatar {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 div.my-info .text p {

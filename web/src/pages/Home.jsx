@@ -33,14 +33,16 @@ export default function Home() {
                 <div className='text'>
                     <FadeIn delay={0.1}>
                         <div className='hero-id'>
-                            <img
-                                className='hero-avatar'
-                                src={profilePicture}
-                                alt='Keyur Pawaskar'
-                                width='96'
-                                height='96'
-                                fetchPriority='high'
-                            />
+                            <span className='hero-avatar-frame'>
+                                <img
+                                    className='hero-avatar'
+                                    src={profilePicture}
+                                    alt='Keyur Pawaskar'
+                                    width='96'
+                                    height='96'
+                                    fetchPriority='high'
+                                />
+                            </span>
                             <p className='hero-eyebrow'>~/ keyur — software engineer</p>
                         </div>
                     </FadeIn>

@@ -28,20 +28,30 @@ div.my-info .text {
     margin: 0;
 }
 
-.hero-avatar {
+.hero-avatar-frame {
     width: 76px;
     height: 76px;
     border-radius: 50%;
-    object-fit: cover;
-    object-position: 35% 40%;
+    overflow: hidden;
+    flex-shrink: 0;
     box-shadow:
         0 0 0 3px var(--profile-ring),
         0 0 0 4.5px var(--accent-ring),
         0 8px 30px var(--accent-shadow);
 }
 
+.hero-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 36% 50%; /* center the head in the panorama crop */
+    /* mirror so the gaze points right, into the page; zoom in on the face */
+    transform: scaleX(-1) scale(1.7);
+    transform-origin: 50% 60%;
+}
+
 @media (max-width: 768px) {
-    .hero-avatar {
+    .hero-avatar-frame {
         width: 60px;
         height: 60px;
     }

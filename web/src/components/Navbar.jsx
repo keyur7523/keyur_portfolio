@@ -23,6 +23,7 @@ export default function Navbar() {
                 <li><NavLink to='/projects' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>Projects</NavLink></li>
                 <li><NavLink to='/about' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>About</NavLink></li>
                 <li><NavLink to='/contact' className={({ isActive }) => isActive ? 'active' : ''} onClick={handleLinkClick}>Contact</NavLink></li>
+                <li><a href='/resume.pdf' target='_blank' rel='noopener noreferrer' className='navbar-resume' onClick={handleLinkClick}>Resume</a></li>
             </ul>
             <button
                 type='button'

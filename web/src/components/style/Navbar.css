@@ -68,6 +68,20 @@ ul.navbar-links a.active {
     color: var(--accent-primary);
 }
 
+/* Resume: outlined pill so it reads as an action, not a route */
+ul.navbar-links a.navbar-resume {
+    padding: 6px 14px;
+    border: 1.5px solid var(--accent-ring);
+    border-radius: 9999px;
+    color: var(--accent);
+    font-size: 16px;
+}
+ul.navbar-links a.navbar-resume:hover {
+    border-color: var(--accent-primary);
+    background: var(--accent-tint);
+    color: var(--accent-primary);
+}
+
 /* right-aligned actions (theme toggle + contact) */
 .navbar-actions {
     display: flex;
@@ -128,12 +142,23 @@ ul.navbar-links a.active {
 @media (max-width: 1024px) {
     nav.navbar {
         grid-template-columns: 1fr auto auto;
-        column-gap: 24px;
+        column-gap: 16px;
         row-gap: 16px;
+        padding: 10px 16px;
+    }
+
+    nav.navbar p {
+        font-size: 19px;
     }
 
     ul.navbar-links {
-        gap: 24px;
+        gap: 16px;
+        font-size: 16px;
+    }
+
+    ul.navbar-links a.navbar-resume {
+        padding: 5px 11px;
+        font-size: 14.5px;
     }
 }
 

@@ -8,6 +8,7 @@ import About from './pages/About'
 import NotFound from './pages/NotFound'
 import Layout from './components/Layout'
 import { ThemeProvider } from './context/ThemeContext'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
+      <Analytics />
     </ThemeProvider>
   )
 }

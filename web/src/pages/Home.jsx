@@ -10,7 +10,7 @@ import { experiences } from '../data/experience.js'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SiTicktick } from "react-icons/si";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FadeIn, Reveal } from '../components/ui/Animations'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -68,6 +68,16 @@ export default function Home() {
                         <button className='projects-button' onClick={() => navigate('/projects')}>
                             Check Out My Projects
                         </button>
+                    </FadeIn>
+                    <FadeIn delay={0.6}>
+                        <div className='hero-socials'>
+                            <a href='https://github.com/keyur7523' target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
+                                <FaGithub />
+                            </a>
+                            <a href='https://www.linkedin.com/in/keyur-pawaskar-7b05b6169/' target='_blank' rel='noopener noreferrer' aria-label='LinkedIn'>
+                                <FaLinkedinIn />
+                            </a>
+                        </div>
                     </FadeIn>
                 </div>
             </div>

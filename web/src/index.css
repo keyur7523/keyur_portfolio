@@ -1,45 +1,63 @@
-/* 1) Variables + color scheme */
-/* Light theme (default) */
-:root,
-:root.light {
-  --bg: #ffffff;
-  --text: #213547;
-  --accent: #646cff;
-  --accent-primary: #6333f2;
-  --accent-primary-hover: #7b4ef5;
-  --accent-primary-soft: rgba(99, 51, 242, 0.35);
-  --accent-tint: rgba(99, 51, 242, 0.08);
-  --accent-shadow: #9b7bf959;
-  --accent-ring: #a78bfa;
-  --surface: #ffffff;
-  --surface-muted: #f5f7fb;
-  --surface-raised: #fcfcfd;
-  --text-strong: #111827;
-  --text-muted: #4b5563;
-  --text-subtle: #777e90;
-  --border: #e5e7eb;
-  --profile-ring: #ffffff;
+/* 1) Variables + color scheme — "Dark Engineering" design language */
+/* Shared type tokens */
+:root {
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Dark theme */
+/* Dark theme (default) */
+:root,
 :root.dark {
-  --bg: #242424;
-  --text: rgba(255, 255, 255, 0.87);
-  --accent: #bca5ff;
-  --accent-primary: #a67dff;
-  --accent-primary-hover: #c19eff;
-  --accent-primary-soft: rgba(166, 125, 255, 0.45);
-  --accent-tint: rgba(166, 125, 255, 0.18);
-  --accent-shadow: rgba(51, 21, 110, 0.55);
-  --accent-ring: #b896ff;
-  --surface: #111217;
-  --surface-muted: #171923;
-  --surface-raised: #1f2230;
-  --text-strong: rgba(255, 255, 255, 0.92);
-  --text-muted: rgba(255, 255, 255, 0.7);
-  --text-subtle: rgba(255, 255, 255, 0.55);
-  --border: rgba(255, 255, 255, 0.18);
-  --profile-ring: #242424;
+  color-scheme: dark;
+  --bg: #0a0a0c;
+  --text: #c9c9d1;
+  --accent: #9d9dff;
+  --accent-primary: #7c7cff;
+  --accent-primary-hover: #9d9dff;
+  --accent-primary-soft: rgba(124, 124, 255, 0.45);
+  --accent-tint: rgba(124, 124, 255, 0.1);
+  --accent-shadow: rgba(124, 124, 255, 0.25);
+  --accent-ring: rgba(124, 124, 255, 0.32);
+  --accent-contrast: #0a0a0c;
+  --surface: #141418;
+  --surface-muted: #17171c;
+  --surface-raised: #1a1a21;
+  --surface-glass: rgba(20, 20, 24, 0.72);
+  --text-strong: #ededf0;
+  --text-muted: #9a9aa3;
+  --text-subtle: #6b6b76;
+  --border: rgba(255, 255, 255, 0.09);
+  --profile-ring: #0a0a0c;
+  --success: #4ade80;
+  --glow-a: rgba(124, 124, 255, 0.13);
+  --glow-b: rgba(124, 124, 255, 0.06);
+}
+
+/* Light theme */
+:root.light {
+  color-scheme: light;
+  --bg: #fbfbfd;
+  --text: #3f4149;
+  --accent: #5151e0;
+  --accent-primary: #5b5bf0;
+  --accent-primary-hover: #4747e0;
+  --accent-primary-soft: rgba(91, 91, 240, 0.35);
+  --accent-tint: rgba(91, 91, 240, 0.07);
+  --accent-shadow: rgba(91, 91, 240, 0.25);
+  --accent-ring: rgba(91, 91, 240, 0.3);
+  --accent-contrast: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f4f4f8;
+  --surface-raised: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.75);
+  --text-strong: #131316;
+  --text-muted: #5c5e68;
+  --text-subtle: #8b8d98;
+  --border: #e7e7ee;
+  --profile-ring: #fbfbfd;
+  --success: #16a34a;
+  --glow-a: rgba(91, 91, 240, 0.06);
+  --glow-b: rgba(91, 91, 240, 0.03);
 }
 
 /* 2) Box-sizing + sensible defaults */
@@ -60,7 +78,7 @@ html, body, #root {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: var(--font-sans);
   line-height: 1.5;
   color: var(--text);
   background: var(--bg);
@@ -68,10 +86,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ambient background atmosphere */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(700px 380px at 18% -5%, var(--glow-a), transparent 62%),
+    radial-gradient(600px 420px at 88% 70%, var(--glow-b), transparent 60%);
+}
+
 /* 3) Typography */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.5rem;
   line-height: 1.2;
+  color: var(--text-strong);
+  letter-spacing: -0.025em;
+}
+
+/* Mono utility for eyebrows / labels */
+.mono {
+  font-family: var(--font-mono);
 }
 
 p {

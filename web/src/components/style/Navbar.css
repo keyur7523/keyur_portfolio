@@ -2,8 +2,16 @@ nav.navbar {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    margin-top: 50px;
-    position: relative;
+    margin-top: 24px;
+    position: sticky;
+    top: 16px;
+    z-index: 100;
+    padding: 12px 22px;
+    border-radius: 16px;
+    background: var(--surface-glass);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
 }
 
 /* Skip navigation link for accessibility */
@@ -29,6 +37,9 @@ nav.navbar p {
     justify-self: start;
     font-size: x-large;
     font-weight: 700;
+    white-space: nowrap;
+    margin: 0;
+    color: var(--text-strong);
 }
 
 ul.navbar-links {

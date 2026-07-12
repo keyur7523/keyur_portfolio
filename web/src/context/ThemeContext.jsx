@@ -4,14 +4,9 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
     const [theme, setTheme] = useState(() => {
-        // Check localStorage first
+        // Dark-first: dark unless the user explicitly chose light
         const saved = localStorage.getItem('theme');
-        if (saved) return saved;
-        // Fall back to system preference
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
-        }
-        return 'light';
+        return saved === 'light' ? 'light' : 'dark';
     });
 
     useEffect(() => {
@@ -25,22 +20,6 @@ export function ThemeProvider({ children }) {
         // Save to localStorage
         localStorage.setItem('theme', theme);
     }, [theme]);
-
-    // Listen for system preference changes (only if no saved preference)
-    useEffect(() => {
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-        const handleChange = (e) => {
-            const saved = localStorage.getItem('theme');
-            // Only auto-switch if user hasn't manually set a preference
-            if (!saved) {
-                setTheme(e.matches ? 'dark' : 'light');
-            }
-        };
-
-        mediaQuery.addEventListener('change', handleChange);
-        return () => mediaQuery.removeEventListener('change', handleChange);
-    }, []);
 
     const toggleTheme = () => {
         setTheme(prev => prev === 'light' ? 'dark' : 'light');

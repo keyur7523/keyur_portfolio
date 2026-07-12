@@ -77,14 +77,14 @@ div.footer-2 {
 .footer-interaction-contact {
     background-color: var(--accent-primary);
     border: 2px solid var(--accent-primary);
-    color: #fff;
+    color: var(--accent-contrast);
 }
 .footer-interaction-contact:hover { background-color: var(--accent-primary-hover); }
 
 .footer-interaction-projects {
-    background: var(--surface);
+    background: transparent;
     color: var(--text-strong);
-    border: 2px solid var(--text-strong);
+    border: 2px solid var(--border);
 }
 .footer-interaction-projects:hover {
     background: var(--surface-muted);

@@ -7,6 +7,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- Fonts: Instrument Sans (text) + JetBrains Mono (labels/code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Primary Meta Tags -->
     <title>Keyur Pawaskar | Software Engineer</title>
     <meta name="title" content="Keyur Pawaskar | Software Engineer" />
@@ -27,14 +35,14 @@
     <meta property="twitter:image" content="https://keyur-portfolio-psi.vercel.app/og-image.jpg" />
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#6333f2" />
+    <meta name="theme-color" content="#0a0a0c" />
 
     <!-- Set theme before paint to avoid a flash of the wrong theme -->
     <script>
       (function () {
         try {
           var saved = localStorage.getItem('theme');
-          var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var theme = saved === 'light' ? 'light' : 'dark'; /* dark-first */
           document.documentElement.classList.add(theme);
         } catch (e) {}
       })();

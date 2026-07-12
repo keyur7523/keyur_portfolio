@@ -29,7 +29,7 @@ export default function Home() {
             <div className='my-info'>
                 <div className='text'>
                     <FadeIn delay={0.1}>
-                        <p>Hello, I'm Keyur! </p>
+                        <p className='hero-eyebrow'>~/ hello, I'm Keyur</p>
                     </FadeIn>
                     <FadeIn delay={0.2}>
                         <h1><span className='accent'>Soft</span>ware<br />Engineer</h1>
@@ -40,7 +40,10 @@ export default function Home() {
                         </p>
                     </FadeIn>
                     <FadeIn delay={0.4}>
-                        <p className='hero-status'>MS CS @ CSU Fresno &middot; Full Stack Developer @ HAV Fresno</p>
+                        <p className='hero-status'>
+                            <span className='status-dot' aria-hidden='true'></span>
+                            open to SWE roles &middot; MS CS @ CSU Fresno &middot; Full Stack Dev @ HAV Fresno
+                        </p>
                     </FadeIn>
                     <FadeIn delay={0.5}>
                         <button className='contact-button' onClick={() => navigate('/contact')}>
@@ -57,6 +60,7 @@ export default function Home() {
             </div>
             <div className='projects-container'>
                 <Reveal>
+                    <p className='section-eyebrow'>01 &mdash; things I've built</p>
                     <h2 className='projects-title'>Projects<span className='accent'>.</span></h2>
                 </Reveal>
                 <div className='projects-grid-compact'>
@@ -95,6 +99,7 @@ export default function Home() {
             
             <div className='experience-container'>
                 <Reveal>
+                    <p className='section-eyebrow'>02 &mdash; where I've worked</p>
                     <h2 className='experience-title'>Experience<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -135,6 +140,7 @@ export default function Home() {
             </div>
             <div className='skills-container'>
                 <Reveal>
+                    <p className='section-eyebrow'>03 &mdash; what I work with</p>
                     <h2 className='skills-title'>Skills<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -143,6 +149,7 @@ export default function Home() {
             </div>
             <div className='mystory-container'>
                 <Reveal>
+                    <p className='section-eyebrow'>04 &mdash; how I got here</p>
                     <h2 className='mystory-title'>My Story<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.1}>

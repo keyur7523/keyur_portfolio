@@ -34,7 +34,7 @@ div.project-images {
 }
 
 div.project-card:hover div.project-images {
-    box-shadow: 0 20px 40px rgba(99, 51, 242, 0.15);
+    box-shadow: 0 20px 44px var(--accent-tint);
 }
 
 img.project-image {

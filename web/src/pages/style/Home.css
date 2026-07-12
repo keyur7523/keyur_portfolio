@@ -21,13 +21,25 @@ div.my-info .text p {
     padding-top: 40px;
 }
 
+.hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: var(--accent-primary) !important;
+    letter-spacing: 0.04em;
+}
+
 .home-page .my-info .text h1 {
     font-size: 100px;
-    font-weight: 900;
+    font-weight: 800;
+    letter-spacing: -0.035em;
 }
 
 div.my-info .text .accent {
-    color: var(--accent-primary);
+    background: linear-gradient(100deg, var(--accent), var(--accent-primary) 60%, var(--accent-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero-subtitle {
@@ -38,11 +50,27 @@ div.my-info .text .accent {
 }
 
 .hero-status {
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: var(--accent-primary) !important;
-    padding-top: 8px !important;
-    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 26px;
+    font-family: var(--font-mono);
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--text-muted) !important;
+    padding: 9px 16px !important;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    background: var(--surface-muted);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 10px var(--success);
+    flex-shrink: 0;
 }
 
 /* actions */
@@ -81,10 +109,10 @@ div.my-info .text .projects-button:hover::before {
 }
 
 div.my-info .text .contact-button {
-    background-color: var(--accent-primary); /* purple */
+    background-color: var(--accent-primary);
     border: 2px solid var(--accent-primary);
-    color: #ffffff;
-    box-shadow: 0 6px 18px var(--accent-shadow);
+    color: var(--accent-contrast);
+    box-shadow: 0 0 28px var(--accent-shadow);
     margin-right: 24px;
 }
 div.my-info .text .contact-button:hover {
@@ -93,9 +121,12 @@ div.my-info .text .contact-button:hover {
 }
 
 div.my-info .text .projects-button {
-    background-color: var(--surface);
+    background-color: transparent;
     color: var(--text-strong);
-    border: 2px solid var(--text-strong);
+    border: 2px solid var(--border);
+}
+div.my-info .text .projects-button:hover {
+    border-color: var(--accent-ring);
 }
 div.my-info .text .projects-button:hover {
     background-color: var(--surface-muted);
@@ -119,8 +150,11 @@ div.my-info .image img {
     object-fit: cover; /* crop to circle nicely */
     object-position: 35% 40%; /* shift content left inside circle */
     border-radius: 50%;
-    /* concentric ring: increase gap before purple outline */
-    box-shadow: 0 0 0 49px var(--profile-ring), 0 0 0 50px var(--accent-ring);
+    /* slim concentric ring + ambient glow */
+    box-shadow:
+        0 0 0 8px var(--profile-ring),
+        0 0 0 9px var(--accent-ring),
+        0 24px 90px var(--accent-shadow);
 }
 
 div.projects-container {
@@ -128,6 +162,15 @@ div.projects-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-primary);
+    letter-spacing: 0.06em;
+    margin: 0 0 10px;
 }
 
 .projects-title {

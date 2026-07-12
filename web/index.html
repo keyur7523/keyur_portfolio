@@ -41,8 +41,10 @@
     <script>
       (function () {
         try {
-          var saved = localStorage.getItem('theme');
-          var theme = saved === 'light' ? 'light' : 'dark'; /* dark-first */
+          /* v2 key: old 'theme' values were auto-saved, not chosen — start
+             everyone dark-first once, then respect their toggle choice */
+          var saved = localStorage.getItem('theme-v2');
+          var theme = saved === 'light' ? 'light' : 'dark';
           document.documentElement.classList.add(theme);
         } catch (e) {}
       })();

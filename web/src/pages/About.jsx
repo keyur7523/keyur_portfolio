@@ -25,7 +25,9 @@ export default function About() {
             <div className='about-intro'>
                 <FadeIn delay={0.25}>
                     <div className='about-intro-content'>
-                        <img src={profilePicture} alt='Keyur Pawaskar' className='about-photo' />
+                        <span className='about-photo-frame'>
+                            <img src={profilePicture} alt='Keyur Pawaskar' className='about-photo' />
+                        </span>
                         <div className='about-intro-text'>
                             <p>
                                 I'm Keyur Pawaskar, a full-stack developer passionate about building

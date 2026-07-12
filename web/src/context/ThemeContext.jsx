@@ -33,6 +33,7 @@ export function ThemeProvider({ children }) {
     );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components -- provider + hook belong together
 export function useTheme() {
     const context = useContext(ThemeContext);
     if (!context) {

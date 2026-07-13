@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "./style/Contact.css"
-import profilePicture from '../images/profile_picture.JPG'
+import profilePicture from '../images/profile_medium.jpg'
 import { MdOutlineEmail } from "react-icons/md";
 import { CiPhone } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub, FaInstagram, FaXTwitter } from 'react-icons/fa6';

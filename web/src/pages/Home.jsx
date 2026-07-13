@@ -1,5 +1,5 @@
 import './style/Home.css'
-import profilePicture from '../images/profile_picture.JPG'
+import profilePicture from '../images/profile_avatar.jpg'
 import ProjectCardCompact from './../components/ProjectCardCompact'
 import Experience from './../components/Experience'
 import Skills from './../components/Skills'

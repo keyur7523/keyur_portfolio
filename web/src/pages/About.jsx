@@ -3,7 +3,7 @@ import './style/About.css'
 import ExperienceItem from './../components/ExperienceItem'
 import { experiences } from './../data/experience'
 import { FadeIn } from '../components/ui/Animations'
-import profilePicture from '../images/profile_picture.JPG'
+import profilePicture from '../images/profile_medium.jpg'
 
 export default function About() {
     useEffect(() => {

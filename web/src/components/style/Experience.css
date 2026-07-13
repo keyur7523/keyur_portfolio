@@ -48,6 +48,12 @@
   .experience-button {
     padding: 46px 0 46px 28px;
     font-size: 22px;
+    /* names must wrap here too — nowrap overflows into the details column */
+    white-space: normal;
+  }
+
+  .experience-company {
+    white-space: normal;
   }
 }
 
@@ -55,11 +61,6 @@
   .experience-button {
     padding: 28px 0 28px 24px;
     font-size: 20px;
-    white-space: normal;
-  }
-
-  .experience-company {
-    white-space: normal;
   }
 }
 

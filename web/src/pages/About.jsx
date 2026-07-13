@@ -71,7 +71,7 @@ export default function About() {
                     <h2>My Experience<span className='accent'>.</span></h2>
                 </FadeIn>
                 <FadeIn delay={0.45}>
-                    <div className='experience-grid'>
+                    <div className='about-exp-grid'>
                         {experiences.map((exp, idx) => (
                             <ExperienceItem key={idx} idx={idx} exp={exp} />
                         ))}

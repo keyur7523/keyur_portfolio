@@ -442,6 +442,14 @@ div.experience-buttons-card {
 .footer-1 { margin-top: 180px; }
 
 /* Responsive overrides */
+@media (max-width: 1280px) {
+    /* the fixed 200px spacer squeezes the details panel on small desktops */
+    .experience-details {
+        margin-left: 48px;
+        padding: 40px 36px 0;
+    }
+}
+
 @media (max-width: 1024px) {
     div.my-info {
         flex-direction: column;
@@ -505,6 +513,7 @@ div.experience-buttons-card {
     div.my-info .text .projects-button {
         width: 100%;
         text-align: center;
+        margin-right: 0; /* full-width + desktop margin overflows the viewport */
     }
 
     div.my-info .image {

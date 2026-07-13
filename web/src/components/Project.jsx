@@ -76,9 +76,11 @@ export default function Project() {
                             <FaGithub size={28} />
                         </a>
                     )}
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className='project-open' aria-label='Open live project'>
-                        <LuExternalLink size={30} strokeWidth={2.5} />
-                    </a>
+                    {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className='project-open' aria-label='Open live project'>
+                            <LuExternalLink size={30} strokeWidth={2.5} />
+                        </a>
+                    )}
                 </div>
             </div>
             <p>{project.summary}</p>
@@ -89,6 +91,7 @@ export default function Project() {
                     ))}
                 </ul>
             )}
+            {totalImages > 0 && (
             <div className="project-gallery">
                 <div className="project-gallery-viewport">
                     <img
@@ -132,6 +135,7 @@ export default function Project() {
                     </div>
                 )}
             </div>
+            )}
             <div className="project-description">
                 <h2>Description</h2>
                 <div className="project-description-points">

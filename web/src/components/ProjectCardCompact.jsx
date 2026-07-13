@@ -11,7 +11,11 @@ export default function ProjectCardCompact({ project }) {
             className='project-card-compact'
         >
             <div className='project-card-compact-image'>
-                <img src={project.images[0]} alt={project.name} loading='lazy' decoding='async' />
+                {project.images.length > 0 ? (
+                    <img src={project.images[0]} alt={project.name} loading='lazy' decoding='async' />
+                ) : (
+                    <span className='project-image-placeholder'>$ git clone {project.name.toLowerCase()}</span>
+                )}
             </div>
             <div className='project-card-compact-info'>
                 <h3 className='project-card-compact-name'>

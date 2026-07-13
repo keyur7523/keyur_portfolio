@@ -1,10 +1,6 @@
 import deepSearchImage1 from '../images/deepsearch/deepsearch_img_1.jpeg'
 import deepSearchImage2 from '../images/deepsearch/deepsearch_img_2.jpeg'
 import deepSearchImage3 from '../images/deepsearch/deepsearch_img_3.jpeg'
-import caseSnapImage1 from '../images/casesnap/casesnap_img_1.jpeg'
-import caseSnapImage2 from '../images/casesnap/casesnap_img_2.jpeg'
-import caseSnapImage3 from '../images/casesnap/casesnap_img_3.jpeg'
-import caseSnapImage4 from '../images/casesnap/casesnap_img_4.jpeg'
 import promptLabImage1 from '../images/promptLab/promptlabimg1.jpeg'
 import probekitImage1 from '../images/probekit/probekitimg1.jpg'
 import probekitImage2 from '../images/probekit/probekitimg2.jpg'
@@ -29,7 +25,7 @@ import delegateImage1 from '../images/delegate/delegateimg1.png'
 
 
 /* Projects */
-export const projectList = [
+const allProjects = [
     {
         name: 'Delegate',
         summary: 'Transparent AI agent for Gmail and Google Calendar with classifier-gated tool execution, mid-session permission revocation, and step-up authentication for high-risk actions.',
@@ -95,7 +91,7 @@ export const projectList = [
     },
     {
         name: 'AuthZ Platform',
-        summary: 'Enterprise-grade authorization and approval workflow system featuring RBAC/PBAC policy engines, multi-tenant organization management, and real-time access request workflows—mirroring authorization infrastructure used at companies like Google, Meta, and ByteDance.',
+        summary: 'Authorization and approval-workflow system with dual RBAC/PBAC policy engines (deny-overrides-allow, priority ordering), multi-tenant organization scoping, JWT refresh-token rotation, and an immutable audit trail — 54 REST endpoints, 12 tables, 24 passing tests.',
         description: [
             'Architected a dual authorization engine supporting both Role-Based Access Control (RBAC) and Policy-Based Access Control (PBAC)—RBAC provides simple user→role→permission hierarchies while PBAC enables flexible JSON policy documents with principal matching, wildcard patterns (e.g., database:*), and attribute-based conditions, with deny-overrides-allow evaluation logic matching AWS IAM semantics.',
             'Built a complete access request workflow with finite state machine (Pending→Approved/Denied→Expired), featuring request submission with justification, approver inbox with risk-based color coding, approve/deny actions with comments, automatic role provisioning on approval, and time-bound access that auto-expires—all changes captured in an immutable audit trail.',
@@ -148,16 +144,24 @@ export const projectList = [
         highlights: ['4-agent task DAG pipeline', 'Web + arXiv hybrid retrieval', 'Enforced inline citations', 'Live SSE task-graph view']
     },
     {
-        name: 'CaseSnap',
-        summary: 'Enterprise Legal Practice Management System for law firms with case management, employee administration, billing, and automated reminders.',
+        name: 'Verbatim',
+        summary: 'LLM verbosity-drift harness: multi-turn (12-turn, fixed-intent) evaluation across four conditions with deterministic evaluators, a FastAPI backend persisting runs/turns/results, and regression-based drift-slope reporting.',
         description: [
-            'Architected enterprise legal SaaS platform supporting 100+ organizations with 2,000 employees each using MongoDB multi-tenant architecture and JWT organization isolation, featuring case management, employee administration, billing, and automated reminders with role-based access control.', 'Engineered workflow automation with court calendar integration, automated billing, PDF/Excel export, smart notifications, and cron job scheduling for deadline tracking, implementing 1-hour caching and CDN optimization for scalable performance.', 'Will be adding an AI-powered analytics dashboard with real-time insights and business intelligence, plus AI-friendly API endpoints supporting 6+ major AI crawlers (GPTBot, Claude, Perplexity) with JSON-LD structured data for enhanced search visibility.'
+            'Runs 12-turn, fixed-intent multi-turn evaluations across four conditions to measure how model behavior drifts over a conversation.',
+            'Scores runs with deterministic evaluators: verbosity drift, instruction adherence, and hallucination/refusal proxies.',
+            'Persists runs, turns, and results through a FastAPI backend.',
+            'Reports drift as a regression-based slope, making behavior changes comparable across runs.'
         ],
-        techStack: ['Next.js 14', 'TypeScript', 'Node.js/Express', 'MongoDB', 'Material-UI', 'TailwindCSS', 'JWT Authentication', 'Redux Toolkit'],
-        images: [caseSnapImage1, caseSnapImage2, caseSnapImage3, caseSnapImage4],
-        link: 'https://casesnap-lake.vercel.app/',
-        github: 'https://github.com/keyur7523/casesnapbackend',
-        highlights: ['Multi-tenant MongoDB isolation', 'Role-based firm administration', 'Automated billing & reminders', 'PDF / Excel export pipeline']
+        techStack: ['Python', 'FastAPI'],
+        images: [],
+        github: 'https://github.com/keyur7523/verbatim',
+        highlights: ['12-turn fixed-intent evals', '4 evaluation conditions', 'Deterministic evaluators', 'Regression drift-slope reporting']
     }
 
 ]
+
+/* Curated display order: strongest / most on-narrative first */
+const displayOrder = ['Delegate', 'Koda', 'AuthZ Platform', 'DeepSearch', 'PromptLab', 'Probekit', 'CollabCanvas', 'HireTrack', 'Verbatim']
+export const projectList = displayOrder
+    .map(name => allProjects.find(p => p.name === name))
+    .filter(Boolean)

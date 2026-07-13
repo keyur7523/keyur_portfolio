@@ -9,10 +9,11 @@ export default function Mystory() {
         <div className='mystory-content'>
             <div className='mystory-paragraph'>
                 <p>
-                    I'm Keyur Pawaskar, a full-stack developer passionate about building
-                    production-ready applications that solve real problems. Currently pursuing
-                    my Master's in Computer Science at California State University, Fresno,
-                    I balance academic research with hands-on development work.
+                    I'm Keyur Pawaskar, a full-stack developer focused on building
+                    production-ready applications that solve real problems. I hold an MS in
+                    Computer Science from California State University, Fresno (3.91 GPA),
+                    and I currently build AI-powered software inside a cardiovascular
+                    practice — from speech-to-text clinical pipelines to LLM agents.
                 </p>
             </div>
 
@@ -32,10 +33,10 @@ export default function Mystory() {
                             focused on creating systems that are both powerful and user-friendly.
                         </p>
                         <p>
-                            I specialize in React, TypeScript, Python, and FastAPI, with a deep
-                            interest in AI safety, behavioral evaluation, and building intelligent
-                            systems. When I'm not coding, you'll find me exploring new technologies,
-                            contributing to open-source, or working on research projects.
+                            I work with React, TypeScript, Python, and FastAPI, with a focus on
+                            AI safety, behavioral evaluation, and building intelligent systems
+                            that hold up in production. Outside of shipping features, I spend
+                            time reading unfamiliar codebases and sharpening fundamentals.
                         </p>
                     </motion.div>
                 )}

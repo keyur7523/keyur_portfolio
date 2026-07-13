@@ -4,10 +4,10 @@ export const experiences =[
         position: 'Full Stack Developer - AI Focused',
         duration: 'Aug 2025 - Present',
         description: [
-            'Built HAV_assistant — a Chrome extension + Python backend for audio transcription and AI-generated clinical summaries (SOAP notes, Disease Plans).',
-            'Engineered a floating UI with real-time audio recording, drag-and-drop bulk upload, and inline corrections modal using MediaRecorder + WebAudio.',
-            'Developed REST endpoints for transcription and async paraphrasing with S3 storage and database persistence.',
-            'Shipped end-to-end: browser extension, real-time audio processing, async server pipelines, and cloud storage integration.'
+            'Built HAV_assistant — a Chrome extension + Python/Flask backend that turns recorded visits into SOAP-formatted clinical notes, cutting a 20-minute manual documentation workflow to 2–3 minutes.',
+            "Engineered a floating UI with real-time audio recording, drag-and-drop bulk upload, and an inline corrections modal (MediaRecorder + WebAudio), backed by a MongoDB correction store that learns the practice's vocabulary.",
+            'Built a three-tier AI paraphrasing pipeline (OpenAI speech-to-text + LangChain/GPT-4) behind REST endpoints for transcription and async paraphrasing, with S3 audio storage and database persistence.',
+            'Shipped end-to-end and kept it in daily use: browser extension, real-time audio processing, async server pipelines, and cloud storage.'
         ]
     },
     {
@@ -25,10 +25,10 @@ export const experiences =[
         position: 'Python Developer',
         duration: 'Sept 2021 - July 2023',
         description: [
-            'Built survey security and automation tools, cutting build time by 90% and improving compliance visibility.',
-            'Optimized data pipelines with caching, increasing throughput across global analytics platforms.',
-            'Created reusable analytics modules, reducing duplicated work across distributed teams.',
-            'Contributed to cross-timezone agile teams with peer reviews and secure coding standards.'
+            'Built and maintained survey application systems using Gryphon (a Python-based proprietary tool) and JavaScript for enterprise clients.',
+            'Built automation tools that reduced manual coding processes from 6–20 hours to single-click operations.',
+            'Optimized internal data pipelines using asynchronous processing and caching, and designed reusable modules to improve consistency across projects.',
+            'Coordinated with cross-functional client teams to translate business needs into technical specifications and deliver data-collection solutions.'
         ]
     }
 ]

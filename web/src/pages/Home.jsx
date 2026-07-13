@@ -51,8 +51,9 @@ export default function Home() {
                     </FadeIn>
                     <FadeIn delay={0.35}>
                         <p className='hero-subtitle'>
-                            I'm Keyur Pawaskar — I build LLM agents, real‑time collaborative tools,
-                            and the production infrastructure that keeps them honest.
+                            I build LLM agents, real‑time collaborative tools, and AI systems inside
+                            a live clinical practice — plus the production infrastructure that keeps
+                            them honest.
                         </p>
                     </FadeIn>
                     <FadeIn delay={0.4}>

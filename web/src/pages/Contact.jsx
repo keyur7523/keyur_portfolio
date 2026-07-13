@@ -38,6 +38,12 @@ export default function Contact() {
                             </a>
                         </div>
                     </FadeIn>
+                    <FadeIn delay={0.25}>
+                        <div className='contact-status'>
+                            <p>Fresno, CA &middot; Open to relocation &amp; remote</p>
+                            <p>Open to Software / AI Engineer roles &middot; authorized to work in the US</p>
+                        </div>
+                    </FadeIn>
                     <FadeIn delay={0.3}>
                         <div className='contact-socials'>
                             <h2>Connect With Me</h2>

@@ -203,3 +203,16 @@
         font-size: 20px;
     }
 }
+
+/* Location + work-authorization status lines */
+.contact-status {
+    margin-top: 28px;
+}
+
+.contact-status p {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+    letter-spacing: 0.01em;
+}

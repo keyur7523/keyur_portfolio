@@ -30,23 +30,24 @@ export default function About() {
                         </span>
                         <div className='about-intro-text'>
                             <p>
-                                I'm Keyur Pawaskar, a full-stack developer focused on building
-                                production-ready applications that solve real problems. I hold an MS in
-                                Computer Science from California State University, Fresno (3.91 GPA),
-                                and I currently build AI-powered software inside a cardiovascular
-                                practice — from speech-to-text clinical pipelines to LLM agents.
+                                I'm Keyur Pawaskar, a full-stack developer. For the past year I've
+                                been building the AI systems that Heart, Artery &amp; Vein Center of
+                                Fresno runs on every day — from the idea in a doctor's head to the
+                                thing running in production. The clinical documentation workflow
+                                that used to take 20 minutes now takes 2–3.
                             </p>
                             <p>
-                                My journey started with a fascination for how software can transform
-                                ideas into impactful solutions. From building survey automation tools
-                                at YouGov to developing AI-powered applications at HAV Fresno, I've consistently
-                                focused on creating systems that are both powerful and user-friendly.
+                                Before HAV, I spent almost two years at YouGov building survey
+                                infrastructure and automation that cut manual coding work from
+                                6–20 hours to a single click. I hold an MS in Computer Science
+                                from California State University, Fresno (3.91 GPA).
                             </p>
                             <p>
-                                I work with React, TypeScript, Python, and FastAPI, with a focus on
-                                AI safety, behavioral evaluation, and building intelligent systems
-                                that hold up in production. Outside of shipping features, I spend
-                                time reading unfamiliar codebases and sharpening fundamentals.
+                                Outside work I build AI agents and the evaluation harnesses that
+                                check whether they're actually right — not just whether they look
+                                right. I work with React, TypeScript, Python, and FastAPI, with a
+                                focus on AI safety, behavioral evaluation, and systems that hold
+                                up in production.
                             </p>
                         </div>
                     </div>

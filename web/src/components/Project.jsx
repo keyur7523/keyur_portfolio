@@ -166,7 +166,13 @@ export default function Project() {
                             className="related-card"
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         >
-                            <img src={p.images[0]} alt={p.name} loading='lazy' decoding='async' />
+                            <div className='related-card-image'>
+                                {p.images.length > 0 ? (
+                                    <img src={p.images[0]} alt={p.name} loading='lazy' decoding='async' />
+                                ) : (
+                                    <span className='project-image-placeholder'>$ git clone {p.name.toLowerCase()}</span>
+                                )}
+                            </div>
                             <span>{p.name}</span>
                         </Link>
                     ))}

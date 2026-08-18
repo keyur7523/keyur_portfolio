@@ -415,12 +415,29 @@
     transform: translateY(-4px);
 }
 
-.related-card img {
+.related-card-image {
     width: 100%;
     aspect-ratio: 16/9;
-    object-fit: cover;
     border-radius: 12px;
     background: var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.related-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.related-card-image .project-image-placeholder {
+    font-size: 13px;
+    font-family: var(--font-mono);
+    color: var(--text-subtle);
+    padding: 0 16px;
+    text-align: center;
 }
 
 .related-card span {

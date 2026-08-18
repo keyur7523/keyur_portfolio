@@ -156,12 +156,26 @@ const allProjects = [
         images: [],
         github: 'https://github.com/keyur7523/verbatim',
         highlights: ['12-turn fixed-intent evals', '4 evaluation conditions', 'Deterministic evaluators', 'Regression drift-slope reporting']
+    },
+    {
+        name: 'RagAssistant',
+        summary: 'AI customer-support agent (Northwind Support Agent) that chains a SQLite order-lookup tool, a RAG policy-search tool (Chroma), and an action tool on a Claude tool-calling loop, with an automated evaluation harness scoring trajectory and outcome separately.',
+        description: [
+            'Built a multi-tool AI agent on a Claude tool-calling loop that reasons across a SQLite order database, a RAG retrieval tool over policy documents (Chroma), and an action tool to resolve real customer-support requests end to end.',
+            'Designed an automated evaluation harness that scores trajectory (did the agent take the right steps) and outcome (did it reach the right answer) separately, rather than only checking the final response—passing 18/18 test cases.',
+            'Served the agent behind a FastAPI service with structured tool schemas and reproducible eval runs, so retrieval quality and grounding are verified after every change instead of assumed.',
+            'Grounded every response in retrieved context to keep answers accurate and auditable rather than free-form.'
+        ],
+        techStack: ['Python', 'FastAPI', 'Anthropic Claude API', 'RAG', 'Chroma', 'SQLite'],
+        images: [],
+        github: 'https://github.com/keyur7523/rag-assistant',
+        highlights: ['Trajectory + outcome eval scoring', '18/18 passing test cases', 'RAG-grounded responses', 'Reproducible eval runs']
     }
 
 ]
 
 /* Curated display order: strongest / most on-narrative first */
-const displayOrder = ['Delegate', 'Koda', 'AuthZ Platform', 'DeepSearch', 'PromptLab', 'Probekit', 'CollabCanvas', 'HireTrack', 'Verbatim']
+const displayOrder = ['Delegate', 'RagAssistant', 'Koda', 'AuthZ Platform', 'DeepSearch', 'PromptLab', 'Probekit', 'CollabCanvas', 'HireTrack', 'Verbatim']
 export const projectList = displayOrder
     .map(name => allProjects.find(p => p.name === name))
     .filter(Boolean)

@@ -9,11 +9,9 @@ export default function Mystory() {
         <div className='mystory-content'>
             <div className='mystory-paragraph'>
                 <p>
-                    I'm Keyur Pawaskar, a full-stack developer focused on building
-                    production-ready applications that solve real problems. I hold an MS in
-                    Computer Science from California State University, Fresno (3.91 GPA),
-                    and I currently build AI-powered software inside a cardiovascular
-                    practice — from speech-to-text clinical pipelines to LLM agents.
+                    I'm a full-stack developer, and for the past year I've been building the
+                    AI systems that Heart, Artery &amp; Vein Center of Fresno runs on every
+                    day — from the idea in a doctor's head to the thing running in production.
                 </p>
             </div>
 
@@ -27,16 +25,28 @@ export default function Mystory() {
                         className='mystory-expanded'
                     >
                         <p>
-                            My journey started with a fascination for how software can transform
-                            ideas into impactful solutions. From building survey automation tools
-                            at YouGov to developing AI-powered applications, I've consistently
-                            focused on creating systems that are both powerful and user-friendly.
+                            That's included an OpenAI-powered speech-to-text pipeline with a
+                            MongoDB-backed correction system, a three-tier AI paraphrasing pass
+                            (LangChain + GPT-4 Turbo) that turns a recorded visit into a
+                            SOAP-formatted clinical note, and a Chrome extension that automates
+                            a legacy, API-less EHR — I reverse-engineered its internals because
+                            the vendor said it couldn't be done. The workflow that used to take
+                            a clinician 20 minutes now takes 2–3.
                         </p>
                         <p>
-                            I work with React, TypeScript, Python, and FastAPI, with a focus on
-                            AI safety, behavioral evaluation, and building intelligent systems
-                            that hold up in production. Outside of shipping features, I spend
-                            time reading unfamiliar codebases and sharpening fundamentals.
+                            Before HAV, I spent almost two years at YouGov building survey
+                            infrastructure and automation that cut manual coding work from
+                            6–20 hours to a single click.
+                        </p>
+                        <p>
+                            Outside work I build AI agents and the evaluation harnesses that
+                            check whether they're actually right — not just whether they look
+                            right. Koda (Tree-sitter-based code understanding), Delegate (an
+                            assistant with real Gmail/Calendar access and a server-side approval
+                            layer that holds even if the model doesn't follow instructions).
+                        </p>
+                        <p>
+                            MS in Computer Science, CSU Fresno (3.91 GPA).
                         </p>
                     </motion.div>
                 )}

@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollProgress from "./ScrollProgress";
 import BackToTop from "./BackToTop";
-import PageTransition from "./PageTransition";
 import "../App.css"
 
 export default function Layout() {
@@ -20,11 +19,14 @@ export default function Layout() {
             <ScrollProgress />
             <Navbar />
             <main id="main-content">
-                <AnimatePresence mode="wait">
-                    <PageTransition key={location.pathname}>
-                        <Outlet />
-                    </PageTransition>
-                </AnimatePresence>
+                {/* No exit animation: the next page responds the instant you click instead of waiting for the old one to leave */}
+                <motion.div
+                    key={location.pathname}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                >
+                    <Outlet />
+                </motion.div>
             </main>
             <Footer />
             <BackToTop />

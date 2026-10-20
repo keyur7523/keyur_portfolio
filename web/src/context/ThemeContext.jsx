@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useLayoutEffect } from 'react';
+import { flushSync } from 'react-dom';
 
 const ThemeContext = createContext();
 
@@ -10,7 +11,7 @@ export function ThemeProvider({ children }) {
         return saved === 'light' ? 'light' : 'dark';
     });
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const root = document.documentElement;
 
         // Remove both classes first
@@ -23,7 +24,10 @@ export function ThemeProvider({ children }) {
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prev => prev === 'light' ? 'dark' : 'light');
+        const flip = () => flushSync(() => setTheme(prev => prev === 'light' ? 'dark' : 'light'));
+        // Cross-fade instead of a hard dark↔light brightness jump; older browsers just switch
+        if (document.startViewTransition) document.startViewTransition(flip);
+        else flip();
     };
 
     return (

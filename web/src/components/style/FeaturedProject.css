@@ -11,7 +11,7 @@
 
 .featured-label {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: var(--accent-primary);
     letter-spacing: 0.06em;
@@ -19,7 +19,7 @@
 }
 
 .featured-name {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 800;
     margin: 0 0 12px;
 }
@@ -33,7 +33,7 @@
 }
 
 .featured-summary {
-    font-size: 16.5px;
+    font-size: 1.0312rem;
     line-height: 1.6;
     color: var(--text-muted);
     margin: 0 0 20px;
@@ -50,7 +50,7 @@
 
 .featured-highlights li {
     font-family: var(--font-mono);
-    font-size: 13.5px;
+    font-size: 0.8438rem;
     color: var(--text-muted);
     padding-left: 20px;
     position: relative;
@@ -78,15 +78,17 @@
     border-radius: 10px;
     background: var(--accent-primary);
     color: var(--accent-contrast);
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 600;
     box-shadow: 0 0 22px var(--accent-shadow);
     transition: background 0.2s ease, transform 0.2s ease;
 }
-.featured-live:hover {
-    background: var(--accent-primary-hover);
-    transform: translateY(-1px);
-    opacity: 1;
+@media (hover: hover) {
+    .featured-live:hover {
+        background: var(--accent-primary-hover);
+        transform: translateY(-1px);
+        opacity: 1;
+    }
 }
 
 .featured-gh {
@@ -94,7 +96,7 @@
     align-items: center;
     gap: 8px;
     color: var(--text-strong);
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 600;
 }
 .featured-gh:hover {
@@ -104,7 +106,7 @@
 
 .featured-case {
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 600;
 }
 .featured-case:hover {
@@ -132,8 +134,10 @@
     object-fit: cover;
     transition: transform 0.4s ease;
 }
-.featured-media:hover img {
-    transform: scale(1.03);
+@media (hover: hover) {
+    .featured-media:hover img {
+        transform: scale(1.03);
+    }
 }
 
 @media (max-width: 1024px) {
@@ -143,7 +147,7 @@
     }
 
     .featured-name {
-        font-size: 34px;
+        font-size: 2.125rem;
     }
 }
 
@@ -160,10 +164,10 @@
     }
 
     .featured-name {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 
     .featured-highlights li {
-        font-size: 12.5px;
+        font-size: 0.7812rem;
     }
 }

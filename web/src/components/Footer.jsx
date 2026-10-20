@@ -30,14 +30,14 @@ export default function Footer() {
                         <NavLink
                             to='/contact'
                             className='footer-interaction-contact'
-                            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
+                            onClick={() => window.scrollTo({ top: 0, left: 0 })}
                         >
                             Get In Touch
                         </NavLink>
                         <NavLink
                             to='/projects'
                             className='footer-interaction-projects'
-                            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
+                            onClick={() => window.scrollTo({ top: 0, left: 0 })}
                         >
                             Browse Projects
                         </NavLink>

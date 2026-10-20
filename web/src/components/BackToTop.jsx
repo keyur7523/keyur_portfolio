@@ -7,16 +7,10 @@ export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisible = () => {
-      setVisible(window.scrollY > 500);
-    };
-    window.addEventListener('scroll', toggleVisible);
+    const toggleVisible = () => setVisible(window.scrollY > 500);
+    window.addEventListener('scroll', toggleVisible, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisible);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <AnimatePresence>
@@ -25,10 +19,11 @@ export default function BackToTop() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.92 }}
           className="back-to-top"
-          onClick={scrollToTop}
+          // no behavior: html's scroll-behavior decides, so reduced motion jumps instead of gliding
+          onClick={() => window.scrollTo({ top: 0 })}
           aria-label="Back to top"
         >
           <FaArrowUp />

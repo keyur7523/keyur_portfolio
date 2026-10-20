@@ -1,16 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaHome, FaArrowLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './style/NotFound.css';
 
 export default function NotFound() {
+    const navigate = useNavigate();
+    // Opened directly (no history to go back to)? "Go Back" still has to lead somewhere.
+    const goBack = () => (window.history.length > 1 ? navigate(-1) : navigate('/'));
+
     return (
         <div className='notfound-page'>
             <motion.div
                 className='notfound-content'
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
             >
                 <h1 className='notfound-code'>
                     4<span className='accent'>0</span>4
@@ -25,7 +28,7 @@ export default function NotFound() {
                         Go Home
                     </Link>
                     <button
-                        onClick={() => window.history.back()}
+                        onClick={goBack}
                         className='notfound-btn secondary'
                     >
                         <FaArrowLeft />

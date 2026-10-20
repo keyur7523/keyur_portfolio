@@ -12,7 +12,6 @@ export default function Contact() {
 
     useEffect(() => {
         document.title = 'Contact | Keyur Pawaskar'
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
         return () => { document.title = 'Keyur Pawaskar | Software Engineer' }
     }, [])
 

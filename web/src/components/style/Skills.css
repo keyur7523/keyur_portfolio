@@ -32,7 +32,7 @@
 .terminal-title {
     margin-left: 12px;
     font-family: var(--font-mono);
-    font-size: 12.5px;
+    font-size: 0.7812rem;
     color: var(--text-subtle);
 }
 
@@ -45,7 +45,7 @@
 
 .term-cmd {
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--text-muted);
     margin: 0 0 14px;
 }
@@ -68,7 +68,7 @@
     padding: 8px 14px;
     border-radius: 8px;
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--text-strong);
     background: var(--surface-muted);
     border: 1px solid var(--border);
@@ -81,9 +81,11 @@
     color: var(--accent-primary);
 }
 
-.term-chip:hover {
-    border-color: var(--accent-ring);
-    transform: translateY(-1px);
+@media (hover: hover) {
+    .term-chip:hover {
+        border-color: var(--accent-ring);
+        transform: translateY(-1px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -93,7 +95,7 @@
     }
 
     .term-chip {
-        font-size: 12px;
+        font-size: 0.75rem;
         padding: 7px 11px;
     }
 }

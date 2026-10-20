@@ -17,8 +17,10 @@ div.project-card {
     transition: transform 0.3s ease;
 }
 
-div.project-card:hover {
-    transform: translateY(-8px);
+@media (hover: hover) {
+    div.project-card:hover {
+        transform: translateY(-8px);
+    }
 }
 
 div.project-images {
@@ -45,8 +47,10 @@ img.project-image {
     transition: transform 0.4s ease;
 }
 
-div.project-card:hover img.project-image {
-    transform: scale(1.05);
+@media (hover: hover) {
+    div.project-card:hover img.project-image {
+        transform: scale(1.05);
+    }
 }
 
 div.project-meta {
@@ -57,7 +61,7 @@ div.project-meta {
 
 .project-name {
     margin: 0;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 800;
     gap: 8px;
 }
@@ -82,7 +86,7 @@ p.project-summary {
     margin: 0;
     color: var(--text-muted);
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
 }
 
@@ -111,7 +115,7 @@ p.project-summary {
 
 .project-link {
      display: inline-flex; 
-     font-size: 28px; 
+     font-size: 1.75rem; 
      line-height: 1; 
      color: var(--accent-primary);
      text-decoration: none; 
@@ -155,11 +159,11 @@ p.project-summary {
     }
 
     .project-name {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     p.project-summary {
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
 }
 

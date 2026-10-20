@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import './style/Project.css'
 import { useParams, Link } from 'react-router-dom'
 import { projectList } from '../data/projectList'
@@ -6,12 +7,22 @@ import { LuExternalLink, LuLink } from "react-icons/lu";
 import { FaArrowCircleLeft, FaArrowCircleRight, FaGithub } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import TechTile from './TechTile'
-import { FadeIn } from './ui/Animations'
+import { spring, flickSpring, swipeDirection } from './ui/physics'
+
+// Next slides in from the right and the old one leaves left; previous mirrors it
+const slide = {
+    enter: ({ dir, w }) => ({ x: dir * w, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: ({ dir, w }) => ({ x: -dir * w, opacity: 0 }),
+}
 
 export default function Project() {
 
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [copied, setCopied] = useState(false)
+    const [[currentIndex, dir], setPage] = useState([0, 0])
+    const [flick, setFlick] = useState(0) // release velocity of the last swipe; 0 after a tap or key
+    const [copyStatus, setCopyStatus] = useState('')
+    const copyTimer = useRef(null)
+    const viewportRef = useRef(null)
     const { projectId } = useParams()
     const project = projectList.find(project => project.name.toLowerCase().replaceAll(' ', '-') === projectId)
 
@@ -23,9 +34,15 @@ export default function Project() {
     }, [project])
 
     const copyLink = async () => {
-        await navigator.clipboard.writeText(window.location.href);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
+        try {
+            await navigator.clipboard.writeText(window.location.href);
+            setCopyStatus('Copied!');
+            navigator.vibrate?.(10);
+        } catch {
+            setCopyStatus("Couldn't copy");
+        }
+        clearTimeout(copyTimer.current);
+        copyTimer.current = setTimeout(() => setCopyStatus(''), 2000);
     };
 
     const relatedProjects = projectList
@@ -38,20 +55,23 @@ export default function Project() {
 
     const totalImages = project.images.length
 
-    function next() {
-        setCurrentIndex(idx =>(
-            (idx + 1) % totalImages
-        ))
-    }
+    const width = () => viewportRef.current?.offsetWidth ?? 600
 
-    function prev() {
-        setCurrentIndex(idx =>(
-            (idx - 1 + totalImages) % totalImages
-        ))
+    function paginate(d, velocity = 0) {
+        setFlick(velocity)
+        setPage(([i]) => [(i + d + totalImages) % totalImages, d])
     }
+    const next = () => paginate(1)
+    const prev = () => paginate(-1)
 
     function goTo(idx) {
-        setCurrentIndex(idx)
+        setFlick(0)
+        setPage(([i]) => [idx, Math.sign(idx - i)])
+    }
+
+    function onKeyDown(e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); next() }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); prev() }
     }
 
     return (
@@ -69,7 +89,7 @@ export default function Project() {
                         aria-label="Copy link"
                     >
                         <LuLink size={24} />
-                        {copied && <span className="copied-tooltip">Copied!</span>}
+                        <span className={`copied-tooltip ${copyStatus ? 'show' : ''}`} role="status">{copyStatus}</span>
                     </button>
                     {project.github && (
                         <a href={project.github} target="_blank" rel="noopener noreferrer" className='project-github' aria-label='View source on GitHub'>
@@ -93,13 +113,43 @@ export default function Project() {
             )}
             {totalImages > 0 && (
             <div className="project-gallery">
-                <div className="project-gallery-viewport">
-                    <img
-                        className="project-gallery-img"
-                        src={project.images[currentIndex]}
-                        alt={`${project.name} screenshot ${currentIndex + 1}`}
-                        decoding="async"
-                    />
+                <div
+                    className="project-gallery-viewport"
+                    ref={viewportRef}
+                    tabIndex={totalImages > 1 ? 0 : undefined}
+                    onKeyDown={totalImages > 1 ? onKeyDown : undefined}
+                    role="region"
+                    aria-roledescription="carousel"
+                    aria-label={`${project.name} screenshots`}
+                >
+                    <AnimatePresence initial={false} custom={{ dir, w: width() }}>
+                        <motion.img
+                            key={currentIndex}
+                            className="project-gallery-img"
+                            src={project.images[currentIndex]}
+                            alt={`${project.name} screenshot ${currentIndex + 1}`}
+                            decoding="async"
+                            draggable={false}
+                            custom={{ dir, w: width() }}
+                            variants={slide}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            // After a flick, the incoming shot carries on at the finger's speed, with a touch of bounce
+                            transition={flick ? { x: { ...flickSpring, velocity: flick }, opacity: spring } : undefined}
+                            drag={totalImages > 1 ? 'x' : false}
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={1}
+                            dragTransition={{ bounceStiffness: 400, bounceDamping: 40 }}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const d = swipeDirection(offset.x, velocity.x, width())
+                                if (d) paginate(d, velocity.x)
+                            }}
+                        />
+                    </AnimatePresence>
+                    {totalImages > 1 && (
+                        <p className="sr-only" aria-live="polite">Screenshot {currentIndex + 1} of {totalImages}</p>
+                    )}
                     {totalImages > 1 && (
                         <>
                             <button
@@ -128,6 +178,7 @@ export default function Project() {
                                 type="button"
                                 key={i}
                                 className={`project-gallery-dot ${i === currentIndex ? 'active' : ''}`}
+                                aria-current={i === currentIndex}
                                 onClick={() => goTo(i)}
                                 aria-label={`Go to image ${i + 1}`}
                             />
@@ -141,7 +192,7 @@ export default function Project() {
                 <div className="project-description-points">
                     {project.description?.map((point, i) => (
                         <div className="project-desc-item" key={i}>
-                            <SiTicktick className="project-desc-icon" />
+                            <SiTicktick className="project-desc-icon" aria-hidden="true" />
                             <p className="project-desc-text">{point}</p>
                         </div>
                     ))}
@@ -164,7 +215,6 @@ export default function Project() {
                             key={i}
                             to={`/projects/${p.name.toLowerCase().replaceAll(' ', '-')}`}
                             className="related-card"
-                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         >
                             <div className='related-card-image'>
                                 {p.images.length > 0 ? (

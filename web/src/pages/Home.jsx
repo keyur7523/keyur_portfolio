@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import { SiTicktick } from "react-icons/si";
 import { FaChevronDown, FaChevronUp, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FadeIn, Reveal } from '../components/ui/Animations'
+import { spring } from '../components/ui/physics'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Home() {
@@ -98,7 +99,7 @@ export default function Home() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                                transition={{ ...spring, delay: idx * 0.05 }}
                             >
                                 <ProjectCardCompact project={project} />
                             </motion.div>
@@ -107,8 +108,8 @@ export default function Home() {
                 </div>
                 <button
                     className='projects-expand-btn'
+                    aria-expanded={projectsExpanded}
                     onClick={() => setProjectsExpanded(!projectsExpanded)}
-                    aria-label={projectsExpanded ? 'Show fewer projects' : 'Show all projects'}
                 >
                     {projectsExpanded ? (
                         <>
@@ -152,7 +153,7 @@ export default function Home() {
                                         <div className='description'>
                                             {experience.description.map((desc, i) => (
                                                 <div className='description-item' key={i}>
-                                                    <SiTicktick className='description-icon' />
+                                                    <SiTicktick className='description-icon' aria-hidden='true' />
                                                     <p className='description-text'>{desc}</p>
                                                 </div>
                                             ))}

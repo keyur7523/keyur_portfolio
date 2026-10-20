@@ -16,7 +16,6 @@ export default function ThemeToggle() {
             <motion.div
                 initial={false}
                 animate={{ rotate: theme === 'dark' ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="theme-toggle-icon"
             >
                 {theme === 'light' ? <FiMoon /> : <FiSun />}

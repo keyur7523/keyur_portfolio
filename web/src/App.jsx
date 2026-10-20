@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Project from './components/Project'
@@ -9,6 +8,8 @@ import NotFound from './pages/NotFound'
 import Layout from './components/Layout'
 import { ThemeProvider } from './context/ThemeContext'
 import { Analytics } from '@vercel/analytics/react'
+import { MotionConfig } from 'framer-motion'
+import { spring } from './components/ui/physics'
 import './App.css'
 
 
@@ -16,6 +17,8 @@ function App() {
 
   return (
     <ThemeProvider>
+      {/* reducedMotion="user": framer drops transform animations when the OS asks for reduced motion */}
+      <MotionConfig reducedMotion='user' transition={spring}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
@@ -26,6 +29,7 @@ function App() {
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
+      </MotionConfig>
       <Analytics />
     </ThemeProvider>
   )

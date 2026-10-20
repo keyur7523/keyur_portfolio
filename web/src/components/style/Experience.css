@@ -15,7 +15,7 @@
   text-align: left;
   box-sizing: border-box;
   margin: 0;
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: 700;
   color: var(--text-strong);
   white-space: nowrap;
@@ -47,7 +47,7 @@
 @media (max-width: 1024px) {
   .experience-button {
     padding: 46px 0 46px 28px;
-    font-size: 22px;
+    font-size: 1.375rem;
     /* names must wrap here too — nowrap overflows into the details column */
     white-space: normal;
   }
@@ -60,17 +60,17 @@
 @media (max-width: 768px) {
   .experience-button {
     padding: 28px 0 28px 24px;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .experience-button {
     padding: 20px 0 20px 20px;
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .experience-company {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }

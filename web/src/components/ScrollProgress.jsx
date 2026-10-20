@@ -1,27 +1,13 @@
-import { useState, useEffect } from 'react';
+import { motion, useScroll } from 'framer-motion';
 import './style/ScrollProgress.css';
 
+// Tracks scroll 1:1 on the compositor (scaleX), with no React re-render per scroll event
 export default function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const updateProgress = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setProgress(scrollPercent);
-    };
-
-    window.addEventListener('scroll', updateProgress);
-    return () => window.removeEventListener('scroll', updateProgress);
-  }, []);
+  const { scrollYProgress } = useScroll();
 
   return (
-    <div className="scroll-progress-container">
-      <div
-        className="scroll-progress-bar"
-        style={{ width: `${progress}%` }}
-      />
+    <div className="scroll-progress-container" aria-hidden="true">
+      <motion.div className="scroll-progress-bar" style={{ scaleX: scrollYProgress }} />
     </div>
   );
 }

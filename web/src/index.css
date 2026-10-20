@@ -31,6 +31,7 @@
   --success: #4ade80;
   --glow-a: rgba(124, 124, 255, 0.13);
   --glow-b: rgba(124, 124, 255, 0.06);
+  --glass-edge: rgba(255, 255, 255, 0.06);
 }
 
 /* Light theme */
@@ -58,6 +59,23 @@
   --success: #16a34a;
   --glow-a: rgba(91, 91, 240, 0.06);
   --glow-b: rgba(91, 91, 240, 0.03);
+  --glass-edge: rgba(255, 255, 255, 0.7);
+}
+
+/* Higher contrast on request: stronger secondary text and real borders */
+@media (prefers-contrast: more) {
+  :root,
+  :root.dark {
+    --text-muted: #c4c4cc;
+    --text-subtle: #a0a0aa;
+    --border: rgba(255, 255, 255, 0.28);
+  }
+
+  :root.light {
+    --text-muted: #3f4149;
+    --text-subtle: #5c5e68;
+    --border: #9a9ca6;
+  }
 }
 
 /* 2) Box-sizing + sensible defaults */
@@ -70,6 +88,13 @@
 /* Keep layout width stable when some pages show a vertical scrollbar */
 html {
   scrollbar-gutter: stable;
+}
+
+/* scrollTo() calls without a behavior inherit this, so reduced motion jumps instead of gliding */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 html, body, #root {
@@ -101,10 +126,15 @@ body::before {
 /* 3) Typography */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.5rem;
-  line-height: 1.2;
   color: var(--text-strong);
-  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
+
+/* Tracking and leading tighten as type grows; body text stays near 0 */
+h1 { line-height: 1.05; letter-spacing: -0.035em; }
+h2 { line-height: 1.1; letter-spacing: -0.03em; }
+h3 { line-height: 1.25; letter-spacing: -0.015em; }
+h4, h5, h6 { line-height: 1.3; letter-spacing: -0.01em; }
 
 /* Mono utility for eyebrows / labels */
 .mono {
@@ -114,13 +144,25 @@ h1, h2, h3, h4, h5, h6 {
 /* Card image placeholder for projects without screenshots */
 .project-image-placeholder {
   font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--text-subtle);
+  font-size: 0.875rem;
+  color: var(--text-muted);
   letter-spacing: 0.02em;
 }
 
 p {
   margin: 0 0 1rem;
+  text-wrap: pretty;
+}
+
+/* Visually hidden, still read by assistive tech */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /* 4) Links and buttons */
@@ -135,6 +177,23 @@ a:hover {
 button {
   font: inherit;
   cursor: pointer;
+}
+
+/* Feedback lives on the press, and it's instant; the release eases back on the element's own transition */
+button:not(:disabled):active,
+.featured-live:active,
+.resume-download:active,
+.footer-interaction-contact:active,
+.footer-interaction-projects:active,
+.notfound-btn:active,
+.hero-socials a:active,
+.project-github:active,
+.project-open:active,
+.project-card-compact:active,
+.related-card:active,
+.featured-media:active {
+  transform: scale(0.97);
+  transition: transform 100ms ease-out;
 }
 
 /* 5) Media + images */
@@ -187,41 +246,10 @@ a:focus-visible {
   border-radius: 4px;
 }
 
-/* 10) Lazy image loading styles */
-.lazy-image-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.lazy-image {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.lazy-image.loaded {
-  opacity: 1;
-}
-
-.lazy-image-placeholder {
-  position: absolute;
-  inset: 0;
-  background: var(--border);
-  animation: skeleton-pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes skeleton-pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.8; }
-}
-
 /* Responsive overrides */
 @media (max-width: 1024px) {
   body {
     font-size: 0.95rem;
-  }
-
-  h1, h2, h3 {
-    line-height: 1.15;
   }
 
   .container {

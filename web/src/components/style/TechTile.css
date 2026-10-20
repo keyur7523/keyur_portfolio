@@ -30,10 +30,12 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
-.tech-tile:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(0,0,0,.10), 0 6px 18px var(--accent-tint);
-    border-color: var(--accent-primary-soft);
+@media (hover: hover) {
+    .tech-tile:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0,0,0,.10), 0 6px 18px var(--accent-tint);
+        border-color: var(--accent-primary-soft);
+    }
 }
 
 .tech-icon svg {
@@ -45,7 +47,7 @@
 .tech-name,
 .tech-tile h1 {
     margin: 0;
-    font-size: 23px;
+    font-size: 1.4375rem;
     font-weight: 600;
     color: var(--text-strong);
 }
@@ -74,6 +76,6 @@
 
     .tech-name,
     .tech-tile h1 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 }

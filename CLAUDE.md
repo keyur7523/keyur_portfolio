@@ -14,6 +14,7 @@ React 19 + Vite SPA in `web/`. Live at https://keyur-portfolio-psi.vercel.app â€
 - Resume: `web/public/resume.pdf` (served at `/resume.pdf`)
 
 ## Design conventions (Apple fluid-interface principles)
+For any UI, motion, or styling work, load the `keyur-apple-design-enhanced` skill first â€” these conventions come from it.
 - Motion uses the shared `spring` (critically damped) set as the default in `<MotionConfig>` in `App.jsx`. Use `flickSpring` (slight bounce) only after a user's own flick. No eased tweens, no `mode="wait"` page exits.
 - Animate only `transform`/`opacity`. Never `transition: all`; never animate width/height.
 - Press feedback is instant (`:active` scale in `index.css`); hover transforms go inside `@media (hover: hover)`.

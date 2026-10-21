@@ -212,7 +212,7 @@
 .my-info .text .contact-status p {
     padding-top: 0;
     font-weight: 400;
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.875rem;
     color: var(--text-muted);
     margin: 0 0 8px;

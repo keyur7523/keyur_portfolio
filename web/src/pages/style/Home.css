@@ -148,11 +148,11 @@ div.my-info .text p {
 }
 
 .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.9375rem !important;
-    font-weight: 500 !important;
+    font-family: var(--font-sans);
+    font-size: 1rem !important;
+    font-weight: 600 !important;
     color: var(--accent-primary) !important;
-    letter-spacing: 0.04em;
+    letter-spacing: 0;
 }
 
 .home-page .my-info .text h1 {
@@ -180,7 +180,7 @@ div.my-info .text .accent {
     align-items: center;
     gap: 9px;
     margin-top: 26px;
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.8125rem !important;
     font-weight: 500 !important;
     color: var(--text-muted) !important;
@@ -321,11 +321,11 @@ div.projects-container {
 }
 
 .section-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    font-weight: 500;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 600;
     color: var(--accent-primary);
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     margin: 0 0 10px;
 }
 

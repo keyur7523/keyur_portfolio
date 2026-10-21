@@ -220,7 +220,7 @@ export default function Project() {
                                 {p.images.length > 0 ? (
                                     <img src={p.images[0]} alt={p.name} loading='lazy' decoding='async' />
                                 ) : (
-                                    <span className='project-image-placeholder'>$ git clone {p.name.toLowerCase()}</span>
+                                    <span className='project-image-placeholder'>{p.name}</span>
                                 )}
                             </div>
                             <span>{p.name}</span>

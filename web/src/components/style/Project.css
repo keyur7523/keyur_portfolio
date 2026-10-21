@@ -170,7 +170,7 @@
 .project-highlight-chip {
     padding: 8px 16px;
     border-radius: 9999px;
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--accent);
@@ -437,11 +437,8 @@
 }
 
 .related-card-image .project-image-placeholder {
-    font-size: 0.8125rem;
-    font-family: var(--font-mono);
-    color: var(--text-muted);
-    padding: 0 16px;
-    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 13px;
 }
 
 .related-card span {

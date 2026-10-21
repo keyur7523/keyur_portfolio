@@ -2,13 +2,14 @@ import './style/FeaturedProject.css'
 import { Link } from 'react-router-dom'
 import { FaGithub } from 'react-icons/fa'
 import { LuExternalLink } from 'react-icons/lu'
+import { SiTicktick } from 'react-icons/si'
 
 export default function FeaturedProject({ project }) {
     const slug = project.name.toLowerCase().replaceAll(' ', '-')
     return (
         <article className='featured-project'>
             <div className='featured-info'>
-                <p className='featured-label'>★ featured build</p>
+                <p className='featured-label'>Featured build</p>
                 <h3 className='featured-name'>
                     <Link to={`/projects/${slug}`}>{project.name}</Link>
                 </h3>
@@ -16,7 +17,7 @@ export default function FeaturedProject({ project }) {
                 {project.highlights && (
                     <ul className='featured-highlights'>
                         {project.highlights.map((h, i) => (
-                            <li key={i}>{h}</li>
+                            <li key={i}><SiTicktick className='featured-check' aria-hidden='true' />{h}</li>
                         ))}
                     </ul>
                 )}

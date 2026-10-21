@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
                 <div className='text'>
                     <FadeIn delay={0.1}>
-                        <p className='hero-eyebrow'>~/ keyur — software engineer</p>
+                        <p className='hero-eyebrow'>Software engineer</p>
                     </FadeIn>
                     <FadeIn delay={0.2}>
                         <h1>Building <span className='accent'>AI systems</span><br />that ship.</h1>
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
             <div className='projects-container'>
                 <Reveal>
-                    <p className='section-eyebrow'>01 &mdash; things I've built</p>
+                    <p className='section-eyebrow'>Things I've built</p>
                     <h2 className='projects-title'>Projects<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.08}>
@@ -119,7 +119,7 @@ export default function Home() {
             
             <div className='experience-container'>
                 <Reveal>
-                    <p className='section-eyebrow'>02 &mdash; where I've worked</p>
+                    <p className='section-eyebrow'>Where I've worked</p>
                     <h2 className='experience-title'>Experience<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -160,7 +160,7 @@ export default function Home() {
             </div>
             <div className='skills-container'>
                 <Reveal>
-                    <p className='section-eyebrow'>03 &mdash; what I work with</p>
+                    <p className='section-eyebrow'>What I work with</p>
                     <h2 className='skills-title'>Skills<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -169,7 +169,7 @@ export default function Home() {
             </div>
             <div className='mystory-container'>
                 <Reveal>
-                    <p className='section-eyebrow'>04 &mdash; how I got here</p>
+                    <p className='section-eyebrow'>How I got here</p>
                     <h2 className='mystory-title'>My Story<span className='accent'>.</span></h2>
                 </Reveal>
                 <Reveal delay={0.1}>

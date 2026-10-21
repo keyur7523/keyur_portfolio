@@ -88,7 +88,7 @@
 .project-card-compact-tag {
     padding: 5px 11px;
     border-radius: 8px;
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.7188rem;
     font-weight: 500;
     color: var(--accent);

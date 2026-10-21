@@ -1,94 +1,64 @@
-/* Terminal-window skills panel */
-.terminal {
+/* Skills: one flat card per category, brand-coloured icons on neutral pills */
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 24px 24px 26px;
     border-radius: 16px;
     background: var(--bg);
     border: 1px solid var(--border);
-    overflow: hidden;
 }
 
-.terminal-bar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 18px 24px 4px;
+.skill-card-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-strong);
 }
 
-.terminal-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-.terminal-dot.red { background: #ff5f57; }
-.terminal-dot.yellow { background: #febc2e; }
-.terminal-dot.green { background: #28c840; }
-
-.terminal-title {
-    margin-left: 12px;
-    font-family: var(--font-mono);
-    font-size: 0.7812rem;
-    color: var(--text-subtle);
-}
-
-.terminal-body {
-    padding: 26px 28px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-}
-
-.term-cmd {
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin: 0 0 14px;
-}
-
-.term-prompt {
-    color: var(--success);
-    margin-right: 8px;
-}
-
-.term-chips {
+.skill-chips {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
 }
 
-.term-chip {
+.skill-chip {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 9px 15px;
-    border-radius: 12px;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--text-strong);
-    background: var(--bg);
+    background: var(--surface-muted);
     border: 1px solid var(--border);
-    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.term-chip svg {
-    width: 15px;
-    height: 15px;
-    color: var(--accent-primary);
-}
-
-@media (hover: hover) {
-    .term-chip:hover {
-        color: var(--accent-primary);
-        transform: translateY(-1px);
-    }
+.skill-chip svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
-    .terminal-body {
-        padding: 20px 18px 24px;
-        gap: 22px;
+    .skill-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    .term-chip {
-        font-size: 0.75rem;
-        padding: 7px 11px;
+    .skill-card {
+        padding: 20px;
+    }
+
+    .skill-chip {
+        font-size: 0.8125rem;
+        padding: 7px 12px;
     }
 }

@@ -27,21 +27,25 @@ export const skills = [
     {
         category: 'Languages',
         tech: ['Python', 'JavaScript', 'TypeScript', 'SQL/noSQL', 'HTML', 'CSS'],
-        icons: [FaPython, IoLogoJavascript, SiTypescript, GrMysql, ImHtmlFive, FaCss3Alt]
+        icons: [FaPython, IoLogoJavascript, SiTypescript, GrMysql, ImHtmlFive, FaCss3Alt],
+        colors: ['#3776AB', '#D4B000', '#3178C6', '#4479A1', '#E34F26', '#1572B6']
     },
     {
         category: 'Frameworks',
         tech: ['React', 'Next.js', 'Flask', 'FastAPI', 'Node.js', 'Express', 'TailwindCSS'],
-        icons: [FaReact, RiNextjsFill, SiFlask, SiFastapi, FaNode, SiExpress, RiTailwindCssFill]
+        icons: [FaReact, RiNextjsFill, SiFlask, SiFastapi, FaNode, SiExpress, RiTailwindCssFill],
+        colors: ['#149ECA', null, null, '#009688', '#5FA04E', null, '#06B6D4']
     },
     {
         category: 'Cloud / Infra',
         tech: ['AWS', 'Docker', 'Github', 'Vercel', 'Render', 'Railway', 'Heroku'],
-        icons: [FaAws, FaDocker, FaGithub, IoLogoVercel, SiRender, SiRailway, SiHeroku]
+        icons: [FaAws, FaDocker, FaGithub, IoLogoVercel, SiRender, SiRailway, SiHeroku],
+        colors: ['#FF9900', '#2496ED', null, null, null, null, '#6762A6']
     },
     {
         category: 'AI / ML',
         tech: ['Hugging Face', 'OpenAI', 'Anthropic', 'LangChain/LangGraph'],
-        icons: [SiHuggingface, SiOpenai, SiAnthropic, SiLangchain]
+        icons: [SiHuggingface, SiOpenai, SiAnthropic, SiLangchain],
+        colors: ['#FF9D00', null, '#D97757', null]
     }
 ]

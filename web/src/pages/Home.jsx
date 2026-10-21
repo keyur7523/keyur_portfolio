@@ -1,5 +1,6 @@
 import './style/Home.css'
-import profilePicture from '../images/profile_avatar.jpg'
+import heroWide from '../images/hero_wide.webp'
+import heroTall from '../images/hero_tall.webp'
 import ProjectCardCompact from './../components/ProjectCardCompact'
 import Experience from './../components/Experience'
 import Skills from './../components/Skills'
@@ -30,22 +31,15 @@ export default function Home() {
 
     return (
         <div className='home-page'>
-            <div className='my-info'>
+            <div className='my-info hero'>
+                {/* Photo fills the hero; its left side fades into the page so the copy sits on it */}
+                <picture className='hero-photo'>
+                    <source media='(max-width: 768px)' srcSet={heroTall} width='640' height='560' />
+                    <img src={heroWide} alt='Keyur Pawaskar standing outside San Francisco City Hall' width='1066' height='650' fetchPriority='high' />
+                </picture>
                 <div className='text'>
                     <FadeIn delay={0.1}>
-                        <div className='hero-id'>
-                            <span className='hero-avatar-frame'>
-                                <img
-                                    className='hero-avatar'
-                                    src={profilePicture}
-                                    alt='Keyur Pawaskar'
-                                    width='96'
-                                    height='96'
-                                    fetchPriority='high'
-                                />
-                            </span>
-                            <p className='hero-eyebrow'>~/ keyur — software engineer</p>
-                        </div>
+                        <p className='hero-eyebrow'>~/ keyur — software engineer</p>
                     </FadeIn>
                     <FadeIn delay={0.2}>
                         <h1>Building <span className='accent'>AI systems</span><br />that ship.</h1>

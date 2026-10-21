@@ -16,41 +16,99 @@ div.my-info .text {
     height: 100%;
 }
 
-.hero-id {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding-top: 40px;
+/* Photo hero: the image spans the row, faded into the page on the left (under the copy), top, bottom and right */
+.my-info.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 680px;
+    margin-top: 24px;
 }
 
-.hero-id .hero-eyebrow {
-    padding-top: 0 !important;
-    margin: 0;
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 }
 
-.hero-avatar-frame {
-    width: 108px;
-    height: 108px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-    border: 1px solid var(--border);
-}
-
-.hero-avatar {
+.hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 36% 50%; /* center the head in the panorama crop */
-    /* mirror so the gaze points right, into the page; zoom in on the face */
-    transform: scaleX(-1) scale(1.7);
-    transform-origin: 50% 60%;
+    object-position: 75% 40%;
+}
+
+.hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        /* eased ramp: a straight linear fade shows a visible edge where it starts */
+        linear-gradient(90deg,
+            var(--bg) 0%,
+            var(--bg) 34%,
+            color-mix(in srgb, var(--bg) 88%, transparent) 42%,
+            color-mix(in srgb, var(--bg) 62%, transparent) 50%,
+            color-mix(in srgb, var(--bg) 30%, transparent) 58%,
+            color-mix(in srgb, var(--bg) 8%, transparent) 66%,
+            transparent 72%),
+        linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 14%, transparent 30%),
+        linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 7%, transparent 16%),
+        linear-gradient(270deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 5%, transparent 12%);
+}
+
+/* dim the photo a touch so it sits back on the near-black page */
+:root.dark .hero-photo img {
+    filter: brightness(0.8);
+}
+
+.my-info.hero .text {
+    width: 46%;
+    padding: 72px 0;
+}
+
+.home-page .my-info.hero .text h1 {
+    font-size: clamp(2.75rem, 4.6vw, 4.5rem);
+}
+
+/* The status pill runs wider than the faded zone; give it its own ground */
+.my-info.hero .hero-eyebrow {
+    padding-top: 0;
+    margin: 0;
+}
+
+.my-info.hero .hero-status {
+    background: var(--bg);
 }
 
 @media (max-width: 768px) {
-    .hero-avatar-frame {
-        width: 76px;
-        height: 76px;
+    /* Stacked: a tighter portrait crop on top, melting down into the copy */
+    .my-info.hero {
+        min-height: 0;
+    }
+
+    .hero-photo {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        aspect-ratio: 640 / 560;
+    }
+
+    .hero-photo img {
+        object-position: 50% 0%;
+    }
+
+    .hero-photo::after {
+        background:
+            linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 18%, transparent 38%),
+            linear-gradient(180deg, var(--bg) 0%, transparent 10%),
+            linear-gradient(90deg, var(--bg) 0%, transparent 8%),
+            linear-gradient(270deg, var(--bg) 0%, transparent 8%);
+    }
+
+    .my-info.hero .text {
+        width: 100%;
+        padding: 0;
+        margin-top: -64px;
     }
 }
 

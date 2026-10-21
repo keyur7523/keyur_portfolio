@@ -17,12 +17,12 @@ div.my-info .text {
     height: 100%;
 }
 
-/* Photo hero: the whole portrait sits flush against the navbar and the window's right edge;
-   only its left side fades into the page, under the copy */
+/* Photo hero: the portrait fills the right 60% of the window, flush against the navbar and the
+   window's right edge; only its left side fades into the page, finishing around the middle */
 .my-info.hero {
     position: relative;
     isolation: isolate;
-    min-height: 860px;
+    min-height: 960px;
     margin-top: 0; /* Contact.css's .my-info margin would push the photo off the navbar */
 }
 
@@ -30,11 +30,9 @@ div.my-info .text {
     position: absolute;
     top: 0;
     bottom: 0;
-    /* break out of the centred page column to the viewport edge */
+    /* break out of the centred page column: from 40% of the window to its right edge */
+    left: calc(50% - 10vw);
     right: calc(50% - 50vw);
-    aspect-ratio: 1066 / 1600;
-    /* never start under the copy column (46%): on narrower screens trim the photo's sides instead */
-    max-width: calc(54% + 50vw - 50%);
     z-index: -1;
 }
 
@@ -42,7 +40,8 @@ div.my-info .text {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 72% 50%;
+    /* keep him head to toe; the top of the dome is what gets trimmed */
+    object-position: 70% 92%;
 }
 
 .hero-photo::after {
@@ -50,13 +49,14 @@ div.my-info .text {
     position: absolute;
     inset: 0;
     /* eased ramp: a straight linear fade shows a visible edge where it starts */
+    /* the photo starts at 40% of the window, so 25% of its width ends the fade at ~55% */
     background: linear-gradient(90deg,
         var(--bg) 0%,
-        color-mix(in srgb, var(--bg) 85%, transparent) 10%,
-        color-mix(in srgb, var(--bg) 55%, transparent) 22%,
-        color-mix(in srgb, var(--bg) 25%, transparent) 34%,
-        color-mix(in srgb, var(--bg) 6%, transparent) 44%,
-        transparent 52%);
+        color-mix(in srgb, var(--bg) 85%, transparent) 6%,
+        color-mix(in srgb, var(--bg) 55%, transparent) 12%,
+        color-mix(in srgb, var(--bg) 25%, transparent) 18%,
+        color-mix(in srgb, var(--bg) 6%, transparent) 23%,
+        transparent 27%);
 }
 
 /* dim the photo a touch so it sits back on the near-black page */
@@ -93,10 +93,11 @@ div.my-info .text {
         position: relative;
         top: auto;
         bottom: auto;
+        left: auto;
         right: auto;
         width: 100vw;
         margin-left: calc(50% - 50vw);
-        max-width: none;
+        aspect-ratio: 1066 / 1600;
     }
 
     .hero-photo::after {

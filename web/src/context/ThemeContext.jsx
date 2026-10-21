@@ -5,10 +5,10 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
     const [theme, setTheme] = useState(() => {
-        // Dark-first: dark unless the user explicitly chose light.
-        // v2 key — old 'theme' values were auto-saved defaults, not choices.
-        const saved = localStorage.getItem('theme-v2');
-        return saved === 'light' ? 'light' : 'dark';
+        // Light-first: light unless the user chose dark.
+        // v3 key — the redesign resets earlier saved choices once.
+        const saved = localStorage.getItem('theme-v3');
+        return saved === 'dark' ? 'dark' : 'light';
     });
 
     useLayoutEffect(() => {
@@ -20,7 +20,7 @@ export function ThemeProvider({ children }) {
         root.classList.add(theme);
 
         // Save to localStorage
-        localStorage.setItem('theme-v2', theme);
+        localStorage.setItem('theme-v3', theme);
     }, [theme]);
 
     const toggleTheme = () => {

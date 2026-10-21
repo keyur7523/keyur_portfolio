@@ -34,10 +34,9 @@ div.my-info .text {
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
-    box-shadow:
-        0 0 0 3px var(--profile-ring),
-        0 0 0 4.5px var(--accent-ring),
-        0 8px 30px var(--accent-shadow);
+    /* photo set in a raised neumorphic ring */
+    border: 5px solid var(--bg);
+    box-shadow: var(--neu-raised);
 }
 
 .hero-avatar {
@@ -78,10 +77,7 @@ div.my-info .text p {
 }
 
 div.my-info .text .accent {
-    background: linear-gradient(100deg, var(--accent), var(--accent-primary) 60%, var(--accent-primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--accent-primary);
 }
 
 .hero-subtitle {
@@ -100,10 +96,10 @@ div.my-info .text .accent {
     font-size: 0.8125rem !important;
     font-weight: 500 !important;
     color: var(--text-muted) !important;
-    padding: 9px 16px !important;
-    border: 1px solid var(--border);
+    padding: 10px 18px !important;
+    border: 1px solid var(--edge);
     border-radius: 9999px;
-    background: var(--surface-muted);
+    box-shadow: var(--neu-inset-sm);
 }
 
 .status-dot {
@@ -111,7 +107,6 @@ div.my-info .text .accent {
     height: 7px;
     border-radius: 50%;
     background: var(--success);
-    box-shadow: 0 0 10px var(--success);
     flex-shrink: 0;
 }
 
@@ -120,12 +115,13 @@ div.my-info .text .contact-button,
 div.my-info .text .projects-button {
     margin-top: 24px;
     padding: 14px 22px;
-    border-radius: 14px;
+    border-radius: 16px;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1;
     cursor: pointer;
-    transition: transform 120ms ease, background-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+    box-shadow: var(--neu-raised-sm);
+    transition: transform 120ms ease, background-color 120ms ease, color 120ms ease;
     position: relative;
     overflow: hidden;
 }
@@ -155,9 +151,8 @@ div.my-info .text .projects-button::before {
 
 div.my-info .text .contact-button {
     background-color: var(--accent-primary);
-    border: 2px solid var(--accent-primary);
+    border: 1px solid var(--accent-primary);
     color: var(--accent-contrast);
-    box-shadow: 0 0 28px var(--accent-shadow);
     margin-right: 24px;
 }
 @media (hover: hover) {
@@ -168,17 +163,13 @@ div.my-info .text .contact-button {
 }
 
 div.my-info .text .projects-button {
-    background-color: transparent;
+    background-color: var(--bg);
     color: var(--text-strong);
-    border: 2px solid var(--border);
-}
-div.my-info .text .projects-button:hover {
-    border-color: var(--accent-ring);
+    border: 1px solid var(--edge);
 }
 @media (hover: hover) {
     div.my-info .text .projects-button:hover {
-        background-color: var(--surface-muted);
-        color: var(--text-strong);
+        color: var(--accent-primary);
         transform: translateY(-1px);
     }
 }
@@ -199,11 +190,8 @@ div.my-info .image img {
     object-fit: cover; /* crop to circle nicely */
     object-position: 35% 40%; /* shift content left inside circle */
     border-radius: 50%;
-    /* slim concentric ring + ambient glow */
-    box-shadow:
-        0 0 0 8px var(--profile-ring),
-        0 0 0 9px var(--accent-ring),
-        0 24px 90px var(--accent-shadow);
+    border: 12px solid var(--bg);
+    box-shadow: var(--neu-raised);
 }
 
 .hero-socials {
@@ -219,16 +207,16 @@ div.my-info .image img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1.5px solid var(--border);
+    border: 1px solid var(--edge);
     color: var(--text-muted);
     font-size: 1.25rem;
-    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--neu-raised-sm);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 @media (hover: hover) {
     .hero-socials a:hover {
         color: var(--accent-primary);
-        border-color: var(--accent-ring);
         transform: translateY(-2px);
         opacity: 1;
     }
@@ -287,20 +275,19 @@ div.projects-grid {
     gap: 10px;
     margin: 40px auto 0;
     padding: 14px 28px;
-    background: transparent;
-    border: 2px solid var(--border);
-    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
+    border-radius: 16px;
     color: var(--text-strong);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--neu-raised-sm);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .projects-expand-btn:hover {
-    border-color: var(--accent-primary);
     color: var(--accent-primary);
-    background: var(--accent-tint);
 }
 
 .projects-expand-btn svg {
@@ -333,6 +320,7 @@ div.experience-grid {
     display: grid;
     grid-template-columns: minmax(420px, 40%) minmax(0, 1fr);
     align-items: flex-start;
+    column-gap: 64px;
     width: 100%;
 }
 
@@ -340,7 +328,7 @@ div.experience-buttons-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+    gap: 18px;
     width: 100%;
 }
 
@@ -348,9 +336,11 @@ div.experience-buttons-card {
     width: 100%;
     min-width: 0;
     min-height: 420px;
-    padding: 45px 48px 0;
-    border-radius: 32px;
-    margin-left: 200px;
+    padding: 45px 48px 40px;
+    border-radius: 28px;
+    margin-left: 0;
+    border: 1px solid var(--edge);
+    box-shadow: var(--neu-raised);
     display: flex;
     flex-direction: column;
 }
@@ -454,10 +444,8 @@ div.experience-buttons-card {
 
 /* Responsive overrides */
 @media (max-width: 1280px) {
-    /* the fixed 200px spacer squeezes the details panel on small desktops */
     .experience-details {
-        margin-left: 48px;
-        padding: 40px 36px 0;
+        padding: 40px 36px;
     }
 }
 

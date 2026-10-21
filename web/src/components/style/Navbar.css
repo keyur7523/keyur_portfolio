@@ -9,13 +9,11 @@ nav.navbar {
     top: 16px;
     z-index: 100;
     padding: 12px 22px;
-    border-radius: 16px;
-    background: var(--surface-glass);
-    -webkit-backdrop-filter: blur(14px) saturate(180%);
-    backdrop-filter: blur(14px) saturate(180%);
-    border: 1px solid var(--border);
-    /* bright top edge: light catching the material */
-    box-shadow: inset 0 1px 0 var(--glass-edge);
+    border-radius: 20px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
+    /* a soft slab raised out of the page */
+    box-shadow: var(--neu-raised);
 }
 
 /* Skip navigation link for accessibility */
@@ -25,7 +23,7 @@ nav.navbar {
     left: 50%;
     transform: translateX(-50%);
     background: var(--accent-primary);
-    color: white;
+    color: var(--accent-contrast);
     padding: 12px 24px;
     border-radius: 0 0 8px 8px;
     z-index: 1001;
@@ -50,7 +48,7 @@ ul.navbar-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 8px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -62,28 +60,34 @@ ul.navbar-links {
 
 /* link defaults + active */
 ul.navbar-links a {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 12px;
     text-decoration: none;
     color: var(--text-muted);
 }
 ul.navbar-links a:hover {
     color: var(--accent-primary);
 }
+/* the current page sits pressed into the bar */
 ul.navbar-links a.active {
     color: var(--accent-primary);
+    box-shadow: var(--neu-inset-sm);
 }
 
 /* Resume: outlined pill so it reads as an action, not a route */
 ul.navbar-links a.navbar-resume {
-    padding: 6px 14px;
-    border: 1.5px solid var(--accent-ring);
+    margin-left: 8px;
+    padding: 8px 18px;
     border-radius: 9999px;
-    color: var(--accent);
+    background: var(--accent-primary);
+    color: var(--accent-contrast);
     font-size: 1rem;
+    box-shadow: var(--neu-raised-sm);
 }
 ul.navbar-links a.navbar-resume:hover {
-    border-color: var(--accent-primary);
-    background: var(--accent-tint);
-    color: var(--accent-primary);
+    background: var(--accent-primary-hover);
+    color: var(--accent-contrast);
 }
 
 /* right-aligned actions (theme toggle + contact) */
@@ -182,7 +186,7 @@ ul.navbar-links a.navbar-resume:hover {
     }
 }
 
-/* Mobile menu: a thicker glass panel anchored under the toggle */
+/* Mobile menu: a raised panel anchored under the toggle */
 .navbar-menu {
     position: absolute;
     top: calc(100% + 8px);
@@ -194,12 +198,10 @@ ul.navbar-links a.navbar-resume:hover {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    border-radius: 16px;
-    background: var(--surface-glass);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid var(--border);
-    box-shadow: inset 0 1px 0 var(--glass-edge), 0 24px 60px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
+    box-shadow: var(--neu-raised);
     transform-origin: top right;
 }
 
@@ -213,10 +215,13 @@ ul.navbar-links a.navbar-resume:hover {
     text-decoration: none;
 }
 
-.navbar-menu a:hover,
+.navbar-menu a:hover {
+    color: var(--accent-primary);
+}
+
 .navbar-menu a.active {
     color: var(--accent-primary);
-    background: var(--accent-tint);
+    box-shadow: var(--neu-inset-sm);
 }
 
 .navbar-menu a.navbar-resume {
@@ -228,24 +233,7 @@ ul.navbar-links a.navbar-resume:hover {
     position: fixed;
     inset: 0;
     z-index: 99;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-@media (prefers-reduced-transparency: reduce) {
-    nav.navbar,
-    .navbar-menu {
-        background: var(--surface);
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-    }
-}
-
-@media (prefers-contrast: more) {
-    nav.navbar,
-    .navbar-menu {
-        background: var(--surface);
-        border-color: var(--text-muted);
-    }
+    background: rgba(17, 20, 24, 0.35);
 }
 
 @media (max-width: 480px) {

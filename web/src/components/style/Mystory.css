@@ -17,20 +17,19 @@
 
 .mystory-toggle {
     margin-top: 16px;
-    padding: 10px 20px;
-    background: transparent;
-    border: 2px solid var(--accent-primary);
+    padding: 12px 22px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
     color: var(--accent-primary);
-    border-radius: 8px;
+    border-radius: 14px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--neu-raised-sm);
 }
 
 .mystory-toggle:hover {
-    background: var(--accent-primary);
-    color: white;
+    color: var(--accent-primary-hover);
 }
 
 /* Responsive overrides */

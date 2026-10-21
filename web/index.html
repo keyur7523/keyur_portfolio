@@ -7,14 +7,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Fonts: Instrument Sans (text) + JetBrains Mono (labels/code) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- Primary Meta Tags -->
     <title>Keyur Pawaskar | Software Engineer</title>
     <meta name="title" content="Keyur Pawaskar | Software Engineer" />
@@ -35,7 +27,8 @@
     <meta property="twitter:image" content="https://keyur-portfolio-psi.vercel.app/og-image.jpg" />
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#0a0a0c" />
+    <meta name="theme-color" content="#eef1f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1e2127" media="(prefers-color-scheme: dark)" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://keyur-portfolio-psi.vercel.app/" />
@@ -61,10 +54,9 @@
     <script>
       (function () {
         try {
-          /* v2 key: old 'theme' values were auto-saved, not chosen — start
-             everyone dark-first once, then respect their toggle choice */
-          var saved = localStorage.getItem('theme-v2');
-          var theme = saved === 'light' ? 'light' : 'dark';
+          /* v3 key: the redesign starts everyone on light once, then respects their toggle choice */
+          var saved = localStorage.getItem('theme-v3');
+          var theme = saved === 'dark' ? 'dark' : 'light';
           document.documentElement.classList.add(theme);
         } catch (e) {}
       })();

@@ -24,17 +24,15 @@
     flex-direction: column;
     gap: 12px;
     padding: 50px 16px;
-    border-radius: 14px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    border-radius: 24px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
+    box-shadow: var(--neu-raised);
+    transition: transform 180ms ease;
 }
 @media (hover: hover) {
     .tech-tile:hover {
         transform: translateY(-2px);
-        box-shadow: 0 12px 28px rgba(0,0,0,.10), 0 6px 18px var(--accent-tint);
-        border-color: var(--accent-primary-soft);
     }
 }
 

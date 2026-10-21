@@ -1,80 +1,87 @@
-/* 1) Variables + color scheme — "Dark Engineering" design language */
-/* Shared type tokens */
+/* 1) Variables + color scheme — soft neumorphic surfaces on a light, Apple-like base */
+/* System font first: SF Pro on Apple devices ships optical sizing and tracking tables */
 :root {
-  --font-sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Dark theme (default) */
+/* Light theme (default). Neumorphic surfaces share the page colour and get their
+   shape from a light shadow (top-left) and a dark shadow (bottom-right). */
 :root,
-:root.dark {
-  color-scheme: dark;
-  --bg: #0a0a0c;
-  --text: #c9c9d1;
-  --accent: #9d9dff;
-  --accent-primary: #7c7cff;
-  --accent-primary-hover: #9d9dff;
-  --accent-primary-soft: rgba(124, 124, 255, 0.45);
-  --accent-tint: rgba(124, 124, 255, 0.1);
-  --accent-shadow: rgba(124, 124, 255, 0.25);
-  --accent-ring: rgba(124, 124, 255, 0.32);
-  --accent-contrast: #0a0a0c;
-  --surface: #141418;
-  --surface-muted: #17171c;
-  --surface-raised: #1a1a21;
-  --surface-glass: rgba(20, 20, 24, 0.72);
-  --text-strong: #ededf0;
-  --text-muted: #9a9aa3;
-  --text-subtle: #6b6b76;
-  --border: rgba(255, 255, 255, 0.09);
-  --profile-ring: #0a0a0c;
-  --success: #4ade80;
-  --glow-a: rgba(124, 124, 255, 0.13);
-  --glow-b: rgba(124, 124, 255, 0.06);
-  --glass-edge: rgba(255, 255, 255, 0.06);
-}
-
-/* Light theme */
 :root.light {
   color-scheme: light;
-  --bg: #fbfbfd;
-  --text: #3f4149;
-  --accent: #5151e0;
-  --accent-primary: #5b5bf0;
-  --accent-primary-hover: #4747e0;
-  --accent-primary-soft: rgba(91, 91, 240, 0.35);
-  --accent-tint: rgba(91, 91, 240, 0.07);
-  --accent-shadow: rgba(91, 91, 240, 0.25);
-  --accent-ring: rgba(91, 91, 240, 0.3);
+  --bg: #eef1f5;
+  --text: #2b3038;
+  --accent: #1a47b8;
+  --accent-primary: #1a47b8;
+  --accent-primary-hover: #153a99;
+  --accent-primary-soft: rgba(26, 71, 184, 0.35);
+  --accent-tint: rgba(26, 71, 184, 0.07);
+  --accent-shadow: rgba(26, 71, 184, 0.25);
+  --accent-ring: rgba(26, 71, 184, 0.3);
   --accent-contrast: #ffffff;
-  --surface: #ffffff;
-  --surface-muted: #f4f4f8;
-  --surface-raised: #ffffff;
-  --surface-glass: rgba(255, 255, 255, 0.75);
-  --text-strong: #131316;
-  --text-muted: #5c5e68;
-  --text-subtle: #8b8d98;
-  --border: #e7e7ee;
-  --profile-ring: #fbfbfd;
-  --success: #16a34a;
-  --glow-a: rgba(91, 91, 240, 0.06);
-  --glow-b: rgba(91, 91, 240, 0.03);
-  --glass-edge: rgba(255, 255, 255, 0.7);
+  --surface: #eef1f5;
+  --surface-muted: #e7ebf0;
+  --surface-raised: #f3f5f8;
+  --text-strong: #111418;
+  --text-muted: #4a515c;
+  --text-subtle: #5f6672;
+  --border: #d5dbe3;
+  --success: #15803d;
+  --neu-light: #ffffff;
+  --neu-dark: rgba(150, 164, 186, 0.55);
+  --edge: transparent;
 }
 
-/* Higher contrast on request: stronger secondary text and real borders */
+/* Dark theme: the same shapes, carved from graphite */
+:root.dark {
+  color-scheme: dark;
+  --bg: #1e2127;
+  --text: #d4d8de;
+  --accent: #8fb0ff;
+  --accent-primary: #8fb0ff;
+  --accent-primary-hover: #a9c2ff;
+  --accent-primary-soft: rgba(143, 176, 255, 0.4);
+  --accent-tint: rgba(143, 176, 255, 0.08);
+  --accent-shadow: rgba(143, 176, 255, 0.2);
+  --accent-ring: rgba(143, 176, 255, 0.32);
+  --accent-contrast: #10131a;
+  --surface: #1e2127;
+  --surface-muted: #1a1d22;
+  --surface-raised: #23272e;
+  --text-strong: #f1f3f6;
+  --text-muted: #aab1bb;
+  --text-subtle: #8f97a3;
+  --border: rgba(255, 255, 255, 0.08);
+  --success: #4ade80;
+  --neu-light: rgba(255, 255, 255, 0.045);
+  --neu-dark: rgba(0, 0, 0, 0.5);
+  --edge: transparent;
+}
+
+/* Shadow recipes, built from the per-theme light/dark pair */
+:root {
+  --neu-raised: 8px 8px 20px var(--neu-dark), -8px -8px 20px var(--neu-light);
+  --neu-raised-sm: 4px 4px 10px var(--neu-dark), -4px -4px 10px var(--neu-light);
+  --neu-inset: inset 4px 4px 9px var(--neu-dark), inset -4px -4px 9px var(--neu-light);
+  --neu-inset-sm: inset 2px 2px 5px var(--neu-dark), inset -2px -2px 5px var(--neu-light);
+}
+
+/* Higher contrast on request: shadows alone don't define a shape, so draw real edges */
 @media (prefers-contrast: more) {
   :root,
-  :root.dark {
-    --text-muted: #c4c4cc;
-    --text-subtle: #a0a0aa;
-    --border: rgba(255, 255, 255, 0.28);
+  :root.light {
+    --text-muted: #2b3038;
+    --text-subtle: #3f4650;
+    --border: #7d8592;
+    --edge: #7d8592;
   }
 
-  :root.light {
-    --text-muted: #3f4149;
-    --text-subtle: #5c5e68;
-    --border: #9a9ca6;
+  :root.dark {
+    --text-muted: #d4d8de;
+    --text-subtle: #b6bdc7;
+    --border: rgba(255, 255, 255, 0.4);
+    --edge: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -109,18 +116,6 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Ambient background atmosphere */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(700px 380px at 18% -5%, var(--glow-a), transparent 62%),
-    radial-gradient(600px 420px at 88% 70%, var(--glow-b), transparent 60%);
 }
 
 /* 3) Typography */
@@ -194,6 +189,22 @@ button:not(:disabled):active,
 .featured-media:active {
   transform: scale(0.97);
   transition: transform 100ms ease-out;
+}
+
+/* Raised neutral controls also sink into the surface on press (instant, like the scale) */
+.projects-button:active,
+.projects-expand-btn:active,
+.theme-toggle:active,
+.mystory-toggle:active,
+.footer-interaction-projects:active,
+.notfound-btn.secondary:active,
+.hero-socials a:active,
+.social-links a:active,
+.project-copy-link:active,
+.project-open:active,
+.experience-button:active,
+.project-gallery-arrow:not(:disabled):active {
+  box-shadow: var(--neu-inset-sm);
 }
 
 /* 5) Media + images */

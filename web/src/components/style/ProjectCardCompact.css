@@ -15,19 +15,14 @@
 .project-card-compact-image {
     overflow: hidden;
     width: 100%;
-    border-radius: 16px;
-    background: var(--surface-muted);
-    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
     aspect-ratio: 16 / 10;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.project-card-compact:hover .project-card-compact-image {
-    box-shadow: 0 16px 40px var(--accent-tint);
-    border-color: var(--accent-ring);
+    box-shadow: var(--neu-raised);
 }
 
 .project-card-compact-image img {
@@ -35,6 +30,7 @@
     height: auto;
     display: block;
     object-fit: cover;
+    border-radius: 8px;
     transition: transform 0.4s ease;
 }
 
@@ -91,14 +87,14 @@
 }
 
 .project-card-compact-tag {
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 5px 11px;
+    border-radius: 8px;
     font-family: var(--font-mono);
     font-size: 0.7188rem;
     font-weight: 500;
     color: var(--accent);
-    background: var(--accent-tint);
-    border: 1px solid var(--accent-ring);
+    border: 1px solid var(--edge);
+    box-shadow: var(--neu-inset-sm);
     letter-spacing: 0.01em;
 }
 
@@ -109,7 +105,7 @@
     }
 
     .project-card-compact-image {
-        border-radius: 14px;
+        border-radius: 20px;
     }
 }
 
@@ -120,7 +116,7 @@
 
     .project-card-compact-image {
         aspect-ratio: 16 / 11;
-        border-radius: 12px;
+        border-radius: 18px;
     }
 
     .project-card-compact {
@@ -139,6 +135,6 @@
     }
 
     .project-card-compact-image {
-        border-radius: 10px;
+        border-radius: 16px;
     }
 }

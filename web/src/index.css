@@ -1,7 +1,7 @@
 /* 1) Variables + color scheme — flat, airy surfaces (Groww-inspired) with a blue→violet accent */
-/* System font first: SF Pro on Apple devices ships optical sizing and tracking tables */
+/* Plus Jakarta Sans, falling back to the system font while it loads */
 :root {
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 

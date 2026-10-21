@@ -1,5 +1,6 @@
 div.home-page {
-    margin-top: 100px;
+    /* the hero photo starts right under the navbar */
+    margin-top: 0;
     min-height: 100vh; /* allow page to grow with content so footer doesn't overlap */
 }
 
@@ -16,17 +17,24 @@ div.my-info .text {
     height: 100%;
 }
 
-/* Photo hero: the image spans the row, faded into the page on the left (under the copy), top, bottom and right */
+/* Photo hero: the whole portrait sits flush against the navbar and the window's right edge;
+   only its left side fades into the page, under the copy */
 .my-info.hero {
     position: relative;
     isolation: isolate;
-    min-height: 680px;
-    margin-top: 24px;
+    min-height: 860px;
+    margin-top: 0; /* Contact.css's .my-info margin would push the photo off the navbar */
 }
 
 .hero-photo {
     position: absolute;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    /* break out of the centred page column to the viewport edge */
+    right: calc(50% - 50vw);
+    aspect-ratio: 1066 / 1600;
+    /* never start under the copy column (46%): on narrower screens trim the photo's sides instead */
+    max-width: calc(54% + 50vw - 50%);
     z-index: -1;
 }
 
@@ -34,26 +42,21 @@ div.my-info .text {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 75% 40%;
+    object-position: 72% 50%;
 }
 
 .hero-photo::after {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        /* eased ramp: a straight linear fade shows a visible edge where it starts */
-        linear-gradient(90deg,
-            var(--bg) 0%,
-            var(--bg) 34%,
-            color-mix(in srgb, var(--bg) 88%, transparent) 42%,
-            color-mix(in srgb, var(--bg) 62%, transparent) 50%,
-            color-mix(in srgb, var(--bg) 30%, transparent) 58%,
-            color-mix(in srgb, var(--bg) 8%, transparent) 66%,
-            transparent 72%),
-        linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 14%, transparent 30%),
-        linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 7%, transparent 16%),
-        linear-gradient(270deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 5%, transparent 12%);
+    /* eased ramp: a straight linear fade shows a visible edge where it starts */
+    background: linear-gradient(90deg,
+        var(--bg) 0%,
+        color-mix(in srgb, var(--bg) 85%, transparent) 10%,
+        color-mix(in srgb, var(--bg) 55%, transparent) 22%,
+        color-mix(in srgb, var(--bg) 25%, transparent) 34%,
+        color-mix(in srgb, var(--bg) 6%, transparent) 44%,
+        transparent 52%);
 }
 
 /* dim the photo a touch so it sits back on the near-black page */
@@ -63,52 +66,47 @@ div.my-info .text {
 
 .my-info.hero .text {
     width: 46%;
-    padding: 72px 0;
+    padding: 120px 0 96px;
 }
 
 .home-page .my-info.hero .text h1 {
     font-size: clamp(2.75rem, 4.6vw, 4.5rem);
 }
 
-/* The status pill runs wider than the faded zone; give it its own ground */
 .my-info.hero .hero-eyebrow {
     padding-top: 0;
     margin: 0;
 }
 
+/* The status pill can run past the copy column; give it its own ground */
 .my-info.hero .hero-status {
     background: var(--bg);
 }
 
 @media (max-width: 768px) {
-    /* Stacked: a tighter portrait crop on top, melting down into the copy */
+    /* Stacked: the full photo edge to edge on top, melting down into the copy */
     .my-info.hero {
         min-height: 0;
     }
 
     .hero-photo {
         position: relative;
-        inset: auto;
-        width: 100%;
-        aspect-ratio: 640 / 560;
-    }
-
-    .hero-photo img {
-        object-position: 50% 0%;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        max-width: none;
     }
 
     .hero-photo::after {
-        background:
-            linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 18%, transparent 38%),
-            linear-gradient(180deg, var(--bg) 0%, transparent 10%),
-            linear-gradient(90deg, var(--bg) 0%, transparent 8%),
-            linear-gradient(270deg, var(--bg) 0%, transparent 8%);
+        background: linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 40%, transparent) 14%, transparent 28%);
     }
 
     .my-info.hero .text {
         width: 100%;
         padding: 0;
-        margin-top: -64px;
+        margin-top: -72px;
     }
 }
 

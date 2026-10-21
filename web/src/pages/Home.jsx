@@ -1,6 +1,5 @@
 import './style/Home.css'
-import heroWide from '../images/hero_wide.webp'
-import heroTall from '../images/hero_tall.webp'
+import heroPhoto from '../images/hero_full.webp'
 import ProjectCardCompact from './../components/ProjectCardCompact'
 import Experience from './../components/Experience'
 import Skills from './../components/Skills'
@@ -32,11 +31,10 @@ export default function Home() {
     return (
         <div className='home-page'>
             <div className='my-info hero'>
-                {/* Photo fills the hero; its left side fades into the page so the copy sits on it */}
-                <picture className='hero-photo'>
-                    <source media='(max-width: 768px)' srcSet={heroTall} width='640' height='560' />
-                    <img src={heroWide} alt='Keyur Pawaskar standing outside San Francisco City Hall' width='1066' height='650' fetchPriority='high' />
-                </picture>
+                {/* Whole photo pinned to the navbar and the window's right edge; only its left side fades into the page */}
+                <div className='hero-photo'>
+                    <img src={heroPhoto} alt='Keyur Pawaskar standing outside San Francisco City Hall' width='1066' height='1600' fetchPriority='high' />
+                </div>
                 <div className='text'>
                     <FadeIn delay={0.1}>
                         <p className='hero-eyebrow'>~/ keyur — software engineer</p>

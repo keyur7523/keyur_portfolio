@@ -100,6 +100,8 @@ html, body, #root {
 
 body {
   margin: 0;
+  /* the home hero photo bleeds to the window edge; clip (not hidden) keeps sticky positioning working */
+  overflow-x: clip;
   font-family: var(--font-sans);
   line-height: 1.5;
   color: var(--text);

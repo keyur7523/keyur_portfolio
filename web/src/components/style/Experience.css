@@ -1,9 +1,8 @@
 
 .experience-button {
   background: var(--bg);
-  border: 1px solid var(--edge);
-  border-radius: 20px;
-  box-shadow: var(--neu-raised-sm);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   cursor: pointer;
   padding: 32px 28px;
   width: 100%;
@@ -19,10 +18,10 @@
   transition: color 200ms ease;
 }
 
-/* the selected company sits pressed in; the others stay raised */
 .experience-button.active {
   color: var(--accent-primary);
-  box-shadow: var(--neu-inset);
+  border-color: var(--accent-ring);
+  background: var(--accent-tint);
 }
 
 .experience-company {

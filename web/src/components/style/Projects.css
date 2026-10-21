@@ -26,14 +26,13 @@ div.project-card {
 div.project-images {
     overflow: hidden;
     width: 100%;
-    border-radius: 28px;
+    border-radius: 16px;
     background: var(--bg);
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     aspect-ratio: 16 / 9;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: var(--neu-raised);
 }
 
 img.project-image {
@@ -60,7 +59,7 @@ div.project-meta {
 .project-name {
     margin: 0;
     font-size: 1.75rem;
-    font-weight: 800;
+    font-weight: 600;
     gap: 8px;
 }
 
@@ -71,10 +70,9 @@ a.project-open {
     width: 28px;
     height: 28px;
     border-radius: 9999px;
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     color: var(--text-strong);
     text-decoration: none;
-    box-shadow: var(--neu-raised-sm);
 }
 a.project-open:hover {
     color: var(--accent-primary);

@@ -5,9 +5,8 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     background: var(--bg);
-    box-shadow: var(--neu-raised-sm);
     cursor: pointer;
 }
 

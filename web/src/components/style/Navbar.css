@@ -4,16 +4,13 @@ nav.navbar {
     grid-template-columns: auto 1fr auto;
     column-gap: 24px;
     align-items: center;
-    margin-top: 24px;
     position: sticky;
-    top: 16px;
+    top: 0;
     z-index: 100;
-    padding: 12px 22px;
-    border-radius: 20px;
+    padding: 18px 0;
+    /* flat bar: opaque so content scrolls cleanly underneath, one hairline to separate it */
     background: var(--bg);
-    border: 1px solid var(--edge);
-    /* a soft slab raised out of the page */
-    box-shadow: var(--neu-raised);
+    border-bottom: 1px solid var(--border);
 }
 
 /* Skip navigation link for accessibility */
@@ -22,7 +19,7 @@ nav.navbar {
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-primary);
+    background: var(--accent-gradient);
     color: var(--accent-contrast);
     padding: 12px 24px;
     border-radius: 0 0 8px 8px;
@@ -72,21 +69,20 @@ ul.navbar-links a:hover {
 /* the current page sits pressed into the bar */
 ul.navbar-links a.active {
     color: var(--accent-primary);
-    box-shadow: var(--neu-inset-sm);
+    background: var(--accent-tint);
 }
 
-/* Resume: outlined pill so it reads as an action, not a route */
+/* Resume: filled pill so it reads as an action, not a route */
 ul.navbar-links a.navbar-resume {
     margin-left: 8px;
     padding: 8px 18px;
     border-radius: 9999px;
-    background: var(--accent-primary);
+    background: var(--accent-gradient);
     color: var(--accent-contrast);
     font-size: 1rem;
-    box-shadow: var(--neu-raised-sm);
 }
 ul.navbar-links a.navbar-resume:hover {
-    background: var(--accent-primary-hover);
+    background: var(--accent-gradient-hover);
     color: var(--accent-contrast);
 }
 
@@ -152,7 +148,7 @@ ul.navbar-links a.navbar-resume:hover {
         grid-template-columns: 1fr auto auto;
         column-gap: 16px;
         row-gap: 16px;
-        padding: 10px 16px;
+        padding: 14px 0;
     }
 
     nav.navbar p {
@@ -200,8 +196,7 @@ ul.navbar-links a.navbar-resume:hover {
     gap: 2px;
     border-radius: 20px;
     background: var(--bg);
-    border: 1px solid var(--edge);
-    box-shadow: var(--neu-raised);
+    border: 1px solid var(--border);
     transform-origin: top right;
 }
 
@@ -221,7 +216,7 @@ ul.navbar-links a.navbar-resume:hover {
 
 .navbar-menu a.active {
     color: var(--accent-primary);
-    box-shadow: var(--neu-inset-sm);
+    background: var(--accent-tint);
 }
 
 .navbar-menu a.navbar-resume {
@@ -236,8 +231,4 @@ ul.navbar-links a.navbar-resume:hover {
     background: rgba(17, 20, 24, 0.35);
 }
 
-@media (max-width: 480px) {
-    nav.navbar {
-        margin-top: 32px;
-    }
-}
+

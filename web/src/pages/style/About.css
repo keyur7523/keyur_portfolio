@@ -5,7 +5,7 @@ div.about-page {
 div.about-header h1 {
     margin: 0 0 24px 0; /* keep your existing font and size; just spacing */
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 /* Lead paragraph with a left accent bar, matching your theme color */
@@ -37,8 +37,7 @@ div.about-intro {
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
-    border: 8px solid var(--bg);
-    box-shadow: var(--neu-raised);
+    border: 1px solid var(--border);
 }
 
 .about-photo {
@@ -70,15 +69,14 @@ div.about-education {
 div.about-education h2 {
     margin: 0 0 24px 0;
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .education-card {
     padding: 28px 32px;
-    border-radius: 24px;
+    border-radius: 16px;
     background: var(--bg);
-    border: 1px solid var(--edge);
-    box-shadow: var(--neu-raised);
+    border: 1px solid var(--border);
 }
 
 .education-card h3 {
@@ -110,7 +108,7 @@ div.my-experience {
 div.my-experience h2 {
     margin: 0 0 24px 0;
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 p.my-experience-lead {
@@ -137,7 +135,7 @@ div.about-exp-grid {
 
 .exp-left-container {
     font-size: 4.375rem;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 1;
     color: var(--text-strong);
     align-self: stretch;                /* make left cell fill row height */
@@ -163,7 +161,7 @@ div.about-exp-grid {
 .exp-right-container p:nth-child(2) {
     margin: 0 0 20px 0;
     font-size: 2.75rem;
-    font-weight: 1000;
+    font-weight: 600;
     color: var(--text-strong);
 }
 

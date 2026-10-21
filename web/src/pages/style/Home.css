@@ -34,9 +34,7 @@ div.my-info .text {
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
-    /* photo set in a raised neumorphic ring */
-    border: 5px solid var(--bg);
-    box-shadow: var(--neu-raised);
+    border: 1px solid var(--border);
 }
 
 .hero-avatar {
@@ -72,12 +70,15 @@ div.my-info .text p {
 
 .home-page .my-info .text h1 {
     font-size: 6.25rem;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: -0.035em;
 }
 
 div.my-info .text .accent {
-    color: var(--accent-primary);
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -97,9 +98,9 @@ div.my-info .text .accent {
     font-weight: 500 !important;
     color: var(--text-muted) !important;
     padding: 10px 18px !important;
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     border-radius: 9999px;
-    box-shadow: var(--neu-inset-sm);
+    background: var(--accent-tint);
 }
 
 .status-dot {
@@ -115,12 +116,11 @@ div.my-info .text .contact-button,
 div.my-info .text .projects-button {
     margin-top: 24px;
     padding: 14px 22px;
-    border-radius: 16px;
-    font-size: 1.25rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
     font-weight: 600;
     line-height: 1;
     cursor: pointer;
-    box-shadow: var(--neu-raised-sm);
     transition: transform 120ms ease, background-color 120ms ease, color 120ms ease;
     position: relative;
     overflow: hidden;
@@ -150,14 +150,14 @@ div.my-info .text .projects-button::before {
 }
 
 div.my-info .text .contact-button {
-    background-color: var(--accent-primary);
-    border: 1px solid var(--accent-primary);
+    background: var(--accent-gradient);
+    border: 1px solid transparent;
     color: var(--accent-contrast);
     margin-right: 24px;
 }
 @media (hover: hover) {
     div.my-info .text .contact-button:hover {
-        background-color: var(--accent-primary-hover);
+        background: var(--accent-gradient-hover);
         transform: translateY(-1px);
     }
 }
@@ -165,7 +165,7 @@ div.my-info .text .contact-button {
 div.my-info .text .projects-button {
     background-color: var(--bg);
     color: var(--text-strong);
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
 }
 @media (hover: hover) {
     div.my-info .text .projects-button:hover {
@@ -190,8 +190,7 @@ div.my-info .image img {
     object-fit: cover; /* crop to circle nicely */
     object-position: 35% 40%; /* shift content left inside circle */
     border-radius: 50%;
-    border: 12px solid var(--bg);
-    box-shadow: var(--neu-raised);
+    border: 1px solid var(--border);
 }
 
 .hero-socials {
@@ -207,10 +206,9 @@ div.my-info .image img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     color: var(--text-muted);
     font-size: 1.25rem;
-    box-shadow: var(--neu-raised-sm);
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -246,7 +244,7 @@ div.projects-container {
 
 .projects-title {
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .projects-title .accent {
@@ -276,13 +274,12 @@ div.projects-grid {
     margin: 40px auto 0;
     padding: 14px 28px;
     background: var(--bg);
-    border: 1px solid var(--edge);
-    border-radius: 16px;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
     color: var(--text-strong);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: var(--neu-raised-sm);
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -309,7 +306,7 @@ div.experience-container {
 
 .experience-title {
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .experience-title .accent {
@@ -337,10 +334,9 @@ div.experience-buttons-card {
     min-width: 0;
     min-height: 420px;
     padding: 45px 48px 40px;
-    border-radius: 28px;
+    border-radius: 16px;
     margin-left: 0;
-    border: 1px solid var(--edge);
-    box-shadow: var(--neu-raised);
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
 }
@@ -413,7 +409,7 @@ div.experience-buttons-card {
 
 .skills-title {
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .skills-title .accent {
@@ -433,7 +429,7 @@ div.experience-buttons-card {
 
 .mystory-title {
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .mystory-title .accent {

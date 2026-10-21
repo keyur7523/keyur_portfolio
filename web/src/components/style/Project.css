@@ -18,12 +18,11 @@
 .project-copy-link {
     position: relative;
     background: var(--bg);
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     cursor: pointer;
     color: var(--text-muted);
     padding: 10px;
     border-radius: 12px;
-    box-shadow: var(--neu-raised-sm);
     transition: color 0.2s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
@@ -61,7 +60,7 @@
 .project-page > .project-description h2,
 .project-page > .project-tech-stack h2 {
     font-size: 3.75rem;
-    font-weight: 800;
+    font-weight: 600;
     margin: 0 0 16px 0;
 }
 
@@ -175,8 +174,8 @@
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--accent);
-    border: 1px solid var(--edge);
-    box-shadow: var(--neu-inset-sm);
+    border: 1px solid var(--border);
+    background: var(--accent-tint);
     white-space: nowrap;
 }
 
@@ -212,15 +211,14 @@
 .project-gallery-viewport {
     position: relative;
     overflow: hidden;
-    border-radius: 28px;
+    border-radius: 16px;
     background: var(--surface-muted);
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* a well the screenshots slide through */
-    box-shadow: var(--neu-inset);
+
 }
 
 .project-gallery-img {
@@ -249,14 +247,13 @@
     width: 42px;
     height: 42px;
     border-radius: 9999px;
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
     background: var(--bg);
     color: var(--accent-primary); /* accent */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: var(--neu-raised-sm);
     transition: transform 0.2s ease, color 0.2s ease;
 }
 .project-gallery-arrow.left { left: 12px; }
@@ -395,7 +392,7 @@
 
 .related-projects h2 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 32px;
 }
 
@@ -424,8 +421,7 @@
     aspect-ratio: 16/9;
     border-radius: 20px;
     background: var(--bg);
-    border: 1px solid var(--edge);
-    box-shadow: var(--neu-raised-sm);
+    border: 1px solid var(--border);
     padding: 8px;
     overflow: hidden;
     display: flex;

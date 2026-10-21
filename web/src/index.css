@@ -1,87 +1,77 @@
-/* 1) Variables + color scheme — soft neumorphic surfaces on a light, Apple-like base */
+/* 1) Variables + color scheme — flat, airy surfaces (Groww-inspired) with a blue→violet accent */
 /* System font first: SF Pro on Apple devices ships optical sizing and tracking tables */
 :root {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Light theme (default). Neumorphic surfaces share the page colour and get their
-   shape from a light shadow (top-left) and a dark shadow (bottom-right). */
+/* Light theme (default): pure white, hairline borders, no shadows */
 :root,
 :root.light {
   color-scheme: light;
-  --bg: #eef1f5;
-  --text: #2b3038;
-  --accent: #1a47b8;
-  --accent-primary: #1a47b8;
-  --accent-primary-hover: #153a99;
-  --accent-primary-soft: rgba(26, 71, 184, 0.35);
-  --accent-tint: rgba(26, 71, 184, 0.07);
-  --accent-shadow: rgba(26, 71, 184, 0.25);
-  --accent-ring: rgba(26, 71, 184, 0.3);
+  --bg: #ffffff;
+  --text: #44475b;
+  --accent: #3d4fe0;
+  --accent-primary: #3d4fe0;
+  --accent-primary-hover: #3040c4;
+  --accent-violet: #6a3df0;
+  --accent-primary-soft: rgba(61, 79, 224, 0.35);
+  --accent-tint: rgba(61, 79, 224, 0.07);
+  --accent-shadow: rgba(61, 79, 224, 0.2);
+  --accent-ring: rgba(61, 79, 224, 0.3);
   --accent-contrast: #ffffff;
-  --surface: #eef1f5;
-  --surface-muted: #e7ebf0;
-  --surface-raised: #f3f5f8;
-  --text-strong: #111418;
-  --text-muted: #4a515c;
-  --text-subtle: #5f6672;
-  --border: #d5dbe3;
+  /* filled buttons and the hero highlight; both ends hold 4.5:1 against white text/background */
+  --accent-gradient: linear-gradient(120deg, #3b5bff 0%, #6a3df0 100%);
+  --accent-gradient-hover: linear-gradient(120deg, #2f4be6 0%, #5a2fd9 100%);
+  --surface: #ffffff;
+  --surface-muted: #f7f8fa;
+  --surface-raised: #ffffff;
+  --text-strong: #262938;
+  --text-muted: #5f6275;
+  --text-subtle: #6f7180;
+  --border: #e9e9eb;
   --success: #15803d;
-  --neu-light: #ffffff;
-  --neu-dark: rgba(150, 164, 186, 0.55);
-  --edge: transparent;
 }
 
-/* Dark theme: the same shapes, carved from graphite */
+/* Dark theme: near-black canvas, slightly lifted surfaces */
 :root.dark {
   color-scheme: dark;
-  --bg: #1e2127;
-  --text: #d4d8de;
-  --accent: #8fb0ff;
-  --accent-primary: #8fb0ff;
-  --accent-primary-hover: #a9c2ff;
-  --accent-primary-soft: rgba(143, 176, 255, 0.4);
-  --accent-tint: rgba(143, 176, 255, 0.08);
-  --accent-shadow: rgba(143, 176, 255, 0.2);
-  --accent-ring: rgba(143, 176, 255, 0.32);
-  --accent-contrast: #10131a;
-  --surface: #1e2127;
-  --surface-muted: #1a1d22;
-  --surface-raised: #23272e;
-  --text-strong: #f1f3f6;
-  --text-muted: #aab1bb;
-  --text-subtle: #8f97a3;
-  --border: rgba(255, 255, 255, 0.08);
+  --bg: #0b0d10;
+  --text: #c9ced3;
+  --accent: #8e9bff;
+  --accent-primary: #8e9bff;
+  --accent-primary-hover: #a9b3ff;
+  --accent-violet: #b394ff;
+  --accent-primary-soft: rgba(142, 155, 255, 0.4);
+  --accent-tint: rgba(142, 155, 255, 0.1);
+  --accent-shadow: rgba(142, 155, 255, 0.2);
+  --accent-ring: rgba(142, 155, 255, 0.32);
+  --accent-contrast: #ffffff;
+  --accent-gradient: linear-gradient(120deg, #3b5bff 0%, #6a3df0 100%);
+  --accent-gradient-hover: linear-gradient(120deg, #4d6bff 0%, #7b52f5 100%);
+  --surface: #15181b;
+  --surface-muted: #15181b;
+  --surface-raised: #1e2224;
+  --text-strong: #f2f5f7;
+  --text-muted: #a3a9ad;
+  --text-subtle: #8a9094;
+  --border: #2a2e32;
   --success: #4ade80;
-  --neu-light: rgba(255, 255, 255, 0.045);
-  --neu-dark: rgba(0, 0, 0, 0.5);
-  --edge: transparent;
 }
 
-/* Shadow recipes, built from the per-theme light/dark pair */
-:root {
-  --neu-raised: 8px 8px 20px var(--neu-dark), -8px -8px 20px var(--neu-light);
-  --neu-raised-sm: 4px 4px 10px var(--neu-dark), -4px -4px 10px var(--neu-light);
-  --neu-inset: inset 4px 4px 9px var(--neu-dark), inset -4px -4px 9px var(--neu-light);
-  --neu-inset-sm: inset 2px 2px 5px var(--neu-dark), inset -2px -2px 5px var(--neu-light);
-}
-
-/* Higher contrast on request: shadows alone don't define a shape, so draw real edges */
+/* Higher contrast on request: stronger secondary text and borders */
 @media (prefers-contrast: more) {
   :root,
   :root.light {
-    --text-muted: #2b3038;
-    --text-subtle: #3f4650;
-    --border: #7d8592;
-    --edge: #7d8592;
+    --text-muted: #3a3d4e;
+    --text-subtle: #4a4d5e;
+    --border: #7d8090;
   }
 
   :root.dark {
-    --text-muted: #d4d8de;
-    --text-subtle: #b6bdc7;
-    --border: rgba(255, 255, 255, 0.4);
-    --edge: rgba(255, 255, 255, 0.4);
+    --text-muted: #d4d8dc;
+    --text-subtle: #b9bec2;
+    --border: #8a9094;
   }
 }
 
@@ -189,22 +179,6 @@ button:not(:disabled):active,
 .featured-media:active {
   transform: scale(0.97);
   transition: transform 100ms ease-out;
-}
-
-/* Raised neutral controls also sink into the surface on press (instant, like the scale) */
-.projects-button:active,
-.projects-expand-btn:active,
-.theme-toggle:active,
-.mystory-toggle:active,
-.footer-interaction-projects:active,
-.notfound-btn.secondary:active,
-.hero-socials a:active,
-.social-links a:active,
-.project-copy-link:active,
-.project-open:active,
-.experience-button:active,
-.project-gallery-arrow:not(:disabled):active {
-  box-shadow: var(--neu-inset-sm);
 }
 
 /* 5) Media + images */

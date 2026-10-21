@@ -55,7 +55,7 @@ div.footer-2 {
 .footer-cta-title {
     margin: 0 0 16px 0;
     font-size: 2.125rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .footer-cta-buttons {
@@ -67,8 +67,7 @@ div.footer-2 {
 .footer-interaction-contact,
 .footer-interaction-projects {
     padding: 13px 20px;
-    border-radius: 14px;
-    box-shadow: var(--neu-raised-sm);
+    border-radius: 9999px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
@@ -76,16 +75,16 @@ div.footer-2 {
 }
 
 .footer-interaction-contact {
-    background-color: var(--accent-primary);
-    border: 1px solid var(--accent-primary);
+    background: var(--accent-gradient);
+    border: 1px solid transparent;
     color: var(--accent-contrast);
 }
-.footer-interaction-contact:hover { background-color: var(--accent-primary-hover); }
+.footer-interaction-contact:hover { background: var(--accent-gradient-hover); }
 
 .footer-interaction-projects {
     background: var(--bg);
     color: var(--text-strong);
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
 }
 .footer-interaction-projects:hover {
     color: var(--accent-primary);

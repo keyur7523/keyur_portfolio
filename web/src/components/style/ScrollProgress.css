@@ -13,5 +13,5 @@
   height: 100%;
   width: 100%;
   transform-origin: 0 50%;
-  background: var(--accent-primary);
+  background: var(--accent-gradient);
 }

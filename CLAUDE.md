@@ -9,7 +9,7 @@ React 19 + Vite SPA in `web/`. Live at https://keyur-portfolio-psi.vercel.app â€
 
 ## Where things live
 - Content: `src/data/projectList.js` (projects + curated `displayOrder`), `src/data/experience.js`, `src/data/skills.js`, copy in `src/components/Mystory.jsx` and `src/pages/About.jsx`
-- Design tokens (colors, system fonts, neumorphic `--neu-*` shadows, contrast `--edge`): `src/index.css`. Light is the default theme; new raised surfaces use `background: var(--bg)` + `box-shadow: var(--neu-raised*)` + `border: 1px solid var(--edge)`
+- Design tokens (colors, system fonts, `--accent-gradient` blueâ†’violet, contrast): `src/index.css`. Flat Groww-inspired look: white (default) / near-black, cards = `1px solid var(--border)` with no shadows, filled buttons = gradient pills
 - Motion: springs and gesture math in `src/components/ui/physics.js`; reusable wrappers (`FadeIn`, `Reveal`, `Stagger*`) in `src/components/ui/Animations.jsx`
 - Resume: `web/public/resume.pdf` (served at `/resume.pdf`)
 

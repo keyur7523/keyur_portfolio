@@ -13,7 +13,7 @@
 
 .notfound-code {
     font-size: 8.75rem;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 1;
     margin: 0 0 16px 0;
     color: var(--text-strong);
@@ -49,24 +49,23 @@
     align-items: center;
     gap: 10px;
     padding: 14px 24px;
-    border-radius: 14px;
+    border-radius: 9999px;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: var(--neu-raised-sm);
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .notfound-btn.primary {
-    background: var(--accent-primary);
+    background: var(--accent-gradient);
     color: var(--accent-contrast);
-    border: 1px solid var(--accent-primary);
+    border: 1px solid transparent;
 }
 
 @media (hover: hover) {
     .notfound-btn.primary:hover {
-        background: var(--accent-primary-hover);
+        background: var(--accent-gradient-hover);
         transform: translateY(-2px);
     }
 }
@@ -74,7 +73,7 @@
 .notfound-btn.secondary {
     background: var(--bg);
     color: var(--text-strong);
-    border: 1px solid var(--edge);
+    border: 1px solid var(--border);
 }
 
 @media (hover: hover) {

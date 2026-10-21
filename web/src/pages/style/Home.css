@@ -22,7 +22,8 @@ div.my-info .text {
 .my-info.hero {
     position: relative;
     isolation: isolate;
-    min-height: 960px;
+    /* fill the first screen under the navbar (~82px), so the photo's bottom edge is in view */
+    min-height: calc(100svh - 82px);
     margin-top: 0; /* Contact.css's .my-info margin would push the photo off the navbar */
 }
 
@@ -40,8 +41,8 @@ div.my-info .text {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* keep him head to toe; the top of the dome is what gets trimmed */
-    object-position: 70% 92%;
+    /* anchor to the bottom so his shoes and the ground stay in frame; the dome is what gets trimmed */
+    object-position: 70% 100%;
 }
 
 .hero-photo::after {
@@ -66,7 +67,7 @@ div.my-info .text {
 
 .my-info.hero .text {
     width: 46%;
-    padding: 120px 0 96px;
+    padding: 72px 0;
 }
 
 .home-page .my-info.hero .text h1 {
@@ -81,6 +82,35 @@ div.my-info .text {
 /* The status pill can run past the copy column; give it its own ground */
 .my-info.hero .hero-status {
     background: var(--bg);
+}
+
+/* Short laptop screens: tighten the copy so the hero (and the photo's bottom edge) fits the first screen */
+@media (min-width: 769px) and (max-height: 880px) {
+    .my-info.hero .text {
+        padding: 40px 0;
+    }
+
+    .home-page .my-info.hero .text h1 {
+        font-size: clamp(2.5rem, min(4.6vw, 7.5vh), 4.5rem);
+    }
+
+    .my-info.hero .hero-subtitle {
+        padding-top: 20px !important;
+        font-size: 1.125rem !important;
+    }
+
+    .my-info.hero .hero-status {
+        margin-top: 16px;
+    }
+
+    .my-info.hero .contact-button,
+    .my-info.hero .projects-button {
+        margin-top: 18px;
+    }
+
+    .my-info.hero .hero-socials {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 768px) {

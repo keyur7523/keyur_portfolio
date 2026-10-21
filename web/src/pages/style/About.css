@@ -26,28 +26,27 @@ div.about-intro {
 
 .about-intro-content {
     display: flex;
-    gap: 48px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.about-photo-frame {
-    display: block;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
+.about-banner {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1655 / 720;
+    object-fit: cover;
+    object-position: 44% 50%;
+    border-radius: 16px;
     border: 1px solid var(--border);
 }
 
-.about-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 36% 50%;
-    /* mirror so the gaze points toward the intro text; zoom in on the face */
-    transform: scaleX(-1) scale(1.7);
-    transform-origin: 50% 60%;
+/* dim the photo a touch so it sits back on the near-black page */
+:root.dark .about-banner {
+    filter: brightness(0.85);
+}
+
+.about-intro-text {
+    max-width: 760px;
 }
 
 .about-intro-text p {
@@ -201,10 +200,6 @@ div.about-exp-grid {
         gap: 32px;
     }
 
-    .about-photo-frame {
-        width: 160px;
-        height: 160px;
-    }
 
     div.about-exp-grid {
         column-gap: 32px;
@@ -234,15 +229,14 @@ div.about-exp-grid {
     }
 
     .about-intro-content {
-        flex-direction: column;
-        align-items: center;
         gap: 24px;
     }
 
-    .about-photo-frame {
-        width: 140px;
-        height: 140px;
+    /* a taller crop on phones so he isn't a speck in a thin strip */
+    .about-banner {
+        aspect-ratio: 4 / 3;
     }
+
 
     .about-intro-text p {
         font-size: 1rem;
@@ -284,10 +278,6 @@ div.about-exp-grid {
         font-size: 1.125rem;
     }
 
-    .about-photo-frame {
-        width: 120px;
-        height: 120px;
-    }
 
     .exp-right-container p:nth-child(2) {
         font-size: 2rem;

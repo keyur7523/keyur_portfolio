@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import "./style/Contact.css"
-import profilePicture from '../images/profile_medium.jpg'
 import { MdOutlineEmail } from "react-icons/md";
 import { CiPhone } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub, FaInstagram, FaXTwitter } from 'react-icons/fa6';
@@ -76,9 +75,6 @@ export default function Contact() {
                         </a>
                     </FadeIn>
                 </div>
-                <FadeIn delay={0.2} className='image'>
-                    <img src={profilePicture} alt='Keyur Pawaskar' width='480' height='480' />
-                </FadeIn>
             </div>
     )
 }

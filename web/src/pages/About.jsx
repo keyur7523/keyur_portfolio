@@ -3,7 +3,7 @@ import './style/About.css'
 import ExperienceItem from './../components/ExperienceItem'
 import { experiences } from './../data/experience'
 import { FadeIn } from '../components/ui/Animations'
-import profilePicture from '../images/profile_medium.jpg'
+import lakePhoto from '../images/about_lake.webp'
 
 export default function About() {
     useEffect(() => {
@@ -25,9 +25,14 @@ export default function About() {
             <div className='about-intro'>
                 <FadeIn delay={0.25}>
                     <div className='about-intro-content'>
-                        <span className='about-photo-frame'>
-                            <img src={profilePicture} alt='Keyur Pawaskar' className='about-photo' />
-                        </span>
+                        {/* A panorama, so it gets a wide frame at its natural size rather than a zoomed circle */}
+                        <img
+                            src={lakePhoto}
+                            alt='Keyur Pawaskar by a lake with pine trees and mountains behind'
+                            className='about-banner'
+                            width='1655'
+                            height='720'
+                        />
                         <div className='about-intro-text'>
                             <p>
                                 I'm Keyur Pawaskar, a full-stack developer. For the past year I've
